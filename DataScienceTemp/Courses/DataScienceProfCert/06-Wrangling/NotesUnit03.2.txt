@@ -1,0 +1,471 @@
+Video 1
+In previous courses, we used a heights
+data set in the dslabs package.
+The dslabs package also includes the raw data
+from which these heights were obtained.
+You can load it like this.
+These heights were obtained using a web form in which students were asked
+to enter their heights into a form.
+They could enter anything, but the instructions asked for heights
+in inches, the number.
+We compiled over 1,000 submissions, but unfortunately the column vector
+with the reported heights had several non-numeric entries, and as a result
+became a character vector.
+We can see it here.
+If we try to parse it into a number, we get a warning.
+There's a lot of NAs.
+
+Although most values appear to be height in inches as requested--
+here are the first five--
+we do end up with many NAs.
+You can see how many using this code.
+We can see some of the entries that are not successfully
+converted by using the filter function to keep only the entries that
+resulted in NAs.
+We can write this code.
+Now, look at the entries that turn out to be non-numeric.
+
+We immediately see what's happening.
+Some of the students did not report their heights in inches as requested.
+We could discard these and continue, however, many of the entries
+follow patterns that, in principle, we can easily convert to inches.
+For example, in the output we just saw, we
+see various cases that use the following format, with x representing
+feet and y representing inches.
+Each of these cases can be read and converted to inches by a human.
+For example, if you write 5'4" like this, this is 5 times 12 plus 4,
+which is 64 inches.
+So we could fix all the problematic entries by hand.
+However, humans are prone to making mistakes.
+Also, because we plan on continuing to collect data going forward,
+it'll be convenient to write code that automatically does this.
+A first step in this type of task is to survey the problematic entries
+and try to define specific patterns followed by a large group of entries.
+The larger these groups, the more entries
+we can fix with a single programmatic approach.
+We want to find patterns that can be accurately described
+with a rule, such as a digit followed by a feet symbol followed by one
+or two digits followed by an inches symbol.
+To look for such patterns, it helps to remove
+the entries that are consistent with being inches,
+and view only the problematic entries.
+We write a function to automatically do this.
+We only keep entries that either result in NAs when applying as numeric
+or are outside a range of plausible heights.
+We permit a range that covers about 99.99999% of the adult population.
+We also use suppressWarnings throughout the code
+to avoid the warning messages we know the as.numeric will give us.
+So here is what the function looks like.
+We apply this function, and find that there are these many entries that
+are problematic.
+We can now view all the cases by simply printing them.
+We don't do that here because there are so many of them.
+But after surveying them carefully, we notice
+three patterns that are followed by three large groups of entries.
+A pattern of the form x feet y or x feet space y inches or x feet
+y backslash inches, and with x and y representing feet and inches
+respectively, is a common pattern.
+Here are 10 examples.
+A pattern of the form x dot y or x comma y, with x feet and y inches,
+are also common.
+Here are 10 examples.
+
+Entries that were reported in centimeters rather than inches
+is another example.
+Here are 10 of them.
+Once seen that these large groups follow specific patterns,
+we can develop a plan of attack.
+Keep in mind that there is rarely just one way to perform these tasks.
+Here, we pick one that helps us teach several useful techniques.
+But surely, there is a more efficient way
+of performing the task we're about to show you.
+
+Video 2
+We have seen three patterns
+that define many problematic entries.
+We will convert entries fitting the first two
+patterns into a standardized one.
+We'll then leverage this standardization to extract the feet and inches,
+and convert to inches.
+We will then define a procedure for identifying
+entries that are in centimeters, and convert these to inches.
+After applying these steps, we will then check again
+to see what entries were not fixed, and see if we can tweak our approach
+to be more comprehensive.
+This is very common in data science.
+There's a lot of interactive approaches that are applied.
+At the end, we hope to have a script that
+makes web-based data collection methods robust to the most common user
+mistakes.
+To achieve our goal, we will use a technique
+that enables us to actually detect patterns, and extract
+these parts we want--
+regular expressions or regex.
+A regular expression, a regex, is a way to describe
+specific patterns of a character of text that
+can be used to determine if a given string matches the pattern.
+A set of rules have been defined to do this efficiently and precisely,
+and we're going to show you some examples.
+We can learn more about these rules by reading detailed tutorials that
+can be found online.
+There's also cheat sheets that are very useful.
+The patterns applied to the stringr functions
+can be a regex, rather than a standard string.
+We'll learn how this works through a series of examples.
+Technically, any string is a regex.
+Perhaps the simplest example is a single character.
+So the comma that we used before--
+here is the code--
+is a simple example of searching with a regex.
+We noted that an entry included centimeters, cm.
+This is also a simple example of a regex.
+We can show all the entries that use "cm" like this.
+We use the function str_subset.
+Now let's consider a slightly more complicated example.
+Let's ask which of the following strings satisfy your pattern.
+We're going to define "yes" as the ones that do,
+and "no" as the ones that don't, and then
+create one vector of strings, called s, including both.
+So we're asking which of the strings include the pattern "cm" or the pattern
+"inches."
+We could call str_detect twice, like this.
+However, we don't need to do this.
+The main feature that distinguishes the regex language from plain strings
+is that we can use special characters.
+These are characters that have a meaning.
+We start by introducing this character, which means "or."
+So if you want to know if either "cm" or "inches" appears in the, string
+we can use the regex bar inches, like this, and obtain the correct answer.
+Another special character that will be useful for identifying feet and inches
+values is the backslash d, which means any digit, 0, 1, 2, 3, up to 9.
+The backslash is used to distinguish it from the character "d."
+In R, we have to escape the backslash, so we actually
+have to use two backslashes, and then a d to represent digits.
+Here's an example.
+We're going to define several strings, some that satisfy a pattern,
+others that don't.
+And now we're going to look for a pattern that has a digit in it.
+Here's an example.
+We're going to find five strings that have digits in them,
+four strings that don't.
+Then we're going to use the regex backslash
+d to try to find which of these strings have the pattern.
+If we use str_detect, we see that we actually
+get the right answer, five trues followed by four falses.
+We take this opportunity to introduce the very useful str_view function.
+This is a helpful function for troubleshooting,
+as it shows us the first match for each string.
+So if we type str_view (s, and then the pattern,
+it shows us the first time a digit was found.
+The str_view_all shows us all the matches.
+So if we use it here, we can see that all the digits are highlighted.
+There are many, many other special characters in regex.
+We'll learn some others, but you can see most or all of them in the cheat sheet.
+
+Video 3
+As we've done already throughout these videos,
+you'll see that we create strings to test our regex.
+To do this, we define patterns that we know
+should match the pattern that we're testing, and some that we know
+should not.
+We'll call them "yes" and "no" respectively.
+This permits us to check for the two types of errors, failing to match
+and incorrectly matching.
+OK.
+Let's continue.
+Character classes are used to define a series of characters
+that can be matched.
+We define character classes with the square brackets.
+So for example, if we want the parent to match only if we have a 5 or a 6,
+we can use the regex, square brackets, 5, 6.
+So we test it out, you can see that we only detect the 5s and the 6s.
+You can see it with string view.
+Suppose we want to match values between 4 and 7.
+A common way to define a character class is with ranges.
+So for example, if we use the brackets and then 0 through 9,
+this is equivalent to using the backlash d.
+It's all the digits.
+So the pattern square brackets 4 to 7 will match the numbers 4, 5, 6, and 7.
+We can see it in this example.
+However, it is important to know that in regex, everything is a character.
+There are no numbers.
+So 4 is the character 4, not the number 4.
+Note, for example, that if we type 1 through 20,
+this does not mean 1, 2, 3, 4, 5, up to 20.
+It means that characters 1 through 2 and then the character 0.
+So the regex 1 through 20 in brackets simply
+means the character class composed of 0, 1, and 2.
+Note that characters do have an order and the digits
+do follow the numeric order.
+So 0 comes before 1, which comes before 2, and so on.
+For the same reason, we can define letters as ranges.
+So a through z are all the lower case letters
+like this and A through Z uppercase are all the letters that are uppercase.
+If you want all the letters, then we would write it like this.
+All right.
+What if we want the pattern to match when we have exactly one digit?
+This will be useful in our case studies since feet are never
+more than one digit.
+So a restriction will help us.
+One way to do this with regex is by using
+anchors which let us define patterns that
+must start or end at specific places.
+The two most common anchors are the caret and the dollar sign,
+which represent the beginning and end of a string respectively.
+So the pattern caret, backslash, backslash, d, dollar sign
+is read as start of the string followed by one digit followed
+by the end of the string.
+Note how this pattern now only detects the strings with exactly one digit.
+We can see it in this example.
+Note that the 1 in the example we just show
+does not match because there's a space in front, so it's not just one digit.
+For the inches part, we can have one or two digits.
+This can be specified in regex with quantifiers.
+This is done by following the pattern by curly brackets
+with the possible number of times the previous entry repeats.
+So the pattern for one or two digits is like this-- backslash, backslash,
+d, and then curly brackets, 1 comma 2.
+So this code will do what we want.
+It will find all the numbers that are two digits or one digit.
+In this case, 1, 2, 3 does not match but 1, 2 does.
+So now, to look for one feet and inches pattern, we can add the symbol for feet
+and the symbol for inches after the digits.
+With what we have learned, we can now construct
+an example for the pattern x feet and y inches,
+with the x representing feet and the y inches.
+It's going to look like this.
+We're going to say it starts this string, then any number between 4
+and 7, the other feet, then the symbol for feet,
+then either one or two digits, and then the end of the string.
+This pattern is now getting complex, but we can
+look at it carefully and break it down.
+The caret means start of the string.
+Brackets, 4, 7.
+One digit either 4, 5, 6, or 7.
+The feet symbol-- backslash, backslash d, curly brackets, 1, 2 means one
+or two digits.
+And then backslash quotes is the inches symbol,
+and then we end with the dollar sign, which means the end of the string.
+Let's test it out.
+Let's make some strings where it is feets and inches, others
+where we shouldn't get a match.
+We test it out with string detect, and we see that it works as expected.
+
+For now, we're permitting the inches to be 12 or larger.
+We will add a restriction later as a regex for this
+is a bit more complex than we're ready to show now.
+
+Video 4
+In a previous video, we defined the object problems
+containing the strings that do not appear to be in inches.
+We can see that only these many of them match the pattern we define.
+To see why this is, we show examples that expose why we don't have more
+matches.
+Here are some examples.
+We see that only two of them match.
+Why is that?
+A first problem we see immediately is that some students wrote out
+the words feet and inches.
+We can see the entries that did this with the function strict subset
+like this.
+We see several examples.
+We also see that some entries use the single quotes twice to represent
+inches instead of the double quotes.
+We can see some examples using the string subset option.
+Here they are.
+First thing we can do to solve this problem
+is to replace the different ways of representing
+inches and feet with a uniform symbol.
+We'll use a single quote for feet, and for inches, we'll
+simply not use anything.
+So 5, single quote, y will mean 5 feet and y inches.
+Now, if we no longer use the inches symbol at the end,
+we can change our pattern accordingly by taking it out of the pattern.
+So our pattern will be this then.
+If we do this replacement before the matching, we get many more matches.
+So we're going to use the string replace function to replace feet,
+ft, foot with the feet symbol.
+And we're going to replace inches in two single double quotes
+and slash double quotes with nothing.
+We run this and now we see that we get many more matches.
+However, we still have many cases to go.
+Note that in the code we just showed, we leveraged the string [? and ?]
+consistency and use the [? part. ?]
+Another problem we have are spaces.
+For example, the pattern 5, single quote, space, 4, and then
+the double quotes does not match because there
+is a space between the single quote and the 4,
+which our pattern does not permit.
+Spaces are characters and r does not ignore them.
+Here.
+You can write this function to see that there are not--
+that these two strings are not the same.
+There is a space in one and not the other.
+In regex, we can represent spaces, white space, as with backslash s.
+So to find patterns like 5, single quote, space, and then another digit,
+we can change our pattern to the following.
+We're adding backslash, backslash, s after the single quote.
+And now, we can see that we find a few examples.
+So do we need more than one regex pattern--
+one for the space and one without the space?
+No, we don't.
+We can use quantifiers for this as well.
+So we want a pattern to permit spaces but not to require them.
+Even if there are several spaces like this, we will still want it to match.
+There is a quantifier exactly for this purpose.
+In regex, the asterisk character means zero or more instances
+of the previous character.
+So let's do a quick example.
+We define some strings, and then we try out
+to see which strings we find by using the asterisk after the 1.
+We see that it finds all of these and none of these.
+Note that it matches the first string which
+has zero 1s and all the strings which have one or more 1s.
+So we can improve our pattern by adding the asterisk after the space character
+backslash, s.
+OK.
+Now there are two other similar quantifiers.
+For none or once, we can use the question mark.
+And for one or more, we can use the plus sign.
+You can see how they differ by testing it out with this code.
+
+We will actually use all three in our report
+as examples as you will see later.
+But right now, to improve our pattern, we
+can add the asterisks after the backslash, s in front
+and after the feet symbol to permit space between the feet
+symbol and the numbers.
+Now we match and we get a few more entries.
+Here's the example.
+
+We might be tempted to avoid doing this by removing
+all the spaces with the function string replace all.
+However, when doing such an operation, we
+need to make sure that it does not have some unintended effect.
+In our reported heights example, this will be a problem
+because some entries are of the form x space y with space
+separating the feet from the inches.
+If we remove all spaces, we will incorrectly turn x space y into xy,
+which implies that a 6' 1" person would turn into a 61 inch
+person instead of a 73 inch person.
+
+Video 5
+The second a large group of problematic entries were of the form
+x.y or x,y, and x y.
+We want to change all these to our common format, x'y.
+But we can't just do the search and replace,
+because we would change value such as 70.5 into 70'5.
+Our strategy will therefore be to search for very specific pattern that assures
+us feet and inches are being provided.
+Then for those that match, replace appropriately.
+Groups are a powerful aspect of regex that permits the extraction of values.
+Groups are defined using parentheses.
+They don't affect the pattern matching per se.
+Instead, it permits tools to identify specific parts of the pattern
+so we can extract them.
+So, for example, we want to change height
+like 5.6 to five feet, six inches.
+To avoid changing patterns such as 70.2, we'll
+require that the first digit be between four and seven--
+we can do that using the range operation--
+and that the second be none or more digits.
+We can do that using backslash, backslash d star.
+Let's start by defining a simple pattern that matches this.
+We can do it like this.
+We want to extract the digits so that we can then form
+the new version using a single quote.
+These are two groups, so we encapsulate them with parentheses like this.
+Note that we encapsulate the part of the pattern that matches the parts we want
+to keep, the parts we want to extract.
+Before we continue, notice that adding groups
+does not affect the detections since it only
+signals that we want to save what is captured by the groups.
+We can see that by writing this code.
+Note that the parentheses do not change the matching procedure.
+Once we define groups, we can use a function str_match
+to extract the values these groups define, like this.
+Look what happens if we write this code.
+Note that the second and third columns contain feet and inches respectively.
+The first is the original pattern that was matched.
+If no match occurred, we see an N/A.
+Now we can understand the difference between the function str_extract
+and str_match.
+str_extract extracts only strings that match a pattern,
+not the values defined by the groups.
+Here's what happens with string extract.
+
+Another powerful aspect of groups is that you
+can refer to the extracted value in regex when searching and replacing.
+The regex special character for the i-th group is backslash, backslash, i.
+So backslash, backslash, 1 is the value extracted from the first group,
+and backslash, backslash, 2 is the value from the second group, and so on.
+So as a simple example, note that the following code
+will replace a comma by a period, but only if it is between two digits.
+Here's the code.
+We can use is to convert cases in our reported heights.
+Now we're ready to define a pattern that helps us convert all the x.y, x,y,
+and x y's to our preferred format.
+We need to adapt pattern underscore with groups to be a bit more flexible
+and capture all these cases.
+The pattern now looks like this.
+Let's break this one down.
+It's quite complicated.
+The caret means start of the string.
+Then four to seven means one digit between four and seven--
+four, five, six, or seven.
+Then the backslash, backslash, s, star means none or more white spaces.
+The next pattern means the fifth symbol is either comma, or dot, or at least
+one space.
+Then we have none or more white spaces again.
+Then we have none or more digits, and then the end of the string.
+We can see that it appears to be working.
+Let's try these examples.
+
+And we'll be able to perform the search and replace.
+Here we go.
+It almost has the desired outcome.
+There's one little problem, and it's that we have one case with 25 inches.
+We'll deal with this problem later.
+
+Video 6
+We have developed a powerful string processing
+technique that can help us catch many of the problematic entries.
+Now, it's time to test our approach, search for further problems,
+and tweak our approach for possible improvements.
+Let's write a function that captures all the entries that
+can't be converted into numbers, remembering
+that some are in centimeters.
+We'll deal with those later.
+Here is the function.
+Let's see how many of these we can make fit
+our pattern after the several processing steps we have developed.
+Here, we leverage the pipe--
+one of the advantages of using a stringer.
+We use the pipe to concatenate the different replacements
+that we have just performed.
+Then we define the pattern and then, we go and try to see how many we match.
+
+We are matching more than half now.
+Let's examine the remaining cases.
+Here they are.
+
+So what are the problems?
+Many students measuring exactly 5 or 6 feet did not enter any inches.
+For example, 6' and our pattern requires that inches be included.
+Some students measuring exactly 5 or 6 feet entered just that number.
+Some of the inches were entered with decimal points.
+For example, 5 feet and 7.5 inches.
+Our pattern only looks for two digits.
+Some entries have spaces the end.
+For example, 5 ' 9.
+
+Some entries are in meters and some of these are European decimals.
+So it's 1, 7 is 1.7 meter.
+Two students added CM and a student spelled
+out the numbers, 5 foot, 8 inches.
+It is not necessarily clear that it is worth
+writing code to handle all these cases since they might be rare enough.
+However, some give us an opportunity to learn some more [? reject ?]
+techniques.
+So we will show you the code that you need
+to fix them in the course material.

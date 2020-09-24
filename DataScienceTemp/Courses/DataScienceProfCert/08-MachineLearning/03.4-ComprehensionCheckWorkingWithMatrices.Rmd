@@ -1,0 +1,78 @@
+---
+title: "Comprehension Check: Working with Matrices"
+output: 
+  github_document:
+    pandoc_args: --webtex
+---
+
+## Q1
+
+Which line of code correctly creates a 100 by 10 matrix of randomly generated normal numbers and assigns it to x?
+
+```{r}
+x <- matrix(rnorm(100*10), 100, 10)
+```
+
+## Q2
+
+Write the line of code that would give you the specified information about the matrix x that you generated in q1. Do not include any spaces in your line of code.
+
+Dimension of x.
+```{r}
+dim(x)
+```
+
+Number of rows of x
+```{r}
+nrow(x)
+```
+
+Number of columns of x
+```{r}
+ncol(x)
+```
+
+## Q3
+Which of the following lines of code would add the scalar 1 to row 1, the scalar 2 to row 2, and so on, for the matrix x?
+
+```{r}
+x <- x + seq(nrow(x))
+# and
+x <- sweep(x, 1, 1:nrow(x),"+")
+```
+
+## Q4
+
+Which of the following lines of code would add the scalar 1 to column 1, the scalar 2 to column 2, and so on, for the matrix x?
+
+```{r}
+x <- sweep(x, 2, 1:ncol(x), FUN = "+")
+```
+
+
+## Q5
+Which code correctly computes the average of each row of x?
+
+```{r}
+rowMeans(x)
+```
+
+Which code correctly computes the average of each column of x?
+
+```{r}
+colMeans(x)
+```
+
+
+## Q6
+For each digit in the mnist training data, compute the proportion of pixels that are in the grey area, defined as values between 50 and 205. (To visualize this, you can make a boxplot by digit class.)
+
+What proportion of pixels are in the grey area overall, defined as values between 50 and 205?
+
+```{r}
+mnist <- read_mnist()
+y <- rowMeans(mnist$train$images>50 & mnist$train$images<205)
+qplot(as.factor(mnist$train$labels), y, geom = "boxplot")
+```
+
+Answer: 0.0618

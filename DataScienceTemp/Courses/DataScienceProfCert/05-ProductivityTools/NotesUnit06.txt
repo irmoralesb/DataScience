@@ -1,0 +1,143 @@
+Video 1
+The final product of a data analysis project
+is often a report.
+Many scientific publications can be thought of as a final report of a data
+analysis.
+The same is true for a news article based on data,
+an analysis report for your company, or lecture notes
+for a class on how to analyze data.
+The reports are often on paper or they're
+a PDF that include textual descriptions of the findings
+along with some figures and tables resulting from the analysis.
+Now, imagine that after you've finished the analysis and the report,
+you're told that you were given the wrong dataset,
+and they send you a new one and you're asked
+to run the same analysis but with this new dataset.
+Or, what if you realized that a mistake was made
+and you need to re-examine the code, fix the error, and rerun the analysis?
+Or imagine that someone you're training wants
+to see the code you used for the report and be
+able to reproduce the results to learn about the approach.
+Situations like the ones just described are actually
+quite common for a data scientist.
+Here, we describe how to generate reproducible reports with RMarkdown
+and knitr in a way that will greatly help with situations
+such as the ones we described.
+The main feature is that code and textual descriptions
+can be combined into the same document.
+And the figures, and tables produced by the code
+are automatically added to the document.
+
+Video 2
+R Markdown is a format for what is called literate programming documents.
+It is based on Markdown, a markup language that
+is widely used to generate HTML pages.
+You can learn more about Markdown at the website provided here.
+Literate programming weaves instructions, documentation,
+and detailed comments in between machine-executable code,
+producing a document that describes the program that
+is best for human understanding.
+Unlike a word processor, such as Microsoft Word, where what you see
+is what you get, with R Markdown, you need
+to compile the document into the final report.
+knitR is what compilers R Markdown documents.
+The R Markdown document looks different than the final product.
+This seems like a disadvantage at first, but it is not at all.
+Because for example, instead of producing plots and inserting
+them one by one into the word processing document,
+the plots are automatically added.
+In RStudio, you can start an R Markdown document
+by clicking on File, then New File, then R Markdown, like this.
+You will then be asked to enter a title and an author for your document.
+We're going to prepare a report on gun murders,
+so we will give the appropriate name.
+You can also decide what format you would like to file a report to be--
+HTML, PDF, or Microsoft Word.
+We can actually easily change this later,
+but here we select HTML, as it is the preferred format for debugging
+purposes.
+This will generate a template file like this.
+As a convention, we use the RND suffix for these files.
+Once you gain experience with R Markdown,
+you will be able to do this without the template
+and can simply start from a blank template.
+But in the template here, you'll see several things,
+and we're going to learn something from them.
+At the top, you see a header that looks like this.
+The things between the dash, dash, dash is the header.
+We actually don't need a header, but it is often useful.
+You can define many other things in the header
+than what is included in the template, which we don't discuss here,
+but much information about this is available online.
+The one parameter that we will highlight is output.
+By changing this to, for example, PDF_document,
+we can control the output that is produced
+when we compile so that it makes a PDF instead of an HTML document.
+Another important thing to notice is that in various places of the document,
+we see something that looks like this.
+These are the R chunks.
+Here's where we write the R code.
+To add your own R chunks, you're going to have
+to type those characters you saw.
+Back quote, back quote, back quote-- it's kind of complicated.
+But you can use a keybinding to do this.
+On the Mac, it's Command-Option-I, and on Windows, is Control-Alt-I.
+This will automatically create an empty code chunk.
+When you compile the document, the R code inside these chunks--
+in the case of the example we're seeing here,
+it's summary pressure-- will be evaluated
+and the result included in that position in the final document.
+This applies to plots as well.
+The plot will be placed in the position where the R chunk is.
+We can write something like this to make a plot.
+Now, by default, the code will show up as well.
+To avoid having the code show up, if you want to give a presentation to someone
+that doesn't really understand code, you can
+avoid showing the code by adding the argument echo equals false.
+Here's an example.
+This would make a plot, but won't show the code.
+We recommend getting into the habit of adding a label to the R code chunks.
+This will be very helpful when debugging, among other advantages.
+You can do this by writing a descriptive word like this.
+
+Video 3
+To convert an R Markdown file into a document,
+we need to use the knitr package.
+The specific function used to compile is the knit function.
+Now, RStudio provides a button that actually makes it easier
+to compile the document.
+We're going to show you an example.
+We have already created an R Markdown file with the gun murders report.
+If you want access to this file, you can follow this link.
+Now here, we can see the file in RStudio.
+You can simply click on the knit button, and if it's
+the first time you'll using it, you might get a pop
+up window asking you to install packages needed to run knit, but once that's all
+installed, then you will automatically knit your document,
+and you'll compile your R Markdown file, and a resulting document will pop up.
+Here's what it looks like.
+Note that this produces an HTML document.
+You can see it in your working directory.
+To see it, open a terminal, and list the files.
+You can open the file in a browser and use it to present your analysis.
+But you can also produce a PDF or a Microsoft document.
+You can do this by changing the output variable in the header.
+So instead of output HTML document, you can
+write PDF document or Word document.
+We can also produce documents that render on GitHub using the output
+GitHub underscore document.
+Here's an example.
+This will produce a markdown file with the suffix .md that renders on GitHub.
+Because we have uploaded this file to GitHub,
+you can actually go to this website, click on the .md file,
+and you will see a very nice report that looks like this.
+This is very useful to show to potential employers.
+Now there's a lot more to learn about R Markdown.
+We highly recommend you learn as you gain more experience by writing reports
+in R. There many free resources on the internet to learn more about R Markdown
+and knitr.
+Here are some examples.
+
+https://raw.githubusercontent.com/rairizarry/murders/master/report.Rmd
+https://rmarkdown.rstudio.com/
+https://yihui.name/knitr/

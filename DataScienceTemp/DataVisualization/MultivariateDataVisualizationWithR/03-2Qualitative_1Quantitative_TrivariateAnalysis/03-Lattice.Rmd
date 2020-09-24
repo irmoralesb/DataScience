@@ -1,0 +1,75 @@
+---
+title: "Trivariate Analysis for 2 Quantitative and 1 Qualitative variables"
+output: github_document
+---
+
+
+# Charts
+
+```{r}
+library(tidyverse)
+library(lattice)
+movies <- read.csv("../data/movies.csv")
+
+table2 <- movies %>%
+  select(Rating, Awards, Box.Office) %>%
+  group_by(Rating, Awards) %>%
+  summarize(Box.Office = mean(Box.Office))
+
+head(table2)
+```
+
+
+## Grouped Bar Chart
+
+```{r}
+table2 %>%
+  barchart(
+    x = Box.Office ~ Rating,
+    groups = Awards,
+    main = "Average Box Office Revenue by Rating and Award Status",
+    xlab = "Rating",
+    ylab = "Box Office Revenue ($M)",
+    auto.key =TRUE)
+
+```
+
+## Stacked Bar Chart
+
+```{r}
+table2 %>%
+  barchart(
+    x = Box.Office ~ Rating,
+    groups = Awards,
+    main = "Average Box Office Revenue by Rating and Award Status",
+    xlab = "Rating",
+    ylab = "Box Office Revenue ($M)",
+    auto.key =TRUE,
+    stack = TRUE)
+```
+
+## Faceted Bar Chart
+
+```{r}
+barchart(
+  x = Box.Office ~ Rating | Awards,
+  data = table2,
+  layout = c(2,1),
+  main = "Average Box Office Revenue by Rating and Award Status",
+  xlab = "Rating",
+  ylab = "Box Office Revenue ($M)")
+```
+
+
+## Heat Map
+
+```{r}
+
+levelplot(
+  x = Box.Office ~ Rating * Awards,
+  data = table2,
+  main = "Average Box Office Revenue by Rating and Award Status",
+  xlab = "Rating",
+  ylab = "Box Office Revenue ($M)")
+```
+

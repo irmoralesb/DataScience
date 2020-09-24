@@ -1,0 +1,101 @@
+Video 1
+In the previous videos, we
+constructed regex that lets us identify which elements of a character vector
+match the feet and inches pattern.
+However, we wanted to do more.
+We wanted to extract and save the feet and number value
+so that we can convert them to inches when appropriate.
+We're going to construct a simpler case.
+So we're going to make it like this.
+We have already learned to use the separate functions.
+So we can use this code to separate out the feet part and the inches part.
+The extract function from the tidyr package--
+that says use regex groups to extract the desired values.
+Here's your column code using extract to the code using separate.
+So why do we even need the new function extract?
+The reason is that groups in regex give us much more flexibility.
+For example, if we define an example like this and we only want the numbers,
+separate fails.
+Look at what happens.
+But we can use extract.
+The regex here is a bit more complicated,
+as we have to permit the single quote with spaces in feet.
+But we also do want the double quotes included in the value,
+so we do not include that in the group.
+So we can use extract to obtain the numbers that we want using this code.
+We can use separate and extract in our case study and in the class material.
+We have the code that finishes off the problems
+and extracts the height in inches for the great majority of students.
+We'll let you study that on your own.
+
+Video 2
+Another very common data wrangling operation
+is string splitting.
+To illustrate how this comes up, we start with an illustrative example.
+Suppose we did not have the function read underscore CSV available to use.
+Suppose that we instead have to read a CSV file using the base R
+function read lines like this.
+This function reads in the data line by line to create a vector of strings.
+In this case, one string for each row in the spreadsheet.
+The first six lines are the following.
+We want to extract the values that are separated by commas
+for each string in the vector.
+The command string split does exactly this.
+Here is an example.
+Note that the first entry has a column name.
+So we can separate that out, like this.
+To convert our list into a data frame, we
+can use a shortcut provided by the map function in the purrr package.
+The map function applies the same function to each element in a list.
+So if we want to extract the first entry of each element in x,
+we can write the following code using the map function.
+However, because this is such a common task, purrr provides a shortcut.
+If the second argument, instead of a function, receives an integer,
+it assumes that we want that entry.
+So the code is actually much simpler.
+We can actually write this.
+To force map to return a character vector instead of a list,
+we can use map underscore chr.
+Similarly, map underscore int returns integers.
+So to create our data frame, we can use the following code.
+Note that, using other functions included in the purrr package,
+we can accomplish what we just did with much more efficient code.
+Here's what it looks like.
+It turns out that we could avoided all this because, in the function string
+split, there's an argument called simplify equals true
+that forces the function to return a matrix instead of a list.
+So we could have written this.
+
+Video 3
+Another common operation
+involving strings is recoding the names of categorical variables.
+For example, if you have a really long name for your levels,
+and you will be displaying them in plots,
+you might want to use shorter versions of the names.
+For example, in a character vector with country names,
+you might want to change United States of America to USA and United Kingdom
+to UK, and so on.
+We can do this using case when.
+But the tidyverse offers options that are specifically designed
+for this task, the recode function.
+Here's an example showing how to rename countries with long names.
+We're going to use the Gapminer data set.
+Suppose we want to show the life expectancy time series
+for countries in the Caribbean.
+So here's a code that will make that plot.
+This is the plot we want, but much of the space
+is wasted to accommodate some of the long country names.
+Here are some of the longer ones.
+For example, Saint Vincent and the Grenadines.
+We have four countries with names longer than 12 characters.
+These names appear once for every year in the Gapminer data set.
+And once we pick nicknames, we need to change them all consistently.
+The recode functions can be used to do this.
+Here's an example of how we do it.
+Notice the recode function is changing all these names to a shorter version,
+and it's going to do it throughout the entire data set,
+as opposed to one by one.
+Once we do this, then we get a better-looking plot.
+Note that there's other similar functions in the tidyverse.
+For example, recode underscore factor and fct underscore recoder.
+These are in the forcats function in the tidyverse package.

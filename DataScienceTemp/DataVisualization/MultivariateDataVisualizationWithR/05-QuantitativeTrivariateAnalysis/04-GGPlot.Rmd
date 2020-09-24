@@ -1,0 +1,78 @@
+---
+title: "Trivariate Quantitative Analysis"
+output: github_document
+---
+
+# Trivariate Quantitative Analysis
+
+Setting up environment
+
+```{r}
+library(tidyverse)
+library(RColorBrewer)
+gradient <- brewer.pal(5, "YlOrRd")
+palette(gradient)
+movies <- read.csv("../data/movies.csv")
+movies2014 <- movies[movies$Year == 2014,]
+```
+
+# Chart and Plots
+
+## Gradient Color-scale Scatterplot
+
+```{r}
+movies2014 %>%
+  ggplot(
+    aes(x = Runtime,
+        y = Critic.Score,
+        color = Box.Office)) +
+  geom_point() +
+  scale_color_gradient(
+    low = gradient[1],
+    high = gradient[5]) +
+  ggtitle("Runtime, Critic Score, and Box Office") +
+  xlab("Runtime (min)") +
+  ylab("Critic Score (%)") +
+  labs(color = "Box Office\nRevenue ($M)")
+
+```
+
+## Divergent Color-scale Scatterplot
+
+```{r}
+divergent <- rev(brewer.pal(5,"RdBu"))
+palette(divergent)
+
+movies2014 %>%
+  ggplot(
+    aes(x = Runtime,
+        y = Critic.Score,
+        color = Box.Office)) +
+  geom_point() +
+  scale_color_gradientn(
+    colors = divergent) +
+  ggtitle("Runtime, Critic Score, and Box Office") +
+  xlab("Runtime (min)") +
+  ylab("Critic Score (%)") +
+  labs(color = "Box Office\nRevenue ($M)")
+```
+
+## Bubble Chart
+
+```{r}
+ movies2014 %>%
+  ggplot(
+    aes(x = Runtime,
+        y = Critic.Score,
+        size = Box.Office, 10)) +
+  geom_point() +
+  scale_size_area() +
+  ggtitle("Runtime, Critic Score, and Box Office") +
+  xlab("Runtime (min)") +
+  ylab("Critic Score (%)") +
+  labs(size = "Box Office\nRevenue ($M)")
+```
+
+## 3D Scatterplot
+
+** Not available on GGPlot**

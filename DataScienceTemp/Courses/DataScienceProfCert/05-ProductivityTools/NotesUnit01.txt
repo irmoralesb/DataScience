@@ -1,0 +1,130 @@
+Installation order
+
+1) R
+2) R Studio
+3) Git
+
+Video 1
+In this series of videos,
+we will describe how to install the software tools that we
+consider the main productivity tools.
+To motivate the use of these tools, we will also
+provide brief illustrations of how we use them.
+We will install the following software tools.
+First, we'll install R, the programming language we use to analyze data.
+Second, we'll install RStudio, the integrated desktop
+environment we use to edit, organize, and test our R scripts.
+Third, we will install Git.
+This is the version control system we use
+to keep track of changes made to our code
+and to sync local copies of our code with copies hosted on GitHub.
+For Windows users, when you install Git, we
+will also install Git Bash, a piece of software
+that emulates Unix on Windows machines.
+We will also show how to open a GitHub account
+and how to sync it with RStudio.
+
+Video 2
+
+RStudio is an interactive desktop environment,
+but it is not R, nor does it include R when you download and install it.
+Therefore to use RStudio, we first need to install
+R. You can download our from the Comprehensive R Archive
+Network or CRAN.
+You can search for CRAN on your browser like this.
+Once at the CRAN download page for your operating system,
+you will have several choices.
+You want to install the base subdirectory.
+This installs the basic packages you need to get going.
+We will later learn how to install other needed packages from within R,
+rather than from this web page.
+Now click on the link to the latest version to start the download process.
+If you're using Chrome, for example, you'll
+see at the bottom of your browser, a tab that
+shows you the progress of the download.
+Once the installer file downloads, you can go ahead and click on that tab
+to start the installation process.
+Other browsers may be different, so you'll
+have to find where they store downloaded files and click on them
+to get the process started.
+Once the installation process starts, you
+can click through all the different choices to finish the installation.
+We highly recommend you select all the default choices,
+even when you get an ominous warning like this one.
+If you're asked to select the language, consider
+that it will be easier to follow this course if you select English.
+Continue selecting the default, and you'll eventually finish and install R.
+Congratulations, you've installed R, although we highly
+recommend that beginners use R through RStudio, you can use R without RStudioYou can start it like any other program.
+If you follow the default installations on a Windows machine,
+a shortcut will appear on your desktop, which you can just double click
+to start R. On a Mac, R will be on the applications folders,
+just like any other program.
+If you start R without RStudio, you'll see an R console
+in which you can start typing commands.
+This is what it looks like.
+But we will be much more productive using an editor developed for coding,
+such as the one provided by RStudio.
+In the next video, we demonstrate how to install RStudio.
+
+Video 3
+
+To install RStudio you you
+can start by searching for RStudio on your browser.
+You should find the RStudio website this way.
+Once there, click on Download RStudio.
+This will give you several options.
+For what we do in this course, it is more than
+enough to use the free desktop version.
+Once you select this option, it will take you
+to a page in which the operating system options are provided.
+Once again, click on the link showing your operating system.
+Once the installation file is downloaded, click on the downloaded
+file to start the installation process.
+We recommend clicking Yes on all the defaults.
+On the Mac, there are fewer clicks.
+You basically drag and drop the RStudio icon into the application folder.
+Congratulations.
+You've installed RStudio.
+
+Video 4
+
+Now that you've installed R and RStudio,
+we're going to show you an example of how you use it.
+You can start RStudio in Windows by going to the Start menu
+and searching for RStudio, and on the Mac, RStudio will be an application.
+You can find it in the application folder.
+Now for the Mac users, to avoid using the mouse to open RStudio or actually
+any other program, you can hit command spacebar
+to open the spotlight search and type RStudio into that search bar
+and then hit enter.
+This will start RStudio.
+
+When you start RStudio for the first time, you will see three panes.
+The left lane shows you the R console.
+On the right, the top pane includes three tabs,
+while the bottom pane shows you five tabs, file, plots, packages, help,
+and viewer.
+Here's what it looks like.
+You can click on the different tabs to move across the different features.
+Now let's start coding.
+Let's start writing a new script.
+To start a new script, you can click on file, then new file, then R script.
+This starts a new pane on the left, and it is here
+where you can start writing your script.
+Note that we use the mouse to do that.
+Many tasks we perform with the mouse can be
+achieved with a combination of keystrokes instead.
+These keyboard versions of performing tasks are referred to as key bindings.
+For example, we just showed you how to use a mouse to start a new script.
+But you can also use a key binding.
+On Windows, it's control shift N. On the Mac,
+it's command shift N. Although in this tutorial,
+we often show how to use a mouse, we highly
+recommend that you memorize key bindings for the operations you use the most.
+RStudio actually provides a useful cheat sheet
+with the most widely used commands.
+You can get it from RStudio directly like this,
+and this is what the cheat sheet looks like.
+You might want to keep this handy so you can look up key bindings
+when you find yourself performing repetitive point and click tasks.
