@@ -1,0 +1,2210 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XA4GVl5ACwAEV1JQAA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"1beac94c95","agent":"","transactionName":"NQQGYUZWDUNSVUMPWQxOIkBaVBdZXFgYBVkXExdQQ1YRVR1AXgNBEU8NW1BSGwpwWUIURQcWBUdRfg1UVk4ZAVMW","atts":"GUMRFw5MQUJWR0IDRRY+FlBSUhFVQRQNRF4WFRRGDhhMU1xDRRVTEU8BUUwZDEJUGVQJQxASAUYbVAxFQUVSS0BTWyxURkECQlduHDZ+U1NRGwFPSAFnBAdXD00CC0BGRAZHUkRSSQUAWQdQAlIFBQsPD1JQUFEFUFYFVlEDDlEHBFtSXQZQGAJUBVVUUQFTVl1WDANaAVBXBFFTVwJWUVICAFVXUlZRGV0CDFxYU15WWkREEhROQxdQRRkARUFEUghCTAUNRkRbAklsWFYLU0BbRmBaXhsQfEBSFEALBBMXGBUbUmxDRANEPRIQVEBSTVdWQmgLVwwYSldYWABbQGlYE0JAW1UZFk8Bb0ZFUhRpERUFQVEZBFVHaVoHWBtPBllbVAhDbERSF0MHEhBQUBVZBB8URQNHFwQXQWtCEFVBaVYBUwwVRg8WegxKWlpbBxlXT1QVHG9SAQgWYgRDDBURDhR7Cl5GThceDlQ+UgEPFxFGCQACSAZLQSNQV1wMHwEGBlYGU1FVFXJeEVVVWU9JAFdPVBcYFQlHR2leFWkDEh1YWVIXQlpVFVxQAw0XUBgVAF9GREQDaQsFRg8WVAxFQUVSS0BTWyxURkECQlduHDZ+U1NRGwFPSAFnBAdXD0BNRk1WaBZDVkRoFUIDFQEbU1IXb15XWR8YAQ4RR0dSTUNaTFJEDFNUSBdMVTxFQFNFOUUWABBQGlAGRGxbVghPTAIMVERDBkIdVFsJVQkSO1pBQ0EKAhoVFVMTTwZZW1QIb1BZQghCEU8SUEZDClNSWhVcB05DF1BFGQFcXFVcOVUNFApBRxkQVUJDUghCCwAIFw4GTxJGRVIUaQsFRg8GB1MGAAcAUBpAEgFEGkcMQ1pCXglYQFtVGRZEBkEdUl4VRg4AHWpaVg5VEQwVM1gLGUR6QlIRRlpTQEQaQBkGakFEBkJsRUMHQgdPA1BAaA5RXU8ZBVcODRcXDgZPEktUaBNFBxM7RkBWF1UdUVISaQ8ACkwaVAtRQ0JSFBgRCB5QFg1SBR8UTwRpFxIBR2tEF1FHUxkBUxY+CVRaTk1TXENFFVNMAwhaV1wQb1xDQ0QMU01GRlFGTVlAaUMPWwc+CFxZXhdVVxQNAFcOEgEZFk8Bb0ZFUhRpERUFQVEZBFVHaVoHWBtPAEBGVhdZXFgVXARMWVwDBAJVCQMGB1QCVlBQGRZdFERsU08WXxAEF2pdWUEKAAAHVhpAEgFEGlkWXWxDWQ9CEUNeBBgVEFVCGFQTRBAECkEaVQ9fUF1oD1JAW0ZXWFgAWx5ABlx+AxMSVEZTOxtjfgZUA0xUHB4FY1EAAg8cEk8SBCRDUUUXWVBXW01UDg4HXnQHVwMBVA9UAQYFUAwAVQAICgdWVAZaVwUGA1VQBFIBAkQaQA4WUhYNQXhSREEHRAY5RhkWRAZBHVVCFEQHDxAbWkIOb1pCUgtFQFtXGRZPAW9GRVIUaREVBUFRGQRVR2laB1gbTxdQRUIGXkdfVgoYAA0LVl9EPF9GQhVcB05DF1BFGQBFQURSCEJMAwhaV1w8U1xDWRJFTAkQWFgVWQIfFE8EaRcSAUdrRBdRR1MZAVMWPglUWk5NQ1ZHQgNYFggFWRpECkpWFA1XA05DF1BFGQ1FXmleElMPEkYPABtBSFFpQhVTED4XQVVDBh5UU0M5WwMPHRtHXhlVEQwGUxpAEwFEQVIQRGxcQBJpAQ4LXl1SQQoRWFgSGxAEFUBRRBdVVxQbREUHEEpXWFgAW2xVWBNYFhJKXUBaDxIJBBtERQcQSldYWABbbF9TRAxAAwhaV1xORgIMfwdEFAAWUWwcM3gCBAJIAxpKVWEGB1IJGEJOFlMiEgFEQVINRFpXW01UDg4HXnQPWglXBwUFBVtYXAcAVFFSCgUGAA9SVAYEA1VWVAQEAEQaQBIBRBpUFkJBU1kSGAANC1ZfaABfRlhDFRgUBBZBXVQCXBEMBkoUEAQVQFFEF29SQ0MOaRYYFFAWDUFDVkVED1kMTAtHGUINW11ZQAgUHxw=","applicationID":"3343327","errorBeacon":"bam.nr-data.net","applicationTime":857}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Unix Overview | PH125.5x Courseware | edX">
+  
+ Unix Overview | Unix Overview | PH125.5x Courseware | edX
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="https://prod-edxapp.edx-cdn.org/static/edx.org/images/favicon.9028de6ff678.ico" />
+
+  
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-vendor.7efc5b554ed0.css" rel="stylesheet" type="text/css" />
+
+
+
+    
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-main-v1.b9333148a90c.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-application.7bec85e7ca02.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/commons.571d12f73a9ae743de5f.227c51b61a7f.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "https://prod\u002Dedxapp.edx\u002Dcdn.org/static/";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/lms/js/require-config.38226099c6ad.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.8f15a0109b05',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.291ea4b56c0f',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.bc5a1361d5f5',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-course-vendor.e7ffa8d48d4a.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-course.d0c6acbdc915.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-student-notes.a35233ec9b00.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="https://prod-edxapp.edx-cdn.org/static/css/vendor/jquery.autocomplete.f95052778189.css" rel="stylesheet" type="text/css">
+  
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "irmoralesb", "enrollment_mode": "verified", "upgrade_link": null, "user_id": 20063176, "course_start": "2019-01-07T20:00:00+00:00", "course_end": "2019-06-28T23:59:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "HarvardX", "run": "1T2019", "course": "PH125.5x"}, "partition_groups": {"Enrollment Track Groups": [2, "Verified Certificate"], "Feature-based Enrollments": [2, "Full-access Users"]}, "has_non_audit_enrollments": true, "pacing_type": "self_paced", "upgrade_price": "$49", "course_id": "course-v1:HarvardX+PH125.5x+1T2019", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-02-14T03:27:45+00:00", "schedule_start": null, "email": "irmoralesb@hotmail.com"}
+</script>
+
+  
+
+  
+
+<script src=//cdn.optimizely.com/js/1743970571.js></script>
+
+  
+
+
+<!-- begin Segment -->
+<script type="text/javascript">
+  // Asynchronously load Segment's analytics.js library
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  analytics.load("8fncv13bt5");
+  analytics.page();
+  }}();
+  // Note: user tracking moved to segment-io-footer.html
+</script>
+<!-- end Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+    <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY" />
+
+  <meta name="openedx-release-line" content="master" />
+
+
+
+
+    <script type="text/javascript">
+        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+        branch.init('key_live_mfvq10qtrE7sjWpz2NHVNlnfrqamuY8u');
+    </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim">
+        
+    
+
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/CookiePolicyBanner.fe631af4297905cdcfe5.13b564e86f3c.js" ></script>
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/ReactRenderer.38f3e5ba7663cd969581.4f3dd33a415e.js" ></script>
+
+    <div id="cookie-policy-banner"></div>
+    <script type="text/javascript">
+      var c;
+      try { c = CookiePolicyBanner; } catch (e) { c = null; }
+      new ReactRenderer({
+        component: c,
+        selector: '#cookie-policy-banner',
+        componentName: 'CookiePolicyBanner',
+        props: {}
+      });
+    </script>
+
+    <div class="main-header">
+        
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="https://www.edx.org">
+    
+    <img  class="logo" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo.790c9a5340cb.png" alt="edX Home Page"/>
+    
+  </a>
+    <div class="course-header">
+      <span class="provider">HarvardX:</span>
+      <span class="course-number">PH125.5x</span>
+      
+      <span class="course-name">Data Science: Productivity Tools</span>
+    </div>
+</h1>
+
+        <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+            
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+
+  </div>
+  <div class="secondary">
+    <div class="mobile-nav-item hidden-mobile nav-item">
+        <a class="help-link" href="https://support.edx.org" target="_blank">Help</a>
+    </div>
+    
+
+
+
+
+
+
+<div class="nav-item hidden-mobile">
+    <a href="/dashboard" class="menu-title">
+        <img class="user-image-frame" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/profiles/default_50.76570a4d025e.png" alt="">
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username">irmoralesb</span>
+    </a>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown" tabindex="-1">
+    <div class="toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+            <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="https://courses.edx.org/courses/course-v1:HarvardX+PH125.5x+1T2019/jump_to/block-v1:HarvardX+PH125.5x+1T2019+type@html+block@e113e1fc733748aa82dbdaa9dbbeb960" role="menuitem">Resume your last course</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/dashboard" role="menuitem">Dashboard</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/u/irmoralesb" role="menuitem">Profile</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/account/settings" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/logout" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+
+  </div>
+</div>
+
+
+
+    </div>
+    <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div class="marketing-hero"></div>
+
+    <div class="content-wrapper main-container" id="content" dir="ltr">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="courseware wrapper-course-material" aria-label="Course Material">
+            <div class="course-material">
+                
+                <ol class="tabs course-tabs">
+                    
+
+
+
+
+
+  
+  <li class="tab">
+  <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/course/" class="active">
+  Course
+      <span class="sr">, current location</span>
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/b9413372263a4e3c9fcd3bea9ad78466/" class="">
+  Syllabus &amp; FAQs
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/discussion/forum/" class="">
+  Discussion
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/progress" class="">
+  Progress
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/edxnotes/" class="">
+  Notes
+  </a>
+  </li>
+
+                    
+                </ol>
+            </div>
+        </nav>
+
+
+<div class="container"
+    lang="en"
+  >
+  <div class="course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/course/">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="3" data-chapter-position="1">
+                                    <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/course/#block-v1:HarvardX+PH125.5x+1T2019+type@chapter+block@3efcb140272449d6be9766211a3b7a24">Unix</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="/courses/course-v1:HarvardX+PH125.5x+1T2019/course/#block-v1:HarvardX+PH125.5x+1T2019+type@sequential+block@899d12c399824c2b931f905b17b5d727">Unix Overview</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Unix Overview</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              
+<div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-graded="False" data-has-score="False" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="71bf220c307d11e995f40e913267738c" data-runtime-version="1" data-usage-id="block-v1:HarvardX+PH125.5x+1T2019+type@sequential+block@899d12c399824c2b931f905b17b5d727" data-type="Sequence" data-course-id="course-v1:HarvardX+PH125.5x+1T2019">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_899d12c399824c2b931f905b17b5d727" class="sequence" data-id="block-v1:HarvardX+PH125.5x+1T2019+type@sequential+block@899d12c399824c2b931f905b17b5d727"
+     data-position="1" data-ajax-url="/courses/course-v1:HarvardX+PH125.5x+1T2019/xblock/block-v1:HarvardX+PH125.5x+1T2019+type@sequential+block@899d12c399824c2b931f905b17b5d727/handler/xmodule_handler"
+     data-next-url="/courses/course-v1:HarvardX+PH125.5x+1T2019/courseware/3efcb140272449d6be9766211a3b7a24/f1a2feec04234fc78b798a9dda2fcf62/?child=first" data-prev-url="/courses/course-v1:HarvardX+PH125.5x+1T2019/courseware/3b8ce6ef58984f20aeb25a08fa29393d/ad6cc77179c8491ca37e5c2df5cedda7/?child=last"
+     data-save-position="true"
+     data-show-completion="true"
+>
+
+  <div class="sequence-nav">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:HarvardX+PH125.5x+1T2019+type@vertical+block@0432b827dd494bc891a2086a37b34a75"
+            data-element="1"
+            data-page-title="Unix Overview"
+            data-path="Unix &gt; Unix Overview &gt; Unix Overview"
+            data-graded="False"
+            id="tab_0">
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle " 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Unix Overview<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:HarvardX+PH125.5x+1T2019&#34; data-request-token=&#34;71bf220c307d11e995f40e913267738c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:HarvardX+PH125.5x+1T2019+type@vertical+block@0432b827dd494bc891a2086a37b34a75&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Unix Overview&lt;/h2&gt;
+
+    
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;irmoralesb,block-v1:HarvardX+PH125.5x+1T2019+type@vertical+block@0432b827dd494bc891a2086a37b34a75&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+    &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:HarvardX+PH125.5x+1T2019+type@html+block@14a87b83a9bc4c499085554ecbd7f68a&#34;&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;71bf220c307d11e995f40e913267738c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:HarvardX+PH125.5x+1T2019+type@html+block@14a87b83a9bc4c499085554ecbd7f68a&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:HarvardX+PH125.5x+1T2019&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  
+
+
+
+
+
+
+&lt;div id=&#34;edx-notes-wrapper-136698380665683829361909570986653090754&#34; class=&#34;edx-notes-wrapper&#34;&gt;
+    &lt;div class=&#34;edx-notes-wrapper-content&#34;&gt;&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span id=&#34;docs-internal-guid-fd779ebc-a1fc-bcb7-81fa-a965bf72c1b1&#34;&gt;&lt;span style=&#34;font-size: 12pt; color: #4c4c4c; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;&#34;&gt;The Unix section discusses the basics of&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;color: rgb(49, 49, 49); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif;&#34;&gt;&amp;nbsp;managing your filesystem from the terminal with Unix commands such as mv and rm.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;There&amp;nbsp;are graded comprehension checks after some, but not all, of the videos.&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;If you get stuck, we encourage you&amp;nbsp;to&amp;nbsp;search the discussion boards for the answer to your issue or ask us for help!&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+  
+  &lt;script type=&#34;text/javascript&#34;&gt;
+    (function (require) {
+        require([&#39;https://prod\u002Dedxapp.edx\u002Dcdn.org/static/js/edxnotes/views/notes_visibility_factory.c0cd10d10d82.js?raw&#39;], function () {
+          require([&#39;js/edxnotes/views/notes_visibility_factory&#39;], function (NotesVisibilityFactory) {
+            
+    var element = document.getElementById(&#39;edx-notes-wrapper-136698380665683829361909570986653090754&#39;);
+    NotesVisibilityFactory.VisibilityDecorator.factory(element, {&#34;eventStringLimit&#34;: 8333, &#34;tokenUrl&#34;: &#34;/courses/course-v1:HarvardX+PH125.5x+1T2019/edxnotes/token/&#34;, &#34;endpoint&#34;: &#34;https://prod-edx-notes.edx.org/api/v1/&#34;, &#34;courseId&#34;: &#34;course-v1:HarvardX+PH125.5x+1T2019&#34;, &#34;token&#34;: &#34;eyJhbGciOiJIUzI1NiJ9.eyJzY29wZXMiOiBbImVtYWlsIiwgInByb2ZpbGUiXSwgImFkbWluaXN0cmF0b3IiOiBmYWxzZSwgInByZWZlcnJlZF91c2VybmFtZSI6ICJpcm1vcmFsZXNiIiwgImZpbHRlcnMiOiBbXSwgImlhdCI6IDE1NTAxNjUwOTYsICJzdWIiOiAiYmE0MjY3MmFiMDBjZWE4YzYzNzAyMGNmZDVhOTY4MWQiLCAiZmFtaWx5X25hbWUiOiAiIiwgImF1ZCI6ICJiNDE4MmQ1ZjQ3ZGZiMTVhY2YxZiIsICJpc3MiOiAiaHR0cHM6Ly9jb3Vyc2VzLmVkeC5vcmcvb2F1dGgyIiwgImVtYWlsX3ZlcmlmaWVkIjogdHJ1ZSwgIm5hbWUiOiAiSWduYWNpbyBSYXVsIE1vcmFsZXMgQmVyYmVyIiwgInZlcnNpb24iOiAiMS4xLjAiLCAiZ2l2ZW5fbmFtZSI6ICIiLCAiZXhwIjogMTU1MDE2ODY5NiwgImlzX3Jlc3RyaWN0ZWQiOiBmYWxzZSwgImVtYWlsIjogImlybW9yYWxlc2JAaG90bWFpbC5jb20ifQ.dAiH50ErKz1ifLywAITQQruuk6gZe2y1pCQ2SrP8840&#34;, &#34;user&#34;: &#34;ba42672ab00cea8c637020cfd5a9681d&#34;, &#34;debug&#34;: false, &#34;usageId&#34;: &#34;block-v1:HarvardX+PH125.5x+1T2019+type@html+block@14a87b83a9bc4c499085554ecbd7f68a&#34;}, true);
+
+          });
+        });
+    }).call(this, require || RequireJS.require);
+  &lt;/script&gt;
+
+
+&lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;div class=&#34;vert vert-1&#34; data-id=&#34;block-v1:HarvardX+PH125.5x+1T2019+type@html+block@e113e1fc733748aa82dbdaa9dbbeb960&#34;&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;71bf220c307d11e995f40e913267738c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:HarvardX+PH125.5x+1T2019+type@html+block@e113e1fc733748aa82dbdaa9dbbeb960&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:HarvardX+PH125.5x+1T2019&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  
+
+
+
+
+
+
+&lt;div id=&#34;edx-notes-wrapper-338913469260908821884853925242844182270&#34; class=&#34;edx-notes-wrapper&#34;&gt;
+    &lt;div class=&#34;edx-notes-wrapper-content&#34;&gt;&lt;p&gt;&lt;!-- [if !mso]&gt;
+&lt;style&gt;
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+&lt;/style&gt;
+&lt;![endif]--&gt;&lt;!-- [if gte mso 9]&gt;&lt;xml&gt;
+ &lt;o:OfficeDocumentSettings&gt;
+  &lt;o:AllowPNG/&gt;
+ &lt;/o:OfficeDocumentSettings&gt;
+&lt;/xml&gt;&lt;![endif]--&gt; &lt;!-- [if gte mso 9]&gt;&lt;xml&gt;
+ &lt;w:WordDocument&gt;
+  &lt;w:View&gt;Normal&lt;/w:View&gt;
+  &lt;w:Zoom&gt;0&lt;/w:Zoom&gt;
+  &lt;w:TrackMoves&gt;false&lt;/w:TrackMoves&gt;
+  &lt;w:TrackFormatting/&gt;
+  &lt;w:PunctuationKerning/&gt;
+  &lt;w:ValidateAgainstSchemas/&gt;
+  &lt;w:SaveIfXMLInvalid&gt;false&lt;/w:SaveIfXMLInvalid&gt;
+  &lt;w:IgnoreMixedContent&gt;false&lt;/w:IgnoreMixedContent&gt;
+  &lt;w:AlwaysShowPlaceholderText&gt;false&lt;/w:AlwaysShowPlaceholderText&gt;
+  &lt;w:DoNotPromoteQF/&gt;
+  &lt;w:LidThemeOther&gt;EN-US&lt;/w:LidThemeOther&gt;
+  &lt;w:LidThemeAsian&gt;JA&lt;/w:LidThemeAsian&gt;
+  &lt;w:LidThemeComplexScript&gt;X-NONE&lt;/w:LidThemeComplexScript&gt;
+  &lt;w:Compatibility&gt;
+   &lt;w:BreakWrappedTables/&gt;
+   &lt;w:SnapToGridInCell/&gt;
+   &lt;w:WrapTextWithPunct/&gt;
+   &lt;w:UseAsianBreakRules/&gt;
+   &lt;w:DontGrowAutofit/&gt;
+   &lt;w:SplitPgBreakAndParaMark/&gt;
+   &lt;w:EnableOpenTypeKerning/&gt;
+   &lt;w:DontFlipMirrorIndents/&gt;
+   &lt;w:OverrideTableStyleHps/&gt;
+  &lt;/w:Compatibility&gt;
+  &lt;m:mathPr&gt;
+   &lt;m:mathFont m:val=&#34;Cambria Math&#34;/&gt;
+   &lt;m:brkBin m:val=&#34;before&#34;/&gt;
+   &lt;m:brkBinSub m:val=&#34;&amp;#45;-&#34;/&gt;
+   &lt;m:smallFrac m:val=&#34;off&#34;/&gt;
+   &lt;m:dispDef/&gt;
+   &lt;m:lMargin m:val=&#34;0&#34;/&gt;
+   &lt;m:rMargin m:val=&#34;0&#34;/&gt;
+   &lt;m:defJc m:val=&#34;centerGroup&#34;/&gt;
+   &lt;m:wrapIndent m:val=&#34;1440&#34;/&gt;
+   &lt;m:intLim m:val=&#34;subSup&#34;/&gt;
+   &lt;m:naryLim m:val=&#34;undOvr&#34;/&gt;
+  &lt;/m:mathPr&gt;&lt;/w:WordDocument&gt;
+&lt;/xml&gt;&lt;![endif]--&gt;&lt;!-- [if gte mso 9]&gt;&lt;xml&gt;
+ &lt;w:LatentStyles DefLockedState=&#34;false&#34; DefUnhideWhenUsed=&#34;true&#34;
+  DefSemiHidden=&#34;true&#34; DefQFormat=&#34;false&#34; DefPriority=&#34;99&#34;
+  LatentStyleCount=&#34;276&#34;&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;0&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Normal&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;heading 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 7&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 8&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;9&#34; QFormat=&#34;true&#34; Name=&#34;heading 9&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 7&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 8&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; Name=&#34;toc 9&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;35&#34; QFormat=&#34;true&#34; Name=&#34;caption&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;10&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Title&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;1&#34; Name=&#34;Default Paragraph Font&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;11&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Subtitle&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;22&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Strong&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;20&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Emphasis&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Table Grid&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; UnhideWhenUsed=&#34;false&#34; Name=&#34;Placeholder Text&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;1&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;No Spacing&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;60&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Shading&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;61&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light List&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;62&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Grid&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;63&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;64&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;65&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;66&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;67&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;68&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;69&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;70&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Dark List&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;71&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Shading&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;72&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful List&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;73&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Grid&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;60&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Shading Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;61&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light List Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;62&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Grid Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;63&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 1 Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;64&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 2 Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;65&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 1 Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; UnhideWhenUsed=&#34;false&#34; Name=&#34;Revision&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;34&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;List Paragraph&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;29&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Quote&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;30&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Intense Quote&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;66&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 2 Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;67&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 1 Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;68&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 2 Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;69&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 3 Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;70&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Dark List Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;71&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Shading Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;72&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful List Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;73&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Grid Accent 1&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;60&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Shading Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;61&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light List Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;62&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Grid Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;63&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 1 Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;64&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 2 Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;65&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 1 Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;66&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 2 Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;67&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 1 Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;68&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 2 Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;69&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 3 Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;70&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Dark List Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;71&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Shading Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;72&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful List Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;73&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Grid Accent 2&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;60&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Shading Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;61&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light List Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;62&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Grid Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;63&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 1 Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;64&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 2 Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;65&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 1 Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;66&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 2 Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;67&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 1 Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;68&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 2 Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;69&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 3 Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;70&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Dark List Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;71&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Shading Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;72&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful List Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;73&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Grid Accent 3&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;60&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Shading Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;61&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light List Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;62&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Grid Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;63&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 1 Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;64&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 2 Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;65&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 1 Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;66&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 2 Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;67&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 1 Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;68&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 2 Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;69&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 3 Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;70&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Dark List Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;71&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Shading Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;72&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful List Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;73&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Grid Accent 4&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;60&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Shading Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;61&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light List Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;62&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Grid Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;63&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 1 Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;64&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 2 Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;65&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 1 Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;66&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 2 Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;67&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 1 Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;68&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 2 Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;69&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 3 Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;70&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Dark List Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;71&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Shading Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;72&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful List Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;73&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Grid Accent 5&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;60&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Shading Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;61&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light List Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;62&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Light Grid Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;63&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 1 Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;64&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Shading 2 Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;65&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 1 Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;66&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium List 2 Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;67&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 1 Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;68&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 2 Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;69&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Medium Grid 3 Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;70&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Dark List Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;71&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Shading Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;72&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful List Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;73&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; Name=&#34;Colorful Grid Accent 6&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;19&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Subtle Emphasis&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;21&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Intense Emphasis&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;31&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Subtle Reference&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;32&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Intense Reference&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;33&#34; SemiHidden=&#34;false&#34;
+   UnhideWhenUsed=&#34;false&#34; QFormat=&#34;true&#34; Name=&#34;Book Title&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;37&#34; Name=&#34;Bibliography&#34;/&gt;
+  &lt;w:LsdException Locked=&#34;false&#34; Priority=&#34;39&#34; QFormat=&#34;true&#34; Name=&#34;TOC Heading&#34;/&gt;
+ &lt;/w:LatentStyles&gt;
+&lt;/xml&gt;&lt;![endif]--&gt;&lt;/p&gt;
+&lt;style&gt;&lt;!--
+/* Font Definitions */
+@font-face
+	{font-family:&#34;Courier New&#34;;
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:&#34;&#34;;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&#34;Times New Roman&#34;;
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-priority:99;
+	mso-style-link:&#34;Footer Char&#34;;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.25in right 6.5in;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&#34;Times New Roman&#34;;
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&#34;Times New Roman&#34;;
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&#34;Times New Roman&#34;;
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&#34;Times New Roman&#34;;
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&#34;Times New Roman&#34;;
+	mso-bidi-theme-font:minor-bidi;}
+span.FooterChar
+	{mso-style-name:&#34;Footer Char&#34;;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:11.0pt;
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&#34;Times New Roman&#34;;
+	mso-bidi-theme-font:minor-bidi;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:344132077;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-518076564 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;
+	font-family:&#34;Courier New&#34;;
+	mso-bidi-font-family:&#34;Courier New&#34;;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.0in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.5in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.0in;
+	text-indent:-.25in;
+	font-family:&#34;Courier New&#34;;
+	mso-bidi-font-family:&#34;Courier New&#34;;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.5in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.5in;
+	text-indent:-.25in;
+	font-family:&#34;Courier New&#34;;
+	mso-bidi-font-family:&#34;Courier New&#34;;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:5.0in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:652414805;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-855336568 67698703 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l2
+	{mso-list-id:1113134038;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2006188320 67698703 67698689 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l3
+	{mso-list-id:1619490679;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-520848744 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l3:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l3:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4
+	{mso-list-id:1948612993;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1015044902 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--&gt;&lt;/style&gt;
+&lt;p&gt;&lt;!-- [if gte mso 10]&gt;
+&lt;style&gt;
+ /* Style Definitions */
+table.MsoNormalTable
+	{mso-style-name:&#34;Table Normal&#34;;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:&#34;&#34;;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:8.0pt;
+	mso-para-margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+table.MsoTableGrid
+	{mso-style-name:&#34;Table Grid&#34;;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:39;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+&lt;/style&gt;
+&lt;![endif]--&gt; &lt;!--StartFragment--&gt;&lt;/p&gt;
+&lt;p&gt;Below, you will find a summary of unix commands that will be&amp;nbsp;covered in this section and the advanced unix section. The examples here and in videos&amp;nbsp;refer to this hypothetical file system. You can download a&amp;nbsp;&lt;a href=&#34;http://courses.edx.org/asset-v1:HarvardX+PH125.5x+1T2018+type@asset+block@data_science_1_rev.png&#34; target=&#34;[object Object]&#34;&gt;copy of the&amp;nbsp;image&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img height=&#34;450&#34; width=&#34;800&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/8a874934d6c335342808150e3be7a2d0/asset-v1:HarvardX+PH125.5x+1T2019+type@asset+block/data_science_1_rev.png&#34; alt=&#34;hierarchical file structure&#34; /&gt;&lt;/p&gt;
+&lt;table class=&#34;MsoTableGrid&#34; border=&#34;1&#34; cellspacing=&#34;0&#34; cellpadding=&#34;0&#34; width=&#34;522&#34; style=&#34;width: 521.75pt; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 1184; mso-padding-alt: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;thead&gt;
+&lt;tr style=&#34;mso-yfti-irow: 0; mso-yfti-firstrow: yes; height: 19.75pt;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; background: black; mso-background-themecolor: text1; padding: 0in 5.4pt 0in 5.4pt; height: 19.75pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;b style=&#34;mso-bidi-font-weight: normal;&#34;&gt;&lt;span style=&#34;font-size: 12.0pt; color: white; mso-themecolor: background1;&#34;&gt;Command&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: black; mso-background-themecolor: text1; padding: 0in 5.4pt 0in 5.4pt; height: 19.75pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;b style=&#34;mso-bidi-font-weight: normal;&#34;&gt;&lt;span style=&#34;font-size: 12.0pt; color: white; mso-themecolor: background1;&#34;&gt;Description&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: black; mso-background-themecolor: text1; padding: 0in 5.4pt 0in 5.4pt; height: 19.75pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;b style=&#34;mso-bidi-font-weight: normal;&#34;&gt;&lt;span style=&#34;font-size: 12.0pt; color: white; mso-themecolor: background1;&#34;&gt;Examples&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr style=&#34;mso-yfti-irow: 1;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;ls&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;List directory content&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 2;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;mkdir &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;dir&lt;/i&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Make a directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;mkdir projects&amp;rdquo; &amp;ndash;make the directory projects&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;mkdir docs&amp;rdquo; &amp;ndash;make the directory docs&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;mkdir junk&amp;rdquo; &amp;ndash;make the directory junk&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 3;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;rmdir &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;dir&lt;/i&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Remove a directory (directory must be empty; otherwise use &amp;ldquo;rm&amp;rdquo;)&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;rmdir junk&amp;rdquo; &amp;ndash;remove the directory junk&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 4;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;cd &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;dir&lt;/i&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Change directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;cd &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/projects&amp;rdquo; &amp;ndash; move to the &amp;ldquo;projects&amp;rdquo; directory (an absolute path)&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;cd projects&amp;rdquo; &amp;ndash; move to the &amp;ldquo;projects&amp;rdquo; directory, assuming we are already in the home directory (a relative path) &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 5;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;cd .. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Go up one directory to the parent directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;cd ../..&amp;rdquo; &amp;ndash; move up two parent directories from our current directory &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 6;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;cd &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Go to the home directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 7;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;cd -&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Go to whatever directory you just left&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 8;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;pwd&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Print the present working directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 9;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;tab&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Autocomplete &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;cd d&amp;rdquo; + tab &amp;ndash; autocompletes to &amp;ldquo;docs&amp;rdquo; if it is the only directory that begins with d; or list the different options. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 10;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together; page-break-after: avoid;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;mv &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;file1 file2&lt;/i&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together; page-break-after: avoid;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Move or rename files&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together; page-break-after: avoid;&#34;&gt;&lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Warning &amp;ndash;this is permanent, and you will not get a warning message if you are overwriting files. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together; page-break-after: avoid;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;mv &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/resumes/cv.tex &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/reports/&amp;rdquo; &amp;ndash;move the &amp;ldquo;cv.tex&amp;rdquo; file from the resume folder to the reports folder&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together; page-break-after: avoid;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;mv cv.tex resume.tex&amp;rdquo; &amp;ndash; rename cv.tex to resume.tex&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together; page-break-after: avoid;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;mv &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/resumes &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/reports/&amp;rdquo; - move the resume folder into the reports folder&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 11;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;cp &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;file1 file2&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Copy file1 to file2&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;mv &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/resumes/cv.tex &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/reports/&amp;rdquo; &amp;ndash; make a copy of the &amp;ldquo;cv.tex&amp;rdquo; file from the resume folder in the reports folder&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 12;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;rm &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;file&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Delete file &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Warning &amp;ndash; this is permanent! You cannot retrieve files from the recycling bin! &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;rm &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/resumes/cv.tex&amp;rdquo; &amp;ndash; delete the file &amp;ldquo;cv.tex&amp;rdquo;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 13;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;less &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;file&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;View file&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;less &lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;/docs/resumes/cv.tex&amp;rdquo; &amp;ndash;open cv.tex in the less text viewer&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 14;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;rm -r &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;dir&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Remove recursively all folders in directory &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;dir&lt;/i&gt; and the directory itself. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 15;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;ls -a&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;List all directory content, including hidden files &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 16;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;ls -l &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;List all directory content in long form (including permissions, size and date) &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 17;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;ls -t&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;List all directory content in chronological order&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;ls -lart&amp;rdquo; &amp;ndash; show more information for all files in reverse chronological order for your current directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 18;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;man &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;command&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Show the manual for the command. Note &amp;ndash; this does not work for GitBash&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;man ls&amp;rdquo; &amp;ndash; show the manual instructions for the command ls. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 19;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;command --&lt;/span&gt;&lt;/i&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;help&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Show the manual for the command in GitBash&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;ls --help&amp;rdquo; &amp;ndash; show help instructions for the command ls&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 20;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;command1 &lt;/span&gt;&lt;/i&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;| &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;command2&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Pipe the results of command 1 to command 2&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;man ls | less&amp;rdquo; &amp;ndash; show the help instructions for the command ls in the less viewer&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 21;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;* (wildcard)&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;ls *.html&amp;rdquo; &amp;ndash;list all the files ending in html in your current directory &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;rm *.html&amp;rdquo; &amp;ndash; remove all files ending in html in your current directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 22;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;? (any character)&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;rm file.???.html&amp;rdquo; &amp;ndash; remove all files whose names follow the pattern; eg file-001.html, file-002.html etc. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;rm file.???.*&amp;rdquo; &amp;ndash; remove all files whose names follow the pattern regardless of their extension; eg file-001.html, file-002.csv, file-any.R, etc. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 23;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;$&lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;var&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;$ identifies a variable&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;echo $HOME&amp;rdquo; &amp;ndash; print your home directory&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;echo $SHELL&amp;rdquo; &amp;ndash; print your shell name&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 24;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;export &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;val=value&lt;o:p&gt;&lt;/o:p&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Change the value of the variable &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;val &lt;/i&gt;(Bash shell specific)&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style=&#34;mso-yfti-irow: 25; mso-yfti-lastrow: yes;&#34;&gt;
+&lt;td width=&#34;99&#34; valign=&#34;top&#34; style=&#34;width: 98.75pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;open &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;file &lt;/i&gt;(mac)&lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;&lt;br /&gt;&lt;/i&gt;start &lt;i style=&#34;mso-bidi-font-style: normal;&#34;&gt;file &lt;/i&gt;(windows)&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;194&#34; valign=&#34;top&#34; style=&#34;width: 193.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .0001pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;Opens a file or program&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td width=&#34;230&#34; valign=&#34;top&#34; style=&#34;width: 229.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt;&#34;&gt;
+&lt;p class=&#34;MsoNormal&#34; style=&#34;margin-bottom: .5pt; line-height: normal; mso-pagination: lines-together;&#34;&gt;&lt;span style=&#34;font-size: 10.5pt;&#34;&gt;&amp;ldquo;open Report.Rmd&amp;rdquo; &amp;ndash; open Report.Rmd in RStudio&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;&lt;span style=&#34;text-decoration: underline;&#34;&gt;Absolute path vs. relative path&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;A full path specifies the location of a file from the root directory. It is independent of your present directory, and must begin with either a &amp;ldquo;/&amp;rdquo; or a &amp;ldquo;&lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&amp;rdquo;&lt;/span&gt;. In this example, the full path to our &amp;ldquo;project-1&amp;rdquo; file is: &lt;br /&gt; /home/projects/project-1&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;A relative path is the path relative to your present working directory. If our present working directory is the &amp;ldquo;projects&amp;rdquo; folder, then the relative path to our &amp;ldquo;project-1&amp;rdquo; file is simply: &lt;br /&gt; project-1 &lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;&lt;span style=&#34;text-decoration: underline;&#34;&gt;Path shortcuts&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;One period &amp;ldquo;.&amp;rdquo; is your current working directory&lt;br /&gt; Two periods &amp;ldquo;..&amp;rdquo; is the parent directory (up one from your present working directory) &lt;br /&gt; A tilde&amp;nbsp; &amp;nbsp;&amp;ldquo;&lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;&amp;rdquo; is your home directory.&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoNormal&#34;&gt;&lt;span style=&#34;text-decoration: underline;&#34;&gt;More path examples&lt;/span&gt;&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpFirst&#34; style=&#34;text-indent: -.25in; mso-list: l4 level1 lfo1;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;1.&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Your current working directory is &amp;ldquo;&lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;/projects&amp;rdquo; and you want to move to the &amp;ldquo;figs&amp;rdquo; directory in the &amp;ldquo;project-1&amp;rdquo; folder&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpMiddle&#34; style=&#34;margin-left: 1.0in; mso-add-space: auto; text-indent: -.25in; mso-list: l0 level1 lfo4;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;&amp;middot;&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Solution 2: cd &lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;/projects/project-1/figs (absolute)&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpMiddle&#34; style=&#34;margin-left: 1.0in; mso-add-space: auto; text-indent: -.25in; mso-list: l0 level1 lfo4;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;&amp;middot;&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Solution 2:&lt;span style=&#34;mso-spacerun: yes;&#34;&gt;&amp;nbsp; &lt;/span&gt;cd project-1/figs (relative)&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpMiddle&#34; style=&#34;text-indent: -.25in; mso-list: l3 level1 lfo2;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;1.&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Your current working directory is &amp;ldquo;&lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;/projects&amp;rdquo; and you want to move to the &amp;ldquo;reports&amp;rdquo; folder in the &amp;ldquo;docs&amp;rdquo; directory&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpMiddle&#34; style=&#34;margin-left: 1.0in; mso-add-space: auto; text-indent: -.25in; mso-list: l2 level2 lfo3;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;&amp;middot;&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Solution 1: cd &lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;/dos/reports (absolute)&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpMiddle&#34; style=&#34;margin-left: 1.0in; mso-add-space: auto; text-indent: -.25in; mso-list: l2 level2 lfo3;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;&amp;middot;&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Solution 2: cd ../docs/reports (relative)&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpMiddle&#34; style=&#34;text-indent: -.25in; mso-list: l3 level1 lfo2;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;2.&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Your current working directory is &amp;ldquo;&lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;/projects/project-1/figs&amp;rdquo; and you want to move to the &amp;ldquo;project-2&amp;rdquo; folder in the &amp;ldquo;projects&amp;rdquo; directory.&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpMiddle&#34; style=&#34;margin-left: 1.0in; mso-add-space: auto; text-indent: -.25in; mso-list: l1 level2 lfo5;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;&amp;middot;&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Solution 1: cd &lt;span style=&#34;font-size: 10.5pt; line-height: 107%; font-family: &#39;Courier New&#39;; mso-bidi-font-family: &#39;Courier New&#39;;&#34;&gt;~&lt;/span&gt;/projects/project-2 (absolute)&lt;/p&gt;
+&lt;p class=&#34;MsoListParagraphCxSpLast&#34; style=&#34;margin-left: 1.0in; mso-add-space: auto; text-indent: -.25in; mso-list: l1 level2 lfo5;&#34;&gt;&lt;!-- [if !supportLists]--&gt;&lt;span style=&#34;font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;&#34;&gt;&lt;span style=&#34;mso-list: Ignore;&#34;&gt;&amp;middot;&lt;span style=&#34;font: 7.0pt &#39;Times New Roman&#39;;&#34;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--[endif]--&gt;Solution 2: cd ../../project-2 (relative)&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+  
+  &lt;script type=&#34;text/javascript&#34;&gt;
+    (function (require) {
+        require([&#39;https://prod\u002Dedxapp.edx\u002Dcdn.org/static/js/edxnotes/views/notes_visibility_factory.c0cd10d10d82.js?raw&#39;], function () {
+          require([&#39;js/edxnotes/views/notes_visibility_factory&#39;], function (NotesVisibilityFactory) {
+            
+    var element = document.getElementById(&#39;edx-notes-wrapper-338913469260908821884853925242844182270&#39;);
+    NotesVisibilityFactory.VisibilityDecorator.factory(element, {&#34;eventStringLimit&#34;: 8333, &#34;tokenUrl&#34;: &#34;/courses/course-v1:HarvardX+PH125.5x+1T2019/edxnotes/token/&#34;, &#34;endpoint&#34;: &#34;https://prod-edx-notes.edx.org/api/v1/&#34;, &#34;courseId&#34;: &#34;course-v1:HarvardX+PH125.5x+1T2019&#34;, &#34;token&#34;: &#34;eyJhbGciOiJIUzI1NiJ9.eyJzY29wZXMiOiBbImVtYWlsIiwgInByb2ZpbGUiXSwgImFkbWluaXN0cmF0b3IiOiBmYWxzZSwgInByZWZlcnJlZF91c2VybmFtZSI6ICJpcm1vcmFsZXNiIiwgImZpbHRlcnMiOiBbXSwgImlhdCI6IDE1NTAxNjUwOTYsICJzdWIiOiAiYmE0MjY3MmFiMDBjZWE4YzYzNzAyMGNmZDVhOTY4MWQiLCAiZmFtaWx5X25hbWUiOiAiIiwgImF1ZCI6ICJiNDE4MmQ1ZjQ3ZGZiMTVhY2YxZiIsICJpc3MiOiAiaHR0cHM6Ly9jb3Vyc2VzLmVkeC5vcmcvb2F1dGgyIiwgImVtYWlsX3ZlcmlmaWVkIjogdHJ1ZSwgIm5hbWUiOiAiSWduYWNpbyBSYXVsIE1vcmFsZXMgQmVyYmVyIiwgInZlcnNpb24iOiAiMS4xLjAiLCAiZ2l2ZW5fbmFtZSI6ICIiLCAiZXhwIjogMTU1MDE2ODY5NiwgImlzX3Jlc3RyaWN0ZWQiOiBmYWxzZSwgImVtYWlsIjogImlybW9yYWxlc2JAaG90bWFpbC5jb20ifQ.dAiH50ErKz1ifLywAITQQruuk6gZe2y1pCQ2SrP8840&#34;, &#34;user&#34;: &#34;ba42672ab00cea8c637020cfd5a9681d&#34;, &#34;debug&#34;: false, &#34;usageId&#34;: &#34;block-v1:HarvardX+PH125.5x+1T2019+type@html+block@e113e1fc733748aa82dbdaa9dbbeb960&#34;}, true);
+
+          });
+        });
+    }).call(this, require || RequireJS.require);
+  &lt;/script&gt;
+
+
+&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" role="tabpanel"></div>
+
+  <nav class="sequence-bottom" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:HarvardX+PH125.5x+1T2019" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/CourseSock.207e89e610bb26d251c9.713b569749c9.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+    <div class="course-license">
+      
+
+
+    © <span class="license-text">All Rights Reserved</span>
+
+    </div>
+</div>
+    <nav class="nav-utilities " aria-label="Course Utilities">
+        
+
+
+
+
+<div class="wrapper-utility edx-notes-visibility">
+  <span class="action-toggle-message" aria-live="polite"></span>
+  <button class="utility-control utility-control-button action-toggle-notes is-disabled is-active">
+    <span class="icon fa fa-pencil" aria-hidden="true"></span>
+    <span class="utility-control-label sr">Hide notes</span>
+  </button>
+</div>
+
+
+  
+  <script type="text/javascript">
+    (function (require) {
+        require(['https://prod\u002Dedxapp.edx\u002Dcdn.org/static/js/edxnotes/views/notes_visibility_factory.c0cd10d10d82.js?raw'], function () {
+          require(['js/edxnotes/views/notes_visibility_factory'], function (NotesVisibilityFactory) {
+            
+    NotesVisibilityFactory.ToggleVisibilityView(
+        true,
+        '/courses/course\u002Dv1:HarvardX+PH125.5x+1T2019/edxnotes/visibility/'
+    );
+
+          });
+        });
+    }).call(this, require || RequireJS.require);
+  </script>
+
+
+
+    </nav>
+
+      
+    </div>
+
+        
+
+
+
+
+
+
+<footer id="footer-edx-v3" role="contentinfo" aria-label="Page Footer"
+>
+
+<div class="container">
+    <div class="row main-row"><!-- row -->
+        <div class="col-xl-2 col-lg-12 col-md-3 col-sm-8 col-xs-10 column-1 flex-column column-styles">
+            <div class="row">
+                <div class="col-12 column-2-2 column-styles">
+                <div class="edx-footer-logo">
+                    <a href="https://www.edx.org">
+                        <img alt="edX Home Page" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo-footer.fde85fe42f6b.png">
+                    </a>
+                </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xl-6 col-lg-8 col-md-9 col-sm-5 col-xs-12 column-2 flex-column column-styles">
+             <div class="row full-height">
+
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 column-2-1 col-xs-12 first-div-border column-styles ">
+                    <div class="row full-height">
+                        <div class="ml-xl-0 col-lg-10 ml-lg-auto col-md-12 column-2-2 col-sm-10 full-height column-styles">
+                              <h2 class="heading">edX</h2>
+                                  <ul class="list-unstyled clear-margins  ">
+                                      <li>
+                                          <a href="https://www.edx.org/about-us">About</a>
+                                      </li>
+                                      <li>
+                                          <a href="https://www.edx.org/enterprise">edX for Business</a>
+                                      </li>
+                                  </ul>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 second-div-border column-styles ">
+                        <div class="row full-height">
+                            <div class="col-lg-12 col-md-12 col-sm-10 column-2-2 full-height column-styles">
+                                  <h2 class="heading">Legal</h2>
+                                    <ul class="list-unstyled clear-margins  ">
+                                        <li>
+                                          <a href="https://www.edx.org/edx-terms-service">Terms of Service &amp; Honor Code</a>
+                                        </li>
+                                        <li>
+                                          <a href="https://www.edx.org/edx-privacy-policy">Privacy Policy</a>
+                                        </li>
+                                        <li>
+                                          <a href="https://www.edx.org/accessibility">Accessibility Policy</a>
+                                        </li>
+                                    </ul>
+                            </div>
+                          </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 third-div-border column-styles">
+                      <div class="row full-height">
+                        <div class="col-lg-12 col-md-12 col-sm-10 full-height column-2-2 column-styles">
+                              <h2 class="heading">Connect</h2>
+                              <ul class="list-unstyled clear-margins  ">
+                                <li>
+                                  <a href="https://www.edx.org/blog">Blog</a>
+                                </li>
+                                <li>
+                                  <a href="https://courses.edx.org/support/contact_us">Contact Us</a>
+                                </li>
+                                <li>
+                                  <a href="https://support.edx.org">Help Center</a>
+                                </li>
+                              </ul>
+                        </div>
+                      </div>
+                 </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-9 ml-md-auto col-sm-7 column-3 flex-column fourth-div-border column-styles">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column-3-1 social-app-links-div column-styles ml-auto">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 column-3-2 column-styles">
+                             <ul class="list-inline list-unstyled social">
+                                    <li>
+                                        <a href="http://www.facebook.com/EdxOnline" class="social-links external" title="Facebook" rel="noreferrer">
+                                            <span class="icon fa fa-facebook-square" aria-hidden="true"></span>
+                                            <span class="sr">Like edX on Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/edXOnline" class="social-links external" title="Twitter" rel="noreferrer">
+                                            <span class="icon fa fa-twitter-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on Twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/user/edxonline" class="social-links external" title="Youtube" rel="noreferrer">
+                                            <span class="icon fa fa-youtube-square" aria-hidden="true"></span>
+                                            <span class="sr">Subscribe to the edX YouTube channel</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.linkedin.com/company/edx" class="social-links external" title="LinkedIn" rel="noreferrer">
+                                            <span class="icon fa fa-linkedin-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://plus.google.com/+edXOnline" class="social-links external" title="Google+" rel="noreferrer">
+                                            <span class="icon fa fa-google-plus-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on Google+</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.reddit.com/r/edx" class="social-links external" title="Reddit" rel="noreferrer">
+                                            <span class="icon fa fa-reddit-square" aria-hidden="true"></span>
+                                            <span class="sr">Subscribe to the edX subreddit</span>
+                                        </a>
+                                    </li>
+                             </ul>
+                            <ul class="list-inline list-unstyled app-links">
+                                    <li>
+                                        <a href="https://itunes.apple.com/us/app/edx/id945480667?mt=8" class="app-link external">
+                                            <img alt="Download the edX mobile app from the Apple App Store" src="https://prod-edxapp.edx-cdn.org/static/images/app/app_store_badge_135x40.d0558d910630.svg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://play.google.com/store/apps/details?id=org.edx.mobile" class="app-link external">
+                                            <img alt="Download the edX mobile app from Google Play" src="https://prod-edxapp.edx-cdn.org/static/images/app/google_play_badge_45.6ea466e328da.png">
+                                        </a>
+                                    </li>
+                            </ul>
+                              <!--"EdX, Open edX, and MicroMasters are trademarks of edX Inc. registered in the U.S. and other countries-->
+                              <p class="copyright">© 2012–2019 edX Inc. 
+                                  <br/>
+                                  EdX, Open edX, and MicroMasters are registered trademarks of edX Inc. 
+                                   | 粤ICP备17044299号-2
+                              </p>
+                        </div>
+                  </div>
+                </div>
+
+                </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</footer>
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-footer-edx.b57512ef6549.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+<script type="text/javascript">
+    // Activating Mathjax accessibility files
+    window.MathJax = {
+        menuSettings: {
+            collapsible: true,
+            autocollapse: true,
+            explorer: true
+        }
+    };
+</script>
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+
+
+  
+    
+      <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/courseware/courseware_factory.1504fc10caef.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:HarvardX+PH125.5x+1T2019";
+  </script>
+
+
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/XModuleShim.7d541d71536fa73c719f.edc6eb43de19.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/HtmlModule.f49be45da3b421f4ff3a.645dc22ac629.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/VerticalStudentView.9b38798e0079e0e4c9dd.a8cf7cd152ff.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/SequenceModule.4f88a12d14d3a9e3c7f4.f7ceb63d269b.js' type='application/javascript'></script>
+
+
+
+  
+
+
+    <!-- begin segment footer -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            analytics.identify(
+                "20063176",
+                {
+                    email: "irmoralesb@hotmail.com",
+                    username: "irmoralesb"
+                },
+                {
+                    integrations: {
+                        // Disable MailChimp because we don't want to update the user's email
+                        // and username in MailChimp on every page load. We only need to capture
+                        // this data on registration/activation.
+                        MailChimp: false
+                    }
+                }
+            );
+        });
+    </script>
+    <!-- end segment footer -->
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/header/header.309a1243e175.js"></script>
+  
+</body>
+</html>
+
+

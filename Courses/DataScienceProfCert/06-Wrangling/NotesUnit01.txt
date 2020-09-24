@@ -1,0 +1,235 @@
+Video 1
+In the R Basics course in this series,
+we cover some of the basics of data import.
+We describe functions available in the default R installation.
+Here we present a more general discussion
+and introduce the tidyverse packages readr and readxl.
+Currently, one of the most common ways of storing and sharing
+data for analysis is through electronic spreadsheets.
+A spreadsheet file stores data in rows and columns.
+It is basically a file version of a data frame.
+When saving such tables to a computer file,
+one needs a way to define when a new row or column ends and the other begins.
+This in turn defines the cell in which single values are stored.
+When creating spreadsheets that are text files, like the ones you can create
+with a simple text editor, a new row is defined with a return and a column
+with some predefined special character.
+The most common characters to define new columns
+are a comma, a semicolon, white space or a tab.
+Here's an example of what a comma-separated file looks like if we
+open it with a basic text editor.
+Apart from seeing the commas, you will also
+note that the first row contains column names rather than data.
+We call this a header.
+And when reading data from a spreadsheet file,
+it is important to know if the file has a header or not.
+Most reading functions assume there is a header.
+To know if the file has a header or not, it helps to look at the file
+before trying to read it in.
+This can be done with a text editor or with RStudio.
+In RStudio, we can do this by navigating to the file location,
+clicking on that file, and then hitting View File.
+However, not all spreadsheets files are text files.
+Google Sheets, which are rendered on a browser, are an example.
+Another example is a proprietary format used by Microsoft Excel.
+Microsoft Excel files can't be viewed with a text editor.
+However, these files are widely used.
+Although there are packages designed to read this format,
+if you are choosing a file format to save your own data,
+we generally recommend against using Microsoft Excel.
+We recommend Google Sheets as a free software tool
+for organizing data instead.
+
+Video 2
+We start by demonstrating
+how to read in a file that is already saved on your computer.
+The first step is to find the file containing your data
+and know its location on your file system.
+For this reason and others, when you are working in R,
+it is important to know your working directory.
+This is the directory in which R will save or look for files by default.
+You can see your working directory by typing the following command--
+getwd().
+
+You can change a working directory using the function setwd.
+If you're using RStudio, you can change it by clicking on Session,
+as you see here.
+Note that one thing that file reading functions have in common
+is that unless a full path is provided, they search
+for files in the working directory.
+For this reason, our recommended approach for beginners
+is that you create a directory for each analysis
+and keep the raw data files in that directory.
+To keep raw data files organized, we recommend
+creating a data directory inside your project
+directory, especially when the project involves more than one data file.
+Let's look at an example.
+Because you may not have a data file handy yet,
+we provide an example data file in the DSLABs package.
+Once you download and install that the DSLABS package,
+files will be in the external data, extdata, directory
+that you can get by typing this command.
+Note that the output of this function call
+will change depending on your operating system, how
+you installed R, and the version of R. But it
+will be consistent within your system.
+And you'll be able to see the files included in this directory using
+the function list.files(), like this.
+Now that we know the location of these files,
+we are ready to import them into R.
+To make the code simpler, you can move this file to your working directory.
+You can do this through the file system directly.
+But you can also do it within R itself, using the file.copy function.
+To do this, it will help to define a variable with the full path using
+the function file.path.
+Note that using paste is not recommended since Microsoft Windows,
+and Mac, Linux, Unix, use different slashes for paths.
+The function file.path is aware of your system and chooses the correct slashes.
+Here's an example.
+You can now copy the file over to your working directory using
+the file.copy function, like this.
+You can check of the file is now in your working directory
+using the file.exist function, like this.
+And we see that, in fact, it is in our working directory.
+
+
+# To see what is the path where dslabs datasets are stored in the computer
+path <- system.file("extdata", package="dslabs")
+list.files(path)
+
+# Use file.path() function to avoid conflicts between OS
+filename <- "murders.csv"
+fullpath <- file.path(path, filename)
+fullpath
+# Copy the file in our local working directory
+file.copy(fullpath, getwd())
+# Validate if file exists
+file.exists(filename)
+
+Video 3
+Now we are ready to read in the file.
+readr is the tidyverse library that includes
+functions for reading data stored in text file spreadsheets into r.
+The following functions are available to read in spreadsheet files--
+read_table, read_csv, read_csv2, read_tsv, and read_delim.
+What makes these different is the type of delimiter that it works with.
+The read_excel package provides functions to read
+in data in the Microsoft Excel format.
+This table shows you two functions that read
+two different formats and another function that tries to auto
+detect the format.
+Note that the Microsoft Excel format permits you to have
+more than one table in each file.
+These are referred to as sheets.
+The function excel_sheets gives us the names of the sheets in an Excel file.
+These names can then be passed on to the sheet argument in the three functions
+that we just described to read in Excel files.
+Then you will get the sheet that you want.
+Now, how do we know which of these functions to use?
+Note that the suffix usually tells us what type of file it is.
+But there's no guarantee that these always match.
+To be sure, we can open the file to take a look or use
+functions such as read_lines that show us
+the first few lines of a file within r.
+You can do it like this.
+This also shows us if there's a header or not.
+So now from this, we know it's comma delimited, and it has a header.
+So now we're ready to read in the data into r.
+From the suffix and the peek that we look,
+we know that we should use the read_csv function.
+We do it like this.
+We can also use the full path of the file like this.
+Note that when we run these functions, we
+receive a message letting us know what data types were used for each column.
+Also note that that, the object that we just created by reading in the file,
+is a tibble with the content of the file.
+You can see the first six lines using the head function like this.
+
+
+readr package# for data stored in text file spreadsheets into r
+read_table -(white space separated values) *.txt
+read_csv - (comma separated values) *.csv
+read_csv2 - (semicolon-separated values) *.csv
+read_tsv - (tab delimited separated values) *.tsv
+read_delim - (general text file format, must define delimiter) *.txt
+
+read_excel package # for MS Excel
+read_excel - auto detect the format *.xls or  *.xlsx
+read_xls - *.xls
+read_xlsx - *.xlsx
+
+excel_sheets - gets names of the sheets in an excel file
+
+# To check the file contents
+read_lines("murders.csv", n_max = 3)
+
+# Loading csv file content into dat variable
+dat <- read_csv(fullpath)
+
+head(dat)
+# a tibble: 6 x 5   <= Note it's a tibble
+...
+
+
+Video 4
+Note, that R:BASE also provides import functions--
+we saw this earlier.
+These have similar names to those in the tidyverse, so don't be confused.
+We have read.table, read.csv, and read.delim, for example.
+There are a couple of important differences you should know about.
+To show this, we read the data using an R:BASE function.
+We call the object dat2, like this.
+One difference is that now we have a data.frame, not a table.
+You can see it using the class function.
+The other difference is that the characters are converted to factors.
+Look at the class of the abbreviation column.
+Note, it's a factor.
+In the original file, there were characters.
+This can be avoided by setting the argument stringsAsFactors to FALSE.
+
+Please note that R has:
+* read.table
+* read.csv
+* read.delim
+
+dat2 <- read.csv(filename) # This returns a dataset
+class(dat2$abb) => factor
+class(dat2$region) => factor
+
+To avoid this you must use parameter stringsAsFactors = FALSE
+dat3 <- read.csv(filename, stringsAsFactors = FALSE)
+class(dat3$abb)
+
+Video 5
+Another common place for data to result is on the internet.
+When these are data files, we can download them and then import them.
+Or we can read them indirectly from the web.
+For example, we know that because our DS lab package is on GitHub,
+the file we downloaded for the package has a URL.
+The read_csv file can read these files directly.
+We use the URL instead of the file name when calling the function, like this.
+Now, if you want to have a local copy of the file,
+you can use the download.file function, like this.
+Two functions that are sometimes useful when downloading data from the internet
+are tempdir and tempfile.
+The first actually creates a directory with a name
+that is very unlikely not to be unique.
+Similarly, tempfile creates a character string, not a file,
+that is likely to be a unique file name.
+Look at the file name that we get when we write tempfile.
+So as an example, we'll use these commands to download a file,
+give it a temporary name, read it in, and then erase
+the files that we downloaded.
+We can do that using this code.
+
+read_csv()  <= can download using url instead of local file name
+download.file(url,"murders.csv") <=  can download a file and save it
+
+
+tempdir() Create a directory odd name
+tempfile() Create a file odd name
+
+tmp_filename <- tempfile()
+download.file(url,tmp_filename)
+dat <- read_csv(tmp_filename)
+file.remove(tmp_filename)

@@ -1,0 +1,98 @@
+---
+title: "Comprehension Check: Confusion Matrix"
+output: github_document
+---
+
+The following questions all ask you to work with the dataset described below.
+
+The reported_heights and heights datasets were collected from three classes taught in the Departments of Computer Science and Biostatistics, as well as remotely through the Extension School. The Biostatistics class was taught in 2016 along with an online version offered by the Extension School. On 2016-01-25 at 8:15 AM, during one of the lectures, the instructors asked student to fill in the sex and height questionnaire that populated the reported_height dataset. The online students filled out the survey during the next few days, after the lecture was posted online. We can use this insight to define a variable which we will call type, to denote the type of student, inclass or online.  
+
+The code below sets up the dataset for you to analyze in the following exercises:  
+
+```{r}
+library(dslabs)
+library(dplyr)
+library(lubridate)
+library(caret)
+library(purrr)
+data("reported_heights")
+
+dat <- mutate(reported_heights, date_time = ymd_hms(time_stamp)) %>%
+  filter(date_time >= make_date(2016, 01, 25) & date_time < make_date(2016, 02, 1)) %>%
+  mutate(type = ifelse(day(date_time) == 25 & hour(date_time) == 8 & between(minute(date_time), 15, 30), "inclass","online")) %>%
+  select(sex, type)
+
+y <- factor(dat$sex, c("Female", "Male"))
+x <- dat$type
+```
+
+##Q1
+The type column of dat indicates whether students took classes in person ("inclass") or online ("online"). What proportion of the inclass group is female? What proportion of the online group is female?
+
+```{r}
+dat %>% 
+  group_by(type) %>%
+  summarize(Female = mean(sex == "Female"), Male = mean(sex == "Male"))
+
+
+```
+
+## Q2
+In the course videos, height cutoffs were used to predict sex. Instead of using height, use the type variable and report your prediction accuracy. Use what you learned about Q1 to make an informed guess about sex based on the most prevalent sex for each type. You do not need to split the data into training and test sets. Enter your answer as a percentage or decimal (eg "50%" or "0.50") to at least the hundredths place.
+
+```{r}
+types <- dat %>% distinct(type)
+accuracy <- map_dbl(types$type,function(x){
+  y_hat <- ifelse(dat$type == x, "Female", "Male")
+  mean(y_hat == dat$sex)
+})  
+```
+
+**Answer : 0.633**
+
+## Q3
+
+Write a line of code using the table function to show the confusion matrix between y_hat and y. Use the format function(a, b) for your answer and do not name the columns and rows.
+
+```{r}
+#table(y_hat, y)
+y_hat <- ifelse(dat$type == "inclass", "Female", "Male")
+table(y_hat, y)
+```
+## Q4
+
+What is the sensitivity of this prediction? You can use the sensitivity function from the caret package. Enter your answer as a percentage or decimal (eg "50%" or "0.50") to at least the hundredths place.
+
+```{r}
+
+types <- dat %>% distinct(type)
+types_cutoff <- map_df(types$type, function(x){
+  y_hat <- ifelse(dat$type == x, "Female", "Male") %>%
+    factor(levels = c("Female", "Male"))
+  list(method = "Type cutoff",
+       FPR = specificity(y_hat,factor(dat$sex)),
+       TPR = sensitivity(y_hat, factor(dat$sex)))
+})
+
+types_cutoff
+
+```
+
+Answer : 0.382
+
+## Q5
+
+What is the specificity of this prediction? You can use the specificity function from the caret package. Enter your answer as a percentage or decimal (eg "50%" or "0.50") to at least the hundredths place.
+
+From previouse question: 0.841
+
+
+## 6
+What is the prevalence (% of females) in the dat dataset defined above? Enter your answer as a percentage or decimal (eg "50%" or "0.50") to at least the hundredths place.
+
+```{r}
+levels <- c("Female","Male")
+confusionMatrix(data = factor(y_hat, levels = levels), reference = factor(dat$sex, levels = levels))
+```
+
+Answer : 0.453

@@ -1,0 +1,100 @@
+---
+title: "Trivariate Analysis for 2 Quantitative and 1 Qualitative variables"
+output: github_document
+---
+
+
+# Charts
+
+
+Function to create table rows
+
+```{r}
+library(tidyverse)
+movies <- read.csv("../data/movies.csv")
+no_awards <- "No Awards"
+won_awards <- "Won Awards"
+
+getRow <- function(awards){
+  
+  subset <- movies[movies$Awards == awards,]
+  
+  tapply(
+    subset$Box.Office,
+    subset$Rating,
+    mean)
+}
+
+# Combine the two rows to form a table
+
+table <- rbind(
+  getRow(no_awards),
+  getRow(won_awards))
+
+# Rename the rows
+rownames(table) = c(no_awards, won_awards)
+
+print(table)
+```
+
+
+
+## Grouped Bar Chart
+
+```{r}
+  barplot(
+    height = table,
+    beside = TRUE,
+    main = "Average Box Office Revenue by Rating and Award Status",
+    xlab = "Rating",
+    ylab = "Box Office Revenue ($M)",
+    legend = rownames(table))
+```
+
+## Stacked Bar Chart
+
+```{r}
+barplot(
+  height = table,
+  beside = FALSE,
+  main = "Average Box Office Revenue by Rating and Award Status",
+  xlab = "Rating",
+  ylab = "Box Office Revenue ($M)",
+  legend = rownames(table))
+```
+
+## Faceted Bar Chart
+
+```{r}
+par(mfrow = c(1,2))
+barplot(
+  height = getRow(no_awards),
+  ylim = c(0,100),
+  main = no_awards,
+  xlab = "Rating",
+  ylab = "Box Office Revenue")
+
+barplot(
+  height = getRow(won_awards),
+  ylim = c(0,100),
+  main = won_awards,
+  xlab = "Rating")
+
+
+```
+
+
+## Heat Map
+
+```{r}
+heatmap(
+  x = table,
+  col = heat.colors(100),
+  scale = "none",
+  Colv = NA,
+  Rowv = NA,
+  margins = c(6,10),
+  main = "Average Box Office Revenue",
+  cexRow = 2)
+```
+

@@ -1,0 +1,86 @@
+Video 1
+Throughout this course, we
+have described three main types of vectors--
+numeric, character, and logical.
+In data science projects, however, we very often
+encounter variables that are dates.
+Although we can represent dates with a string--
+for example, November 2, 2017--
+once we pick a reference day, referred to as the epoch,
+they can be converted to numbers.
+Computer languages usually use January 1, 1970 as the epoch.
+So November 2, 2017 is day 17,204.
+Now, how should we represent dates and times when analyzing data in R?
+We could just say, use days since the epoch.
+But then, it's almost impossible to interpret.
+If I tell you it's November 2, 2017, you know what this means immediately.
+If I tell you it's day 17,204, you'll be quite confused.
+Similar problems arise with times.
+In this case, it gets even more complicated due to time zones.
+For this reason, R defines a data type just for dates and times.
+We saw an example, in the poles data--
+here it is.
+
+These look like strings, but they're not.
+Look at the class, it's date.
+Look what happens when you convert them to numbers--
+they turn into numbers around the 17-thousands.
+Plotting functions such as those into GPlot are aware days.
+This means that, for example, a scatterplot
+can use a numeric representation to decide on the position of the point,
+but include the string and the labels, like this.
+Note, in particular, that the months are displayed.
+Because dates are so common, the tidyverse
+includes functionality for dealing with dates through the lubridate package.
+You can load like this.
+We'll take a random sample of dates to show the useful things
+you can do with this package.
+We'll do it like this.
+The functions, year, month, and day, extract those values.
+Here's an example.
+
+We can also extract the month labels like this.
+Another useful set of functions are the parsers
+that converts strings into dates.
+So here's an example of how you can convert any kinds of strings
+into dates.
+Look at what happens.
+Another complication with dates is the fact
+that they can be written in different formats.
+The preferred format is to show year with all four
+digits, months with two digits, and then days,
+or what is called ISO 8601 format.
+Specifically, we use the format four digits for Y, dash,
+two digits for months, dash, two digits for day,
+so if we order the string alphabetically it orders it by date.
+We saw how the function ymd returns dates in this format.
+But what if you encountered data such as 09/01/02?
+This could be September 1, 2002, or January 2, 2009, or January 9, 2002.
+In this case, examining the entire vector of dates
+will help you determine what format it is by process of elimination.
+Once you know, you can use the mini-parsers provided by lubridate
+to convert.
+For example, if the string is 09/01/02, the ymd function assumes the first
+entry is a year, the second is a month, and the third is a day.
+So it converts it to that format like this.
+The mdy function assumes the first entries month, then day, then year.
+So this is what it does.
+Lubridate provides a function for every possibility.
+We list them out here.
+Lubridate is also useful for dealing with times.
+To show an example, we're going to use a Sys.time function, which,
+in R, gets you the current time.
+Lubridate provides a slightly more advanced function call now
+that permits you to find the time zone.
+So if I type now, I get this time.
+And if I type now GMT, I get the time in London.
+You can see all the available time zones using the function OlsonNames,
+like this.
+Lubridate also has functions to extract hours, minutes, and seconds
+from a time.
+We'll show you some examples here.
+It also has functions that can parse strings into times.
+Let's see some examples.
+Here's an example.
+And here's an example that takes a string that has both date and time,
+and parses it out into a more appropriate format.

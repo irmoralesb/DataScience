@@ -1,0 +1,242 @@
+Video 1
+We already learn how to use Git and Github with RStudio.
+We're going to learn some more details and how to use the command line.
+However, we're only scratching the surface.
+To learn more about this topic, we highly recommend free sources
+like the following.
+There are three main reasons to use Git and Github.
+The first is version control.
+The version control capabilities of Git permit
+us to keep track of changes we make to our code.
+We can also revert back to previous versions of files.
+Git also permit us to create branches in which we
+can test out ideas then this decide if we can
+merge the new branch with the original.
+The second reason is collaborating.
+Once you set up a central repo, you can have multiple people make changes
+to the code and keep version synced.
+GitHub provide a free service for centralized repos.
+GitHub also has a special utility called pull
+request that can be used by anybody to suggest changes to your code.
+You can easily either accept or deny these request.
+The third reason is to share, and this is the main one we use here.
+Even if we do not take advantage of the advanced and powerful version control
+functionality, we can still use Git and GitHub to share our code.
+We have already shown how we can do this with RStudio.
+Here we focus on the sharing aspects of Git and GitHub,
+and we refer to the links we just showed to learn more about this powerful tool.
+To effectively permit version control and collaboration, in Git
+files move across four different areas shown here.
+But how does it all get started?
+There are two ways to do this.
+We can clone an existing repo or initialize a new one.
+We will try the first approach first.
+
+https://www.codecademy.com/learn/learn-git
+https://guides.github.com/activities/hello-world/
+https://try.github.io/levels/1/challenges/1
+http://happygitwithr.com/
+
+
+Video 2
+We're going to clone an existing upstream repository.
+We can see it on GitHub by following this link.
+By visiting this page, you can see that there's multiple files and directories.
+This is called the upstream repository.
+When you go on GitHub, you will see a green clone button
+that you can click to copy the repos URL, which is shown here.
+But what does clone mean?
+Rather than download all these files to your computer,
+we are going to actually copy the entire git structure, which
+means we will add the files and directories to each of the three
+local stages--
+working directory, staging area, and local repository.
+So when you clone, all three are exactly the same.
+You can quickly see an example of this by doing the following.
+We open a terminal and type the following.
+We're going to create a temporary directory to store all this,
+cd into the directory, and then use the git clone
+command with the upstream repository's URL added at the end.
+Once we do that, it will download everything,
+and now we can cd into the new directory, which is called murders.
+You have now cloned a GitHub repo and have a working git directory.
+All the files on your file system.
+If you type ls, you can see all these files and subdirectories.
+So now, we have done this.
+Now the working directory is the same as your Unix working directory.
+When you edit files using an editor such as RStudio,
+you change the files in this area and only this area.
+Git can tell you how these files relate to the version
+of the files in other areas with the command git status.
+If you check the status now, you will see that nothing has changed
+and get the following message.
+You type git status, and you get a message saying basically
+everything's fine, nothing has changed.
+All right.
+So we are now going to make changes that we eventually want
+to be synced with the upstream repo.
+But we do not want to do this until we are sure that these
+are final enough versions to share.
+However, we can keep track of changes we make on our local directory
+before pushing these files to the upstream repo.
+But we also want to avoid keeping track of too many changes
+in the local version.
+We don't want every little change.
+We really want changes we think are worth tracking.
+Edits in the staging area are not kept by the version control system.
+We add a file to the staging area with the git add command.
+Here, we create a file using the Unix echo command,
+just as an example that we showed earlier.
+Basically, all this does is create a file that has the word "test" in it.
+We are also going to add another temporary file just as an example.
+This one is going to be called temp.txt.
+So you can type this into your terminal.
+OK.
+So now, we can stage the file we want in our repository.
+To do this, we type git add--
+this is what's going to stage the file--
+new-file.txt.
+
+Notice what the status says now.
+You can look at the status by typing git status.
+And now you get a slightly different message telling you
+that there's a new file stage that has not been committed yet,
+and there's another file that is untracked.
+That's the file we don't want to track, because it's temporary.
+So now, any changes we make to newfile.txt
+will get added to the repository next time we commit.
+We commit using the git commit command.
+Now, whenever you commit, you have to add
+a message stating what you're doing.
+In this case, we're going to use the message "adding a new file name."
+Once we do this, we get a message telling us
+that one file changed and one file was added to the local repository.
+We have now changed the local repository.
+If we type git status, we see this.
+So here is a representation of what we've done.
+Now remember, if we edit that file again,
+it only changes in the working directory.
+To add to the local repo, we need to stage it and then commit the changes,
+and this will be added to the local repository.
+So let's make a little change.
+We're adding a new line to that file.
+We're going to use the echo command again.
+Once we do that, in order to commit, we first stage it,
+then we commit, and now we can see, by looking at status,
+that we have made a change.
+This step is often unnecessary in our use of git.
+We can skip the staging part if we add the file name to the commit command,
+like this.
+Notice that we get a similar message.
+OK.
+Now we can keep track of all the changes we
+have made by using the git log command.
+If we do it with the newfile.txt, we can see all the commits that
+have been done to our local repository.
+You can see it here.
+All right.
+So now, we have made changes to the local repository,
+and now we want to push these changes to the upstream repository-- the GitHub
+repository.
+This is done using the git push command.
+We simply type git push.
+This will have this effect on the files.
+However, you will not be able to do this because you don't have permission
+to edit the upstream repo.
+You would only be able to do this if it was your repository.
+Now, if this is a collaborative project, the upstream repo
+may change and become different than our own version.
+So to update our local repository to be like the upstream repository,
+we use the command git fetch, like this.
+And this will have this effect.
+And then, to make these copies to the staging and working directories,
+we use the command git merge.
+That will change the files in our working directory.
+However, we often just want to change everything in one shot.
+So for this, we can use git pull.
+git pull is equivalent to git fetch followed by git merge.
+Note that we earlier learned how to do all this in RStudio,
+and that has buttons to do it.
+The details we provide here should help you understand
+what happens in the background.
+
+Video 3
+All right, but now let's
+learn about a second approach we can use to get started.
+And that is by initialising directory on our own computer rather than cloning.
+We will show you how we created the GitHub repository for the gun murders
+project.
+We first created a project on our computer independent of Git.
+So we already had all the files and all of the directories ready,
+but we did not yet have a Git local repo or a GitHub upstream repo.
+We start by creating a new repo on our GitHub page.
+This is the upstream repo.
+So we go to GitHub, we click on a repository, click New.
+And we're going to be asked what to call it.
+We're going to call it the Murders repo just
+to match the name of the record in our local system.
+But if you're doing this for another project, please use another name.
+Don't use murders.
+We then get a series of instructions on how to get started.
+But we can instead use what we have learned.
+The main thing we need from this page is to copy the repo's URL.
+In this case, it's this one.
+It will be different if you're creating your own repo.
+So that is the URL of the upstream repo, so that's set.
+So we've created an upstream repo.
+Now, we have to create a local repository.
+We're going to do it in the directory that already includes all the files
+and directories for our murders project.
+So let's do that let's start by opening a terminal
+and moving into the directory that contains the project.
+That would be, in this case, cd ~/projects/murders.
+Now, this is a working directory in our system.
+Git knows nothing about it.
+We need to make it a local Git directory.
+To do this, we need to initialize it.
+By typing git init in the command line, assuming we're in the right directory,
+this turns the directory into a Git directory
+and Git starts tracking everything.
+Now, the files are there in our working directory, but they're nowhere else.
+We haven't done anything.
+We haven't staged, we haven't committed.
+So they're just in the working directory.
+So there's two next steps to do.
+One is to start moving files into our local repo.
+And another thing we need to do is to connect the local repo
+with our GitHub repo.
+We need to let Git know that it is going to be connected to a GitHub repository.
+In a previous example, we had RStudio do this
+by starting the whole project as a Git projet,
+but now we need to do it ourselves.
+So what we're going to do is we're just going to add one of the files just
+to get started.
+So we're going to add the readme.txt file.
+We're going to stage it, and then we're going to do our first commit.
+So we type it like this.
+We now have a file in our local repository, just one, just readme.txt.
+And we're ready to connect our local repo, which now has one file,
+to our upstream repo.
+We already have the URL for their upstream repo,
+and the command to do this is "get remote."
+We use this to connect our local repo to a upstream repo.
+The command in our Unix command line would
+be "get remote add origin" and then the URL.
+
+Now they're connected.
+All right, so now we have some files in our working directory.
+We have a file in our Git local repository,
+and we also have a connection to our GitHub upstream repository.
+We're going to push the file we have up to our GitHub
+repository, so we type git push and this should do it.
+Now, we can continue adding and committing each file one by one.
+It's not that hard using the command line,
+but we're going to go ahead and do it in RStudio.
+We find this easier.
+So to do this, you start the project by opening the R Project file.
+And then the Git icons should appear, you can see them here.
+So we just click them all, we hit the Commit button,
+and then we hit the Push button.
+And they all go up to GitHub.
+And you can confirm this by going to your GitHub web page
+and checking to see if the files have been added.

@@ -1,0 +1,44 @@
+---
+title: "Multivariate  Analysis"
+output: github_document
+---
+
+# Multivariate Analysis
+
+# Charts / Plots
+
+Setting up environment
+```{r}
+library(corrgram)
+library(lattice)
+movies <- read.csv("../data/movies.csv")
+top100 <- read.csv("../data/Top 100.csv")
+# Creates a correlation matrix
+correlations <- cor(movies[,c(2,4,5,6)])
+
+round(correlations,2)
+```
+
+
+
+## Correlogram
+
+```{r}
+levelplot(
+  x = correlations,
+  at = seq(-1,1,0.1))
+```
+
+## Scatterplot Matrix
+
+```{r}
+splom(movies[,c(2:6)])
+```
+
+## Parallel Coordinates Plot
+
+```{r}
+parallelplot(
+  x = top100[,c(2,4,5,6)],
+  horizontal.axis = FALSE)
+```

@@ -1,0 +1,265 @@
+Video 1
+
+Another great advantage of RStudio projects
+is that one can share them with collaborators or the public
+through GitHub.
+To do this, we will need a piece of software named Git as well as access
+to a Unix terminal.
+The installation process for Git is quite different for Mac and Windows.
+We include both here.
+Git is what we refer to as a version control system.
+These are useful for tracking changes to files
+as well as coordinating the editing of code by multiple collaborators.
+We will later learn how to use GitHub, which is a hosting system for code.
+You need Git to interact with GitHub.
+Having your code, and more generally, data-science projects on GitHub
+is, among other things, a way to show employers what you can do.
+Git is most effectively used using Unix, although one can also
+use it through RStudio.
+In a later video, we describe Unix in more detail.
+
+Video 2
+We're going to start by installing Git and Git Bash on Windows.
+Now remember, this is only for Windows.
+Mac users do not need to do this part.
+There are several pieces of software that
+permit you to perform Unix commands on Windows.
+We'll be using Git Bash as an interface with RStudio,
+and it is automatically installed and we install Git for Windows.
+To install Git, start by searching for Git for Windows on your browser
+and clicking on the link for git-scm.com.
+ This will take you to the download Git page
+from which you can download the most recent maintained build.
+You can then start running the installer and agree to the license.
+In one of the installation steps, you will be asked
+to pick the default editor for Git.
+Unless you're already a VI or VIM user, here I
+recommend against selecting VIM, which might be the default.
+If you do not recognize an editor you know among the options given,
+we recommend that you select Nano as your default editor
+for Git, since this is the easiest to learn.
+The next installation decision is actually an important one.
+This installation process installs Git Bash.
+We recommend that you select Git and optional Unix tools from the Windows
+command prompt as this will permit you to learn Unix from within RStudio.
+However, if you do this, some commands that run on your Windows command line
+will stop working.
+If you do not use your Windows command line,
+then this should not be a problem.
+Also, most, if not all, of these windows command lines
+have a Unix equivalent that you will be able to use now.
+You can now continue selecting the default options.
+You have now installed Git on Windows.
+A final and important step is to change your preference in RStudio
+so that Git Bash becomes a default Unix shell in RStudio.
+Remember, this is only for Windows users.
+To check that you, in fact, are using Git Bash in RStudio,
+you can open a new terminal in RStudio like this,
+and it should look something like this.
+Congratulations, you just installed Git and Git Bash for Windows.
+
+Video 3
+In this video, we're going to show you
+how to install Git for the Mac.
+Before we show you the installation process,
+we introduce you to the terminal.
+Macs already come with this terminal, and it can be used to learn Unix.
+We can also use it to check if Git is already installed,
+and if it's not installed, start the installation process.
+To open a terminal, you can use Command-Spacebar and then
+type terminal, or you can find it in the Utilities folder like this.
+Once you start the terminal, you will see a console like this one.
+You might have Git installed already.
+One way to check is by asking for the version by typing into the command line
+the following-- git --version.
+If you get a version number back, it's already installed.
+If not, you will get the following message,
+and you will be asked if you want to install it.
+You should click Install.
+This will take you through the installation process.
+Once installed, you can check for the version again
+and it should show you something like this.
+Congratulations.
+You've installed Git on your Mac.
+
+Video 4
+The next step is to get a GitHub account.
+Basic GitHub accounts are free.
+The first step is to go to GitHub.com where you'll see a box like this one
+that you can use to sign up.
+When signing up, you want to pick a name carefully.
+You want it to be short, easy to remember and spell,
+somewhat related to your name, and professional.
+The last one is important since you might be sending potential employers
+a link to your GitHub account.
+Here, we're going to open an account as an example.
+In this one, I'm going to sacrifice on the ease
+of spelling to incorporate my name.
+Initials and last name is usually a good choice.
+That's what I'm going to use.
+If you have a very common name, then this account might be taken.
+So you might have to add numbers or spell out part of your name.
+The account I use for my own research, rafalab,
+is the same one I use for my web page and Twitter,
+which makes it easy to remember for those that follow my work.
+Once you have a GitHub account, you're ready to connect RStudio
+to this GitHub account.
+You start by going to the global options and selecting Gitsvn.
+You then need to enter the path for the Git executable we just installed.
+On the Windows installation, it'll look like this,
+but you should find it by browsing your system as this
+can change from system to system.
+Now, to avoid entering our GitHub password every time
+we want to try to access our repository from RStudio,
+we'll create what is called an SSHRSA Key.
+RStudio can do this for us automatically if we click on the Create RSA
+key button, like this.
+You can follow the default instructions, and then RStudio and GitHub
+her should now be able to connect and we're
+ready to create our first GitHub code repository.
+
+Video 5
+In this video, we're going
+to show how to create a GitHub repository, or repo for short.
+The general idea is that you will have at least two copies of your code--
+one on your computer and one on GitHub.
+If you add collaborators to this project,
+then each will have a copy on their own computer.
+The GitHub copy is usually considered the master copy
+that each collaborator syncs to.
+Git will help you keep all the different copies synced.
+As mentioned, one of the advantages of keeping code on a GitHub repository
+is that you can easily share it with potential employers.
+Because many data science companies use version control systems like Git
+to collaborate on projects, they might also
+be impressed that you already know at least the basics.
+The first step in creating a repo for your code
+is to initialize one on GitHub.
+Because you already created an account, you can go to the URL,
+GitHub.com/yourusername.
+To create a repo, first log into your account
+by clicking on the sign in button on GitHub.com.
+Watch out, you might already be logged in.
+And if you are, you can skip this step.
+You won't see a sign in button at the top.
+If signing in, you'll have to enter your username and password.
+We recommend you set up your browser to remember to avoid typing it each time.
+Once on your account, you can click on Repositories.
+Then you click on New to create a new repo.
+You will then want to choose a good descriptive name for the project.
+Remember that in the future, you might have dozens of repos,
+so keep that in mind when choosing a name.
+Here, to keep it simple.
+We will use the name Homework-0.
+Now you'll get asked what kind of repo you want.
+We recommend you make the repo public.
+If you want to keep it private, you'll have to pay a monthly charge.
+You now have your first repo on GitHub.
+Now we're going to connect it to RStudio.
+So to do this, it is convenient to copy the link provided
+by GitHub specifically to connect this repo using Git.
+We do it like this.
+
+Video 5
+We are now ready to clone our repo,
+start editing files on our computer, and syncing with GitHub Help.
+We will use RStudio to facilitate this, and we'll use Unix for the first time.
+Our first step is to let Git know who we are.
+This will make it easier to connect with GitHub help.
+We started by opening a terminal window in RStudio
+or you can open an independent one.
+Now, we use the git config command to tell who we are.
+We will type the following two commands into our terminal window.
+ You need to use the email account you use to open your GitHub
+account so that they can get connected.
+If you use the RStudio terminal, the RStudio session
+should look something like this.
+Now, we're ready to start on RStudio project that uses version control
+and stores the code on GitHub.
+To do this we started project, but instead of New Directory,
+we will instead select Version Control like this.
+Then we will select Git as our version control system.
+Now, we're asked a repository URL.
+This is that URL we copied earlier.
+We put this into that box.
+Here we use the following Git repository URL.
+And in the project directory name, you put
+the name of the folder that was generated, which in our example,
+will be the name of the people that we generated in GitHub call homework-0.
+Note that this will create a folder called homework-0 on your local system.
+Once you do this, the project is created,
+and it is aware of the connection to GitHub.
+You will see on the top right corner, the name and type of project
+and a new tab on the upper right pane title Git.
+If you select this tab, it will show you the files
+on your project with some icons that give you
+information about these files and their relationship to GitHub repo.
+In this example, we already added the files to the folder called code.R.
+If you don't have one, you can add one.
+And then you can see in the editing pane that that code is being edited.
+We now need to pay attention to the Git pane.
+It is important to know that your local files and the GitHub repo
+will not be synced automatically.
+You have to do this when you're ready.To truly understand all this, we need to learn more details
+about Git which we will do later.
+Right now, we will quickly show you how to sync with this simple example.
+The main actions on Git are to "pull" changes from the remote repo,
+in this case the GitHub repo, "add" files, or as we say in the Git lingo--
+stage files-- "commit" changes to the local repo,
+and "push" changes to the remote repo.
+These are words you're going to see, if you're using Git--
+pull, add, commit, and push.
+Before we start working on collaborative projects, usually the first thing we do
+is pull in the changes from the remote repo, in our case, the one to GitHub.
+However, for the example shown here, we're starting with an empty repo
+and we know that there's no changes to pull.
+So we're going to skip that step here.
+In RStudio, the status of the files as they
+relate to the remote and local repos are represented
+with status symbols and colors.
+A yellow square means that Git knows nothing about this file.
+To sync with the GitHub repo.
+We need to add the file, then commit the changes to our local
+get repo, then push the changes to the GitHub repo.
+Right now, the file is just on our computer.
+To add the file using RStudio, we click on the stage box.
+You will see that the status icon now change is to a green "a,"
+it's been added.
+Note, we're only adding the code.R file.
+We don't necessarily need to add all files in our local repo
+to the GitHub repo.
+Only the ones that we want to keep track of or the ones we want to share.
+If our work is producing files of a certain type
+that we don't want to keep track of, we can
+add the suffix that defines these files in the gitignore file.
+This is a bit advanced and you can find more details on it
+in the link provided here.
+These files will stop appearing in your RStudio Git pane.
+For the examples shown here, we'll only be adding the code.R file.
+But in general for an RStudio project, we recommend adding both the .gitignore
+and the .rproject files.
+Now, we're ready to commit the file to our local repo.
+In RStudio, we can use the Commit button.
+This will open a new dialog window.
+With Git, whenever we commit a change, weare required to enter a comment describing the change being committed.
+In this case, we'll simply describe that we are adding a new script.
+And this dialog box, RStudio also gives you a summary
+of what you're changing to GitHub repo.
+In this case because it's a new file, the entire file
+is highlighted as green which highlights the changes.
+Once we hit the Commit button, we should see a message from it
+with a summary of the changes that were committed.
+Now, we're ready to push these changes to the GitHub repo.
+We can do this by clicking on the Push button on the top right corner.
+Now, we see a message from just letting us know that the push has succeeded.
+Note that in the pop-up window we no longer see code.R.
+This is because this file has not changed since our last push.
+We can exit this pop-up window now and continue working on our code.
+If we now visit our repo on the web, we will
+see that it matches our local copy.
+Congratulations, you have successfully created a GitHub code repository.
+Soon, we will learn how to use this to keep
+us organized while sharing our code.
+Now, before we continue learning about Git,
+we will provide a brief introduction to Unix
+and how it is used to keep organized.

@@ -1,0 +1,77 @@
+---
+title: "Trivariate Analysis - 1 Qualitative and 2 Quantitative"
+output: github_document
+---
+
+# 1 Qualitative and 2 Quantitative
+
+    * 1 Categorical variables
+    * 2 Numeric variable
+    * Relationship by categories
+    * Time series
+    
+    
+# Charts and Plots
+
+## Color-coded Scatterplot
+
+    * Scatterplot
+    * Color-coded categories
+    * Discrete color palette
+    * Small number of colors (12 or less)
+    
+    
+## Shaped-coded Scatterplot
+
+    * Scatterplot
+    * Shape-coded categories
+    * Palette of shapes
+    * Small number of shapes (2 - 4)
+    
+    
+## Faceted Scatterplot
+
+    * Scatterplot
+    * Faceted
+    * Compare overall shape
+
+## Multi-series Line Chart
+
+    * Line chart
+    * Multiple time series
+    * Easy comparisons
+    
+## Stacked Area Chart
+
+    * Area Chart
+    * Stacked areas
+    * Cumulatitve values
+    * Marginal values
+    
+## Faceted Line Chart
+
+    * Line chart
+    * Faceted
+    * Compare overall shape
+    
+## Questions
+
+    * How does critic score relate to box office in each rating category?
+    * How has box office reveneu changed over time and rating category?
+    
+# Color Code
+
+The palete recommended to be used is **RColorBrewer**
+```{r}
+library(RColorBrewer)
+display.brewer.all()
+```
+
+**Top color palette section: **
+    Sequencial color palette, for represent quantitative values from low to high
+
+**Middle color palette section:**
+    For Categorical values
+
+**Bottom color palette section:**
+    Divergent color palette, for representing values that goes from low to high, but making emphasis on the extreme values.

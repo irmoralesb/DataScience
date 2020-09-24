@@ -1,0 +1,156 @@
+Video 1
+Unix is the operating system of choice in data science.
+We'll introduce you to an approach and a way
+of thinking using an example showing how we
+keep a data-analysis project organized.
+We will learn some of the most commonly used commands along the way.
+However, we won't go into the details here.
+We highly encourage you learn more.
+Specifically when you find yourself using the mouse too much
+or performing a repetitive task, there's probably a more efficient way
+to do it in Unix.
+We provide some links to some courses you can take to learn more about Unix.
+Note that there are many courses as well as very informative reference books.
+We also provide some links.
+When searching for Unix resources, keep in mind
+that other terms that are used to describe what we're going to learn here
+are Linux, the shell, and the command line.
+Basically what we're learning is a series
+of commands and a way of thinking that facilitates the organization of files
+without using the mouse.
+To serve as motivation, we're going to start constructing a directory using
+Unix tools in RStudio.
+
+Video 2
+ The terminal is our window into the Unix world.
+Instead of clicking, dragging, and dropping
+to organize our files and folders, we'll be typing commands into the terminal.
+We'll do this in the terminal similar to how we type commands
+into the [? RConsole. ?] But now instead of generating
+plots and statistical summaries, we'll be organizing files on our system.
+We have already described how we access the terminal using RStudio, namely
+by going to Tools, then Terminal, then New Terminal.
+But often, we want to access the terminal and have no need for RStudio.
+We already described how to access the terminal on the Mac
+by going to the Utilities folder and clicking on the Terminal
+or by using spotlight to find the terminal.
+On Windows, assuming you installed [? GetBatch, ?] we can also access
+a terminal without RStudio by running the [? GetBatch ?] program like this.
+Once you have a terminal open, you can start typing commands.
+You should see a blinking cursor at the spot where what you type will show up.
+This position is called the command line.
+Once you type something and hit Enter on Windows or Return on the Mac,
+Unix will try to execute this command.
+If you want to try out an example, type this into your command line.
+The command echo is similar to cat in R. And executing
+this line should print out "Hello world,"
+and then return back to the command line.
+Note that you can't use the mouse and move around the terminal.
+You have to use the keyboard.
+To go back to a command you previously typed, you can use the up arrow.
+Throughout the next videos, we're going to be showing you how to use Unix.
+You're going to be seeing code in your screen.
+You can try it out on your own computer.
+
+Video 3
+ RAFAEL IRIZARRY: We refer to all the files, folders, and programs
+on your computer as the filesystem.
+Note that folders and programs are also file,
+but this is a technicality we rarely think about and ignore in this course.
+We'll focus on files and folders for now and discuss programs,
+or executables as we call them in Unix, in a later video.
+The first concept you need to grasp to become a Unix user
+is how your file system is organized.
+You should think of it as a series of nested folders each
+containing files, folders, and executables.
+Here's a visual representation of the structure we're describing.
+In Unix, we refer to folders as directories.
+Directories that are inside other directories
+are often referred to as subdirectories.
+So for example, in this figure, the directory Docs
+has two subdirectories-- reports and resumes.
+And Docs is a subdirectory of Home.
+The Home directory is where all your stuff is kept.
+In this figure, the directory called Home represents your home directory,
+but that is rarely a name that is used.
+On your system, the name of your home directory is likely the same
+as your username on that system.
+Here's an example on Windows showing a home directory.
+In this case, the home directory is called rafa, that's my username.
+Here's an example on the Mac.
+Now back to the figures showing the filesystem.
+Suppose you're using a point and click system,
+and you want to remove the file cv.tex.
+Suppose that on your screen, you can see the home directory.
+To erase this file, you would double click on the Home directory,
+then double click on Docs, then double click on resumes,
+and then drag cv.tex to the trash.
+Here you are experiencing the hierarchical nature of the system.
+cv.tex is a file inside the Resumes directory, which
+is a subdirectory inside the Docs directory, which is
+a subdirectory of the Home directory.
+Now suppose you can see the Home directory on your screen.
+You would somehow need to make it appear on your screen.
+One way to do it is to navigate from what is called the root directory all
+the way to your home directory.
+Any filesystem will have what is called the rootdirectory, which is the directory that contains
+all directories on your system.
+The home directory shown in this figure will usually
+be two or more levels from the root.
+On Windows, you will have a structure like this.
+On a Mac, it will be something like this.
+
+Video 4
+ RAFAEL IRIZARRY: The concept of a current location
+is part of the point and click experience.
+At any given moment, we're in a folder and see the content of that folder.
+As you search for a file, as we did in the previous video,
+you experience the concept of a current location.
+Once you double click on a directory, you change locations and now
+are in that folder, as opposed to the folder you were before.
+In Unix, we don't have the same visual cues.
+But the concept of a current location is indispensable.
+We refer to this as the working directory.
+Each terminal window you have open has a working directory associated with it.
+And how do we know what is your working directory?
+The first command we learn in Unix is pwd, which
+stands for Print Working Directory.
+And it answers this question.
+It returns to working directory.
+You can open a terminal and type pwd, and you will see your home directory.
+Note that the working directory will be different in every system.
+So you shouldn't expect to have the same result as what we get here.
+If you open a terminal and type pwd as your first command,
+you should see something like /Users/yourusername on a Mac
+or something like /c/Users/yourusername on Windows.
+The character string returned by calling pwd represents your working directory.
+When we first open a terminal, it will start in our home directory.
+So in this case, the working directory is the same as a home directory.
+Note that the four slashes in the strings
+that we just showed separate directories.
+So for example, the location-- /c/Users/rafa implies that our working
+directory is called rafa, and it is in a subdirectory called users,
+which is in a subdirectory called c.
+And this is a subdirectory of the root directory.
+The root directory is therefore represented by just a forward slash.
+We refer to strings returned by pwd as the full path of the working directory.
+The name comes from the fact that this string spells out
+the path you need to follow to get to the directory in question
+from the root directory.
+Every directory has a full path.
+Later, we will learn about relative paths,
+which tell us how to get to a directory from the working directory.
+Note that in Unix, we use the shorthand ~
+as a nickname for your home directory.So for example, if docs is in the path to a directory in your home directory,
+docs can be written as ~/docs.
+ Most terminals will show the path to your working directory
+right on the command line.
+If you're using default settings and open a terminal on the Mac,
+you will see that right at the command line you have something like
+computername:~username, with ~ representing your working directory,
+which, in this example, is a home directory.
+The same is true for Git Bash terminals, where you will see something
+like username@computername MINGW64 ~, with the working directory at the end.
+Soon we're going to learn how to change directories using Unix.
+When we change directories, we'll see that this home directory
+representation on your terminal will change on both Macs and Windows.

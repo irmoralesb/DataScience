@@ -1,0 +1,69 @@
+---
+title: "Demo - Base"
+output: github_document
+---
+
+
+```{r}
+timeSeries <- read.csv("../data/TimeSeries.csv")
+head(timeSeries)
+
+```
+
+```{r}
+#Create parameterized function to plot line chart
+plotFacet <- function(index, name){
+  values <- timeSeries[,c(1,index)]
+  yMax <- max(timeSeries$G)
+  plot(
+    x = values,
+    type = "l",
+    ylim = c(0,yMax),
+    main = name,
+    xlab = "Year",
+    ylab = "Box Office ($M)")
+}
+```
+
+## Horizontal Facet
+Create horizontal facets
+
+```{r}
+par(mfrow = c(1,4))
+
+plotFacet(2,"G")
+plotFacet(3,"PG")
+plotFacet(4,"PG-13")
+plotFacet(5,"R")
+
+```
+
+## Vertical Facet
+Create vertical facets
+
+```{r}
+par(mfrow = c(4,1))
+plotFacet(2,"G")
+plotFacet(3,"PG")
+plotFacet(4,"PG-13")
+plotFacet(5,"R")
+```
+
+## Wrapped Facet
+Create wrapped facets
+
+```{r}
+par(mfrow = c(2,2))
+plotFacet(2,"G")
+plotFacet(3,"PG")
+plotFacet(4,"PG-13")
+plotFacet(5,"R")
+
+```
+
+Reset to normal process
+
+```{r}
+par(mfrow = c(1,1))
+```
+

@@ -1,0 +1,159 @@
+Video 1
+ Most of what we learned in previous courses depends
+on packages included in what is called the tidyverse.
+The data we've worked with depends on the dslabs package.
+These packages do not come preinstalled in R. In fact,
+the default destination of R is quite minimal, and for many of your projects
+you'll need to download and install one or more packages.
+You can install packages directly from R with the command install.packages().
+To install the tidyverse package we would type, in the R console,
+install.packages open parentheses quotes tidyverse.
+Know that we can install more than one package at once
+by feeding a character vector to this function.
+So with this command we can install both tidyverse and the dslabs
+in one command.
+You can also install packages using RStudio using
+point and click in the following way.
+One advantage of using RStudio is that it autocompletes package names
+once you start typing, which is helpful when you do not remember
+the exact spelling of the package.
+Once you select your package, we recommend selecting all the defaults.
+Note that installing tidyverse actually install several packages.
+Once packages are installed, you can load them into R
+and you do not need to install them again,
+unless you install a fresh version of R. Then you have to start again.
+Remember packages are installed in R, not RStudio.
+It is helpful to have a script that installs all the packages you need
+because if you need to perform a fresh install of R,
+you can reinstall all your packages by simply running this script.
+You can see all the packages you have installed using the following command.
+
+Video 2
+There are many editors, specifically made for coding.
+These are useful, because color and indentation are automatically
+added to make code more readable.
+RStudio is one of these editors, and it was specifically developed for R. One
+main advantage provided by RStudio over other editors
+is that we can test our code easily as we edit our scripts.
+Here we show an example.
+Let's start by opening a new script as we did before.
+And next step is to give the script a name.
+We can do this through the editor by saving the current new unnamed script
+like this.
+You can do this by clicking on the icon, or you can use the keybinding control
+S on Windows or command S on the Mac.
+We will call the script of myfirstscript.r like this.
+Now we're going to start editing our script.
+The first lines of code in an R script are typically
+dedicated to loading the libraries we will use.
+Another useful RStudio feature is that once you type library,
+it starts to auto complete with the libraries we have installed.
+You can see that by trying it out yourself like this.
+Type library parentheses TI, and see what happens.
+Another feature you may have noticed is that when you type library parentheses,
+the second parentheses is automatically added.
+This will help you avoid one of the most common errors in coding,
+forgetting to close parentheses.
+Now you can continue to write code.
+As an example, we will make a graph showing
+murder totals versus population totals by state as we did in another course.
+Once you're done writing the code, needed to make this plot,
+you can try it out by sourcing in the code.
+To do this, you can click on the run button
+on the upper right side of the editing pane.
+You can also use the keybinding control shift enter on Windows
+and command shift return on the Mac, like this.
+Once you run the code, you will see it appears in the R console.
+And in this case, the generated plot appears in the plot pane.
+Note that the plot pane has a useful interface that
+permits you to click back and forward across different plots,
+zoom in into the plot or save the plot as a file.
+One final little trick, if you want to test out code line by line,
+you can do this.To run one line at a time, instead of the entire script,
+you can use control enter on Windows or command return on the Mac.
+
+Video 3
+You can change the look and functionality of RStudio
+quite a bit.
+To change the global options, you can click on Tools then Global Options,
+like this.
+As an example, we show how to change the appearance of the editor.
+To do this, click on Appearance, and then notice the Editor Theme option.
+You can click on these and see examples of how your editor would
+look if you chose them.
+I personally like the Cobalt option.
+If I pick it, this is what the error starts looking like.
+As a second example, we show how to make a change that we highly recommend,
+and this is to change the Save workspace to R. RData on exit to Never,
+and uncheck the Restore .RData into workspace at start.
+By default, R saves all the objects you have created into the file called
+.RData.
+This is done so that when you restart the session in the same folder,
+it loads these objects.
+But we find this causes confusion, especially when we share code with
+colleagues and assume that they have this .RData file.
+To change these options, make your general settings look like this.
+
+Video 4
+ A data analysis project is not always a data set and a script.
+It often involves several scripts.
+The data may be saved across different files,
+and it is often convenient to save intermediate files.
+RStudio projects provide a way to keep all this organized in one folder.
+We will later learn how RStudio facilities
+sharing work of these projects.
+To organize yourself on a computer, it will be essential
+that you understand how your file system is organized.
+A systematically organized file system can greatly increase your productivity,
+especially if you work on more than one project at a time.
+In a later video, we introduce you to how Unix provides a powerful tool
+to do this.
+In this video, we will create a folder in a default
+location for illustrative purposes.
+But once you become a regular R user, you
+will want to think carefully about the best location for the folder
+in which you will keep a new project.
+To start a project, you click on File and then New Project.
+It looks like this.
+And unless you have a pre-selected folder to save the work,
+you will select the New Directory option.
+Then, for a data analysis project, you usually select the New Project option.
+Now, you will have to decide on the location
+of the folder it will be associated with your project and the name
+of the folder.
+When choosing a folder name, make sure it
+has a meaningful name that will help you remember what the project is about.
+As with files, we recommend using lower case letters, no spaces,
+and using hyphens to separate words.
+We will call the folder for this project,
+just as an example, my-first-project.
+Note that this will generate a file called my-first-project dot R-p-r-o-j--
+R project.
+And the folder associated with that project.
+We will see how this is useful shortly.
+You will be given options on where this folder should be on your file system.
+In this example, we will place it in a Home folder,
+but this is generally not a good practice.
+Later, we will learn better ways to do this.
+As we will describe in more detail later,you want to organize your file system following a hierarchical approach.
+And you might have a folder called Projects,
+where you keep a folder for each of your projects.
+Now when you start using RStudio with a project,
+you will see in the upper right corner the project name.
+This will remind you what project this particular RStudio session belongs to.
+When you open an RStudio session with no project, it will say Project:(None).
+When working on a project, all files will be saved
+and searched for in the folder associated with that project.
+Here, we show an example of a script that we wrote and saved with the name
+code.R. Note that if you use a meaningful name for the project,
+we can be a little bit less informative when picking names for the files.
+Although we did not do it here, note that you
+can have several scripts open at once.
+Another advantage of R projects is that it
+saves a file that if you click on it, it automatically opens the project.
+This file will be in the folder where you started the project.
+Once you get to that folder, you'll see are file with the suffix R-P-R-O-J,
+R project.
+In this case, the file is called my-first-project.Rproj.
+And you double click on it, and it starts RStudio
+on the project with the file that we were already editing.
