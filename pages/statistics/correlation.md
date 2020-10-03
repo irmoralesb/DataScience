@@ -4,6 +4,7 @@
 
 * Positive correlation: if the values of the variables increase or decrease.
 * Negative correlation: if one variable value increases while the another one decreases.
+* **Useful only** when the variables have a linear correlation
 
 ## Correlation Coefficient
 
@@ -16,8 +17,6 @@
 
 <!-- $r=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s_xs_y}$ --> <img style="transform: translateY(0.25em);" src="../../svg/TrZ97JYpff.svg"/>
 
-> Useful only when the variables have a linear correlation
-
 ## Correlation Matrix
 
 * It contains the correlation between multiple variables.
@@ -28,11 +27,9 @@
 
 Example
 
-
-![Correlation table](../images/CorrelationTable.png)
+![Correlation table](../images/statistics/correlation_table.png)
 
 ### Correlation Graph
 Example
 
-
-![Correlation graph](../images/CorrelationGraph.png)
+![Correlation graph](../images/statistics/correlation_graph.png)
