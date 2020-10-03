@@ -10,6 +10,3 @@
 * Categorical: Data that can take on only a specific set of values representing a set of possible categories
   * Binary: Special case of categorical data with just two categories
   * Ordinal: Categorical data that has an explicit ordering
-
-
-[Basic Statistical Metrics](BasicStatisticalMetrics.md)
