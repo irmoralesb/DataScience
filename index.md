@@ -9,6 +9,7 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
 ## My Notes
 
 * Probability and Statistics
+  * [Correlation](/pages/statistics/correlation.md)
 * Exploratory Data Analisys
   * Charts And Plots
     * [Histograms](/pages/eda/charts/Histograms.md)
