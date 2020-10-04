@@ -1,7 +1,7 @@
 # Histograms
 
 
-![Histograms](../../images/eda/histogram.png)
+![Histograms](../../images/statistics/histogram.png)
 
 ## Description
 
@@ -48,7 +48,7 @@ _ = plt.ylabel("Y axis label")
 plt.show()
 ```
 
-![Histogram with Seaborn](../../images/eda/histogramsns.png)
+![Histogram with Seaborn](../../images/statistics/histogramsns.png)
 
 ## Code Example
 

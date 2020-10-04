@@ -2,7 +2,7 @@
 
 ## Data Types
 
-![Diagrams Types](../images/statistics/datatypes.png)
+![Diagrams Types](../../images/statistics/datatypes.png)
 
 * Numeric: Data that can take on any value in an interval
   * Continous: Data that can take any value in a range

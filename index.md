@@ -9,9 +9,10 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
 ## My Notes
 
 * Probability and Statistics
-  * [Elements of Structured Data](/pages/statistics/elements_of_structured_data.md)
-  * [Moments of Distribution](/pages/statistics/moments_of_distribution.md)
-  * [Correlation](/pages/statistics/correlation.md)
-* Exploratory Data Analisys
   * Charts And Plots
-    * [Histograms](/pages/eda/charts/histograms.md)
+    * [Histograms](/pages/statistics/charts/histograms.md)
+  * Concepts
+    * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
+    * [Moments of Distribution](/pages/statistics/concepts/moments_of_distribution.md)
+    * [Correlation](/pages/statistics/concepts/correlation.md)
+
