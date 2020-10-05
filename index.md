@@ -10,6 +10,8 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
 
 * Probability and Statistics
   * Charts And Plots
+    * [Basic Chart](/pages/statistics/charts/basic_chart.md)
+    * [Bar Chart](/pages/statistics/charts/bar_chart.md)
     * [Histograms](/pages/statistics/charts/histograms.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
