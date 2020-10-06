@@ -29,7 +29,6 @@ Python Code snipet to set number of bins based on the edges
 plt.hist(df["column"], bins=10)
 ```
 
-
 ## Python Libraries
 
 * Matplotlib
@@ -50,7 +49,7 @@ plt.show()
 
 ![Histogram with Seaborn](../../images/statistics/histogramsns.png)
 
-## Code Example
+## Matplotlib & Seaborn - Python
 
 Python code snipet
 
@@ -61,4 +60,18 @@ _ = plt.xlabel("X axis label")
 _ = plt.ylabel("Y axis label")
 plt.show()
 ```
+
+## Lattice - R
+
+Create a part-of-whole frequency bar chart
+
+``` r
+histogram(
+  x = ~Rating,
+  data = movies,
+  main = "Percentage of Movies by Rating"
+)
+```
+
+![](../../images/statistics/histogram_lattice_1.png)
 
