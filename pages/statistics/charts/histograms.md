@@ -9,12 +9,14 @@
 
 ## Highlights
 
-### Bins 
+  * Shows distribution of values by grouping them in **bins**
+    * Number of bins is important, a default value is 10. 
+    * Choosing too many or too few bins can affect the way you see the data
+    * A rule for choosing the number of bins is to use the **square root of the number of samples**
+  * Location
+  * Shape of data  
 
-* Number of bins is important, a default value is 10. 
-* Choosing too many or too few bins can affect the way you see the data
-* A rule for choosing the number of bins is to use the **square root of the number of samples**
-
+## Example
 
 Python Code snipet to set number of bins based on the edges
 

@@ -11,12 +11,18 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
 * Probability and Statistics
   * Charts And Plots
     * [Chart Types](/pages/statistics/charts/chart_types.md)
-    * [Basic Chart](/pages/statistics/charts/basic_chart.md)
-    * [Bar Chart](/pages/statistics/charts/bar_chart.md)
-    * [Frequency Bar Chart](frequency_bar_chart.md)
-    * [Cleveland Plot](cleveland_dot_chart.md)
-    * [Pie Chart](pie_chart.md)
-    * [Histograms](/pages/statistics/charts/histograms.md)
+    * [R Chart Libraries](/pages/statistics/charts/r_chart_libraries.md)
+    * Qualitative Univariate Analysis
+      * [Bar Chart](/pages/statistics/charts/bar_chart.md)
+      * [Frequency Bar Chart](frequency_bar_chart.md)
+      * [Cleveland Plot](cleveland_dot_chart.md)
+      * [Pie Chart](pie_chart.md)
+    * Quantitative Univariate Analysis
+      * [Histograms](/pages/statistics/charts/histograms.md)
+      * [Box Plot](pages/statistics/charts/box_plot.md)
+      * [Density Plot](pages/statistics/charts/density_plot.md)
+      * [Dot Plot](pages/statistics/charts/dot_plot.md)
+      * [Jitter Plot](pages/statistics/charts/jitter_plot.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
     * [Moments of Distribution](/pages/statistics/concepts/moments_of_distribution.md)
