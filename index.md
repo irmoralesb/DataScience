@@ -27,9 +27,9 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
     * Qualitative Bivariate Analysis
       * [Grouped Frequency Bar Chart](pages/statistics/charts/grouped_frequency_bar_chart.md)
       * [Stacked Frequency Bar Chart](pages/statistics/charts/stacked_frequency_bar_chart.md)
-      * [100% Stacked Frequency Bar Chart]()
-      * [Spine Plot]()
-      * [Mosaic Plot]()
+      * [100% Stacked Frequency Bar Chart](pages/statistics/charts/100_staked_frequency_bar_chart.md)
+      * [Spine Plot](pages/statistics/charts/spined_plot.md)
+      * [Mosaic Plot](pages/statistics/charts/mosaic_plot.md)
       
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)

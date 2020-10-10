@@ -48,7 +48,7 @@ This focus on categories or non-numeric variables, and in this case we are inter
   * We can use a contingency table, for instance, the intersection between cols and rows
   * Use of marginal frequencies
   * Use relative frequency
-    
+
     
 **Marginal Frequency**: That is the total columns or rows, it may be count, sum, etc.  
 
@@ -64,7 +64,7 @@ This focus on categories or non-numeric variables, and in this case we are inter
 
   * [Grouped Frequency Bar Chart](grouped_frequency_bar_chart.md)
   * [Stacked Frequency Bar Chart](stacked_frequency_bar_chart.md)
-  * [100% Stacked Frequency Bar Chart]()
-  * [Spine Plot]()
-  * [Mosaic Plot]()
+  * [100% Stacked Frequency Bar Chart](100_staked_frequency_bar_chart.md)
+  * [Spine Plot](spined_plot.md)
+  * [Mosaic Plot](mosaic_plot.md)
       
