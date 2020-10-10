@@ -18,11 +18,13 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
       * [Cleveland Plot](cleveland_dot_chart.md)
       * [Pie Chart](pie_chart.md)
     * Quantitative Univariate Analysis
-      * [Histograms](/pages/statistics/charts/histograms.md)
-      * [Box Plot](pages/statistics/charts/box_plot.md)
-      * [Density Plot](pages/statistics/charts/density_plot.md)
       * [Dot Plot](pages/statistics/charts/dot_plot.md)
       * [Jitter Plot](pages/statistics/charts/jitter_plot.md)
+      * [Box Plot](pages/statistics/charts/box_plot.md)
+      * [Histograms](/pages/statistics/charts/histograms.md)
+      * [Density Plot](pages/statistics/charts/density_plot.md)
+      * [All Togheter](pages/statistics/charts/quantitative_univariate_all_in_one.md)
+      
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
     * [Moments of Distribution](/pages/statistics/concepts/moments_of_distribution.md)

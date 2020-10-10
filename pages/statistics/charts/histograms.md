@@ -31,10 +31,7 @@ Python Code snipet to set number of bins based on the edges
 plt.hist(df["column"], bins=10)
 ```
 
-## Python Libraries
-
-* Matplotlib
-* Seaborn
+## Matplotlib & Seaborn Libraries - Python
 
 Seaborn has plots and predefined themes.
 
@@ -51,17 +48,10 @@ plt.show()
 
 ![Histogram with Seaborn](../../images/statistics/histogramsns.png)
 
-## Matplotlib & Seaborn - Python
 
-Python code snipet
+## Core R Library
 
-```python
-import matplotlib.pyplot as plt
-_ = plt.hist(df["variable"])
-_ = plt.xlabel("X axis label")
-_ = plt.ylabel("Y axis label")
-plt.show()
-```
+
 
 ## Lattice - R
 
@@ -77,3 +67,73 @@ histogram(
 
 ![](../../images/statistics/histogram_lattice_1.png)
 
+
+## Environment Setup for R
+
+``` r
+movies = read.csv("../data/Movies.csv")
+```
+
+## Core R Library
+
+``` r
+hist(
+  x = movies$Runtime,
+  main= "Distribution of Movie Runtimes",
+  xlab = "Runtime in minutes"
+)
+```
+
+![](../../images/statistics/histogram_chart_1.png)
+
+Creating a more course-grain histogram
+
+``` r
+hist(
+  x= movies$Runtime,
+  main = "Distribution of Movies Runtimes",
+  breaks = 10,
+  xlab = "Runtime in minutes"
+)
+```
+
+![](../../images/statistics/histogram_chart_2.png)
+
+Creating a more fine-grain histogram
+
+``` r
+hist(
+  x = movies$Runtime,
+  main = "Distribution of Movies Runtimes",
+  breaks = 30,
+  xlab = "Runtime in minutes"
+)
+```
+
+![](../../images/statistics/histogram_chart_3.png)
+
+## Lattice Library
+
+``` r
+histogram(
+  x = ~Runtime,
+  data = movies,
+  main = main_title,
+  xlab = x_lab)
+```
+
+![](../../images/statistics/histogram_chart_4.png)
+
+## GGPlot Library
+
+
+``` r
+ggplot(
+data = movies,
+aes(x = Runtime)) +
+geom_histogram(binwidth = 10) +
+  ggtitle(main_title) + 
+  xlab(x_lab)
+```
+
+![](../../images/statistics/histogram_chart_5.png)
