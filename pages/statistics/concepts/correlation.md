@@ -15,7 +15,7 @@
   * 0 No correlation at all
 * Formula
 
-<!-- $r=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s_xs_y}$ --> <img style="transform: translateY(0.25em);" src="../../../svg/TrZ97JYpff.svg"/>
+<!-- $r=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s_xs_y}$ --> <div style="background:white;text-align:center"><img style="transform: translateY(0.25em);" src="../../../svg/TrZ97JYpff.svg"/></div>
 
 ## Correlation Matrix
 

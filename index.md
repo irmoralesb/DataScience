@@ -24,6 +24,12 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
       * [Histograms](/pages/statistics/charts/histograms.md)
       * [Density Plot](pages/statistics/charts/density_plot.md)
       * [All Togheter](pages/statistics/charts/quantitative_univariate_all_in_one.md)
+    * Qualitative Bivariate Analysis
+      * [Grouped Frequency Bar Chart](pages/statistics/charts/grouped_frequency_bar_chart.md)
+      * [Stacked Frequency Bar Chart](pages/statistics/charts/stacked_frequency_bar_chart.md)
+      * [100% Stacked Frequency Bar Chart]()
+      * [Spine Plot]()
+      * [Mosaic Plot]()
       
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)

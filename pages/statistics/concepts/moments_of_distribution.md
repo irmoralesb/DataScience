@@ -2,10 +2,10 @@
 
 In statistics there are four:
 
-1) Location
-2) Distribution
-3) Skewness
-4) kurtosis
+    1) Location
+    2) Distribution
+    3) Skewness
+    4) kurtosis
 
 
 ## Estimates of Location

@@ -1,8 +1,9 @@
 # Elements of Structured Data
 
 ## Data Types
-
-![Diagrams Types](../../images/statistics/datatypes.png)
+<div style="background:white; text-align:center">
+<img src="../../images/statistics/datatypes.png"/>
+</div>
 
 * Numeric: Data that can take on any value in an interval
   * Continous: Data that can take any value in a range
