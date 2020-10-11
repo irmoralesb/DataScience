@@ -7,12 +7,6 @@ The bar width of each category on X-axis changes according to the proportion of 
 * Relative frequency
 * Both variables
 
-## We Can Answers Questios Like
-
-
-  1. How many award-winning movies are in each rating category?
-  2. What proportion of movies in each category have won awards?
-
 ## Environment Setup
 
 Load data and create a contingency table

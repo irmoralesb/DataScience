@@ -6,12 +6,7 @@ it is pretty much the same than Grouped frequency bar chart, but we stretch the 
 
 * Relative frequency
 * One variable
-  
-## We Can Answer Questions Like:
 
-    1. How many award-winning movies are in each rating category?
-    2. What proportion of movies in each category have won awards?
-     
 ## Environment Setup
 
 

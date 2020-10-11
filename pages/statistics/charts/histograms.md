@@ -16,7 +16,7 @@
   * Location
   * Shape of data  
 
-## Example
+## Matplotlib - Python
 
 Python Code snipet to set number of bins based on the edges
 
@@ -47,25 +47,6 @@ plt.show()
 ```
 
 ![Histogram with Seaborn](../../images/statistics/histogramsns.png)
-
-
-## Core R Library
-
-
-
-## Lattice - R
-
-Create a part-of-whole frequency bar chart
-
-``` r
-histogram(
-  x = ~Rating,
-  data = movies,
-  main = "Percentage of Movies by Rating"
-)
-```
-
-![](../../images/statistics/histogram_lattice_1.png)
 
 
 ## Environment Setup for R

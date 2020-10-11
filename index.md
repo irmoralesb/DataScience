@@ -30,7 +30,17 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
       * [100% Stacked Frequency Bar Chart](pages/statistics/charts/100_staked_frequency_bar_chart.md)
       * [Spine Plot](pages/statistics/charts/spined_plot.md)
       * [Mosaic Plot](pages/statistics/charts/mosaic_plot.md)
-      
+    * Quantitative Bivariate Analisys
+      * [Scatter Plot](pages/statistics/charts/scatter_plot.md)
+      * [Binned Frequency Heatmap]()
+      * [Hexagonal Binned Frequency Heatmap]()
+      * [Countour Plot]()
+      * [Level Plot]()
+      * [Mesh Plot]()
+      * [Surface Plot]()
+      * [Step Chart]()
+      * [Line Chart]()
+      * [Area chart]()
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
     * [Moments of Distribution](/pages/statistics/concepts/moments_of_distribution.md)

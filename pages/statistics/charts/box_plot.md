@@ -13,14 +13,6 @@
 * Spread
 * Range
 
-## We Can Answer Questions Like:
-
-  1. What is the average movie runtime?
-  2. Are there any outliers?
-  3. How spread out are the movie runtimes?
-  4. What is the shape of the runtime distribution?
-
-
 ## Setup environment
 
 ```r

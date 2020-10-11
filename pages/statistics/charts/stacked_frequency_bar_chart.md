@@ -11,11 +11,6 @@ It is similar than the **Frequency Bar Chart**, but the bar are in stack.
 
 > Chose this data visualization when comparing the marginal frequency of one category is more important than comparing the joint frequency across categories.
 
-## We Can Asnwer Questions like
-
-  1. How many award-winning movies are in each rating category?
-  2. What proportion of movies in each category have won awards?
-
 ## Environment Setup
 
 

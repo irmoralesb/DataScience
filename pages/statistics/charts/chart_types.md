@@ -11,7 +11,7 @@ This focus on categories or non-numeric variables, and in this case we are inter
 * Frequency
 * Average
     
-### It can answer questions like
+### It Can Answer Questions Like
 
     1. How many movies in each rating category?  
     2. What proporcion of movies have won awards?
@@ -30,6 +30,12 @@ This focus on categories or non-numeric variables, and in this case we are inter
 * Spread of the data
 * Shape of the data
 
+### It Can Answer Questions Like
+
+  1. What is the average movie runtime?
+  2. Are there any outliers?
+  3. How spread out are the movie runtimes?
+  4. What is the shape of the runtime distribution?
 
 ### Charts & Plots
 
@@ -60,6 +66,11 @@ This focus on categories or non-numeric variables, and in this case we are inter
   * Two-way table
   * Cross tabulation matrix
 
+### It Can Answer Questions Like
+
+  1. How many award-winning movies are in each rating category?
+  2. What proportion of movies in each category have won awards?
+
 ### Charts & Plots
 
   * [Grouped Frequency Bar Chart](grouped_frequency_bar_chart.md)
@@ -67,4 +78,32 @@ This focus on categories or non-numeric variables, and in this case we are inter
   * [100% Stacked Frequency Bar Chart](100_staked_frequency_bar_chart.md)
   * [Spine Plot](spined_plot.md)
   * [Mosaic Plot](mosaic_plot.md)
-      
+
+## Quantitive Bivariate Analysis
+
+*In this topic we are covering the relationship between two numeric variables.*
+  
+### What Does It Measure?
+
+  * Interested in how two numeric variables are related
+  * Location, Spread and Shape of the distribution at the same time
+  * Time series analysis
+
+
+### It Can Answer Questions Like
+
+  1. How are runtime and box-office revenue related?
+  2. Has the average box-office revenue changed over time?
+
+### Charts & Plots
+
+* [Scatter Plot](scatter_plot.md)
+* [Binned Frequency Heatmap]()
+* [Hexagonal Binned Frequency Heatmap]()
+* [Countour Plot]()
+* [Level Plot]()
+* [Mesh Plot]()
+* [Surface Plot]()
+* [Step Chart]()
+* [Line Chart]()
+* [Area chart]()

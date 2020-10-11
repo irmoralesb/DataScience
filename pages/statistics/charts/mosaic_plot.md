@@ -8,12 +8,6 @@ Similar to Spine plot, the key difference is it may display intersection of cate
 * Relative frequency
 * Both variables
 
-## We Can Answer Questions Like
-
-  1. How many award-winning movies are in each rating category?
-  2. What proportion of movies in each category have won awards?
-
-
 ## Environment Setup
 
 Load data and create a contingency table

@@ -12,11 +12,6 @@ It allows us to compare two variables, for instance we can see on X-axis the rat
   * Part of whole
 
 
-## We Can Answer Questions Like
-
-  1. How many award-winning movies are in each rating category?
-  2. What proportion of movies in each category have won awards?
-
 ## Environment Setup
 
 Load data and create a contingency table

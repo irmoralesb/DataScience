@@ -9,16 +9,7 @@
 * Discrete values
 
 
-## We Can Answer Questions like
-
-  1. What is the average movie runtime?
-  2. Are there any outliers?
-  3. How spread out are the movie runtimes?
-  4. What is the shape of the runtime distribution?
-
-
 ## Setting up environment
-
 
 ```r
 movies = read.csv("../data/Movies.csv")

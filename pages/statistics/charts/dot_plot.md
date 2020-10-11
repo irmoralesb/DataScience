@@ -6,12 +6,6 @@
 * Simple - Show few data, for instance: min/max and where are located the most of the observations
 * Small size
 
-## Help us Answer Questions like:
-
-1. What is the average movie runtime?
-2. Are there any outliers?
-3. How spread out are the movie runtimes?
-4. What is the shape of the runtime distribution?
 
 ## Core R Library
 
