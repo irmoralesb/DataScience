@@ -98,10 +98,10 @@ This focus on categories or non-numeric variables, and in this case we are inter
 ### Charts & Plots
 
 * [Scatter Plot](scatter_plot.md)
-* [Binned Frequency Heatmap]()
-* [Hexagonal Binned Frequency Heatmap]()
-* [Countour Plot]()
-* [Level Plot]()
+* [Binned Frequency Heatmap](binned_frequency_heatmap.md)
+* [Hexagonal Binned Frequency Heatmap](binned_hex_heatmap.md)
+* [Countour Plot](contour_plot.md)
+* [Level Plot](level_plot.md)
 * [Mesh Plot]()
 * [Surface Plot]()
 * [Step Chart]()
