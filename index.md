@@ -42,10 +42,10 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
       * [Line Chart](pages/statistics/charts/line_chart.md)
       * [Area chart](pages/statistics/charts/area_chart.md)
     * Quantitative & Qualitative Bivariate Analysis
-      * [Bar Chart](bar_chart_bivariate.md)
-      * [Bivariate Box Plot](box_plot_bivariate.md)
-      * [Notched Box Plot](notched_box_plot.md)
-      * [Bivariate Violin Plot](violin_plot_bi.md)
+      * [Bar Chart](pages/statistics/charts/bar_chart_bivariate.md)
+      * [Bivariate Box Plot](pages/statistics/charts/box_plot_bivariate.md)
+      * [Notched Box Plot](pages/statistics/charts/notched_box_plot.md)
+      * [Bivariate Violin Plot](pages/statistics/charts/violin_plot_bi.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
     * [Moments of Distribution](/pages/statistics/concepts/moments_of_distribution.md)
