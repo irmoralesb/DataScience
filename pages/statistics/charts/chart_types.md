@@ -4,8 +4,6 @@
 
 This focus on categories or non-numeric variables, and in this case we are interested on only one variable, and we are interested on, for instance:  
 
-## Univariate Visualization for a Qualitative Variable
-
 ### What does it measure?
 
 * Frequency
@@ -22,7 +20,7 @@ This focus on categories or non-numeric variables, and in this case we are inter
 * [Cleveland Plot](cleveland_dot_chart.md)
 * [Pie Chart](pie_chart.md)
 
-## Univariate Visualization for a Quantitative Variable
+## Quantitative Univariate Analysis
 
 ### What does it measure?
 
@@ -107,3 +105,28 @@ This focus on categories or non-numeric variables, and in this case we are inter
 * [Step Chart](step_charts.md)
 * [Line Chart](line_chart.md)
 * [Area chart](area_chart.md)
+
+## Qualitative and Quantitative Bivariate Analysis
+
+> Visualizing both a categorical and a numeric variable*
+
+For this type of analysis we group numeric variable using categorical variable, usually we use an aggregate value.
+
+### What Does It Measure?
+
+1) Look for a aggregate value
+2) Gruop by category
+3) Use the result to compare them
+
+### It Can Answer Questions Like
+
+ 1. How does average box-office revenue compare across raings?
+ 2. How similar are the spreads of box-office revenue across ratings?
+ 3. How do their shapes compare?
+
+### Charts & Plots
+
+* [Bar Chart](bar_chart_bivariate.md)
+* [Bivariate Box Plot](box_plot_bivariate.md)
+* [Notched Box Plot](notched_box_plot.md)
+* [Bivariate Violin Plot](violin_plot_bi.md)
