@@ -130,3 +130,6 @@ For this type of analysis we group numeric variable using categorical variable, 
 * [Bivariate Box Plot](box_plot_bivariate.md)
 * [Notched Box Plot](notched_box_plot.md)
 * [Bivariate Violin Plot](violin_plot_bi.md)
+
+### Notes
+* [General Analysis Notes](general_analysis_notes.md)
