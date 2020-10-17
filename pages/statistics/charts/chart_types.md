@@ -131,41 +131,75 @@ For this type of analysis we group numeric variable using categorical variable, 
 * [Notched Box Plot](notched_box_plot.md)
 * [Bivariate Violin Plot](violin_plot_bi.md)
 
-## Facet Technique
+
+## Multivariate Data Visualization
+
+### Facet Technique
 
 Process of creating multiple plots in a single chart, they may be arranged in row and or columns.  
 
-### Horizontal Facets
+#### Horizontal Facets
 
 * Share y-axes
 * Compressed x-axes
 * Compare y-axes
     
-### Vertical Facets
+#### Vertical Facets
 
 * Shared x-axes
 * Compressed y-axes
 * Compare x-axes
 
-### Wrapped Facets
+#### Wrapped Facets
 
 * Wrap to rows
 * Shared axes
 * Equal importance compare x-axes and y-axes
     
-### Two-dimensional Grid Facets
+#### Two-dimensional Grid Facets
 
 * Four or more variables
 * Shared axes
 * Variable compression
 * Multiple orientation
 
-### Charts & Plots
+#### Charts & Plots
 
 * [Horizontal Facet](facet_horizontal.md)
 * [Vertical Facet](facet_vertical.md)
 * [Wrapped Facet](facet_wrapped.md)
 * [2D Facetted Grid](facet_2d_grid.md)
+
+## Qualitative Trivariate Analysis
+
+### What Does It Measure?
+
+* Three categorical variables
+* Frequency of observations
+* Three-way contingency table
+* Flat or Partial Contingency table
+* Case Wise Contingency table (this is the preferred format for Lattice & ggplot)
+  - Tidy format.
+
+### I Can Answer Questions Like
+
+1) How many movies based on rating, awards, and distribution?
+
+### Charts & Plots
+
+  * [Grouped bar chart](grouped_frequency_bar_chart_trivariate.md)
+  * [Stacked bar chart]()
+  * [Frequency bar chart]()
+
+<!-- 
+  * [Faceted by 3rd variable]()
+* Faceted Stacked Frequency Bar Chart
+  * [Faceted by 3rd variable]()
+  * [Comparison of marginal frequencies]()
+* Faceted Frequency Bar Chart
+  * [Faceted by two variables]()
+  * [Multiple orientations]() -->
+
 
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)
