@@ -46,6 +46,12 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
       * [Bivariate Box Plot](pages/statistics/charts/box_plot_bivariate.md)
       * [Notched Box Plot](pages/statistics/charts/notched_box_plot.md)
       * [Bivariate Violin Plot](pages/statistics/charts/violin_plot_bi.md)
+    * Multivariate Data Visualization
+      * Facets
+        * [Horizontal Facets]()
+        * [Vertical Facets]()
+        * [Wrapped Facets]()
+        * [Two-dimensional Grid Facets]()
     * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)

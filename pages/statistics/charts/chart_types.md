@@ -131,5 +131,41 @@ For this type of analysis we group numeric variable using categorical variable, 
 * [Notched Box Plot](notched_box_plot.md)
 * [Bivariate Violin Plot](violin_plot_bi.md)
 
+## Facet Technique
+
+Process of creating multiple plots in a single chart, they may be arranged in row and or columns.  
+
+### Horizontal Facets
+
+* Share y-axes
+* Compressed x-axes
+* Compare y-axes
+    
+### Vertical Facets
+
+* Shared x-axes
+* Compressed y-axes
+* Compare x-axes
+
+### Wrapped Facets
+
+* Wrap to rows
+* Shared axes
+* Equal importance compare x-axes and y-axes
+    
+### Two-dimensional Grid Facets
+
+* Four or more variables
+* Shared axes
+* Variable compression
+* Multiple orientation
+
+### Charts & Plots
+
+* [Horizontal Facet](facet_horizontal.md)
+* [Vertical Facet](facet_vertical.md)
+* [Wrapped Facet](facet_wrapped.md)
+* [2D Facetted Grid](facet_2d_grid.md)
+
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)
