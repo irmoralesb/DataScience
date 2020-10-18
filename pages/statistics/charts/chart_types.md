@@ -212,5 +212,28 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 * [Faceted Bar Chart](faceted_bar_chart_2quan_1quan.md)
 * [Heat Map](heat_map_2quan_1qual.md)
 
+## Trivariate Analysis - 2 Qualitative and 1 Quantitative
+
+### What Does It Measure?
+  
+* 1 Categorical variables
+* 2 Numeric variable
+* Relationship by categories
+* Time series
+
+### I Can Answer Questions Like
+
+* How does critic score relate to box office in each rating category?
+* How has box office reveneu changed over time and rating category?
+
+### Charts & Plots
+
+* [Color-coded Scatter Plot](color_coded_scatter_plot.md)
+* [Shaped-coded Scatter Plot](shaped_coded_scatter_plot.md)
+* [Faceted Scatter Plot](faceted_scatter_plot.md)
+* [Multi-Series Line Chart](multiseries_line_chart.md)
+* [Stacked Area Chart](stacked_area_chart.md)
+* [Faceted Line Chart](faceted_line_chart.md)
+
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)

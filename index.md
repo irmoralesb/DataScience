@@ -56,12 +56,18 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
         * [Faceted Grouped Frequency Bar Chart](pages/statistics/charts/faceted_grouped_frequency_bar_chart.md)
         * [Faceted Stacked Frequency Bar Chart](pages/statistics/charts/facet_wrapped.md)
         * [Faceted Frequency Bar Chart](faceted_frequency_bar_chart.pages/statistics/charts/frequency_bar_chart.md)
-      * Trivariate Analysis - 2 Qualitative and 1 Quantitative
+      * Trivariate Analysis - 2 Qualitative and 1 Quantitative Variables
         * [Grouped Bar Chart](pages/statistics/charts/grouped_bar_chart_2qual_1quan.md)
         * [Stacked Bar Chart](pages/statistics/charts/stack_bar_chart_2qual_1quan.md)
         * [Faceted Bar Chart](pages/statistics/charts/faceted_bar_chart_2quan_1quan.md)
         * [Heat Map](pages/statistics/charts/heat_map_2quan_1qual.md)
-
+      * Trivariate Analysis - 1 Qualitative and 2 Quantitative Variables
+        * [Color-coded Scatter Plot](pages/statistics/charts/color_coded_scatter_plot.md)
+        * [Shaped-coded Scatter Plot](pages/statistics/charts/shaped_coded_scatter_plot.md)
+        * [Faceted Scatter Plot](pages/statistics/charts/faceted_scatter_plot.md)
+        * [Multi-Series Line Chart](pages/statistics/charts/multiseries_line_chart.md)
+        * [Stacked Area Chart](pages/statistics/charts/stacked_area_chart.md)
+        * [Faceted Line Chart](pages/statistics/charts/faceted_line_chart.md)
     * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
