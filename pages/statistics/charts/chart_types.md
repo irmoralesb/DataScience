@@ -181,7 +181,7 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 * Case Wise Contingency table (this is the preferred format for Lattice & ggplot)
   - Tidy format.
 
-### I Can Answer Questions Like
+### It Can Answer Questions Like
 
 1) How many movies based on rating, awards, and distribution?
 
@@ -200,7 +200,7 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 * Aggregate measure (sum, min, max, avg, etc...)
 * Multiple table formats
 
-### I Can Answer Questions Like
+### It Can Answer Questions Like
 
 1) How does box office revenew compare across award status and rating?
 2) Are there any patterns?
@@ -212,7 +212,7 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 * [Faceted Bar Chart](faceted_bar_chart_2quan_1quan.md)
 * [Heat Map](heat_map_2quan_1qual.md)
 
-## Trivariate Analysis - 2 Qualitative and 1 Quantitative
+## Trivariate Analysis - 1 Qualitative and 2 Quantitative
 
 ### What Does It Measure?
   
@@ -221,7 +221,7 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 * Relationship by categories
 * Time series
 
-### I Can Answer Questions Like
+### It Can Answer Questions Like
 
 * How does critic score relate to box office in each rating category?
 * How has box office reveneu changed over time and rating category?
@@ -234,6 +234,44 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 * [Multi-Series Line Chart](multiseries_line_chart.md)
 * [Stacked Area Chart](stacked_area_chart.md)
 * [Faceted Line Chart](faceted_line_chart.md)
+
+## Quantitative Trivariate Analysis
+
+### What Does It Measure?
+
+* Three numeric variables
+* Relationship among them
+
+### It Can Answer Questions Like
+
+* We need to convert numeric data into categorical, using ranges.
+  - Named: binning, discretization, or quantization.
+  
+### Charts & Plots
+
+* [Gradient Color-Scale Scatter Plot](gradient_color_scale_scatter_plot.md)
+* [Divergent Color-Scale Scatter Plot](divergent_color_scale_scatter_plot.md)
+* [Bubble Chart](bubble_chart.md)
+* [3D Scatter Plot](3d_scatter_plot.md)
+
+## Multivariate Analysis
+
+### What Does It Measure?
+
+* Visualizing Many Variables
+* Relationships
+* Patterns
+  
+### It Can Answer Questions Like
+
+* Are there correlations?
+* Are there any patterns?
+
+### Plots & Charts
+
+* [Correlogram](correlogram.md)
+* [Scatter Plot Matrix](scatter_plot_matrix.md)
+* [Parallel Coordinates Plot](parallel_coordinates_plot.md)
 
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)

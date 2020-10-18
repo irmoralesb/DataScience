@@ -68,6 +68,15 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
         * [Multi-Series Line Chart](pages/statistics/charts/multiseries_line_chart.md)
         * [Stacked Area Chart](pages/statistics/charts/stacked_area_chart.md)
         * [Faceted Line Chart](pages/statistics/charts/faceted_line_chart.md)
+      * Quantitative Trivariate Analysis
+        * [Gradient Color-scale Scatter Plot](pages/statistics/charts/gradient_color_scale_scatter_plot.md)
+        * [Divergent Color-scale Scatter Plot](pages/statistics/charts/divergent_color_scale_scatter_plot.md)
+        * [Bubble Chart](pages/statistics/charts/bubble_chart.md)
+        * [3D Scatter Plot](pages/statistics/charts/3d_scatter_plot.md)
+      * Multivariate Analysis
+        * [Correlogram](pages/statistics/charts/correlogram.md)
+        * [Scatter Plot Matrix](pages/statistics/charts/scatter_plot_matrix.md)
+        * [Parallel Coordinates Plot](pages/statistics/charts/parallel_coordinates_plot.md)
     * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
