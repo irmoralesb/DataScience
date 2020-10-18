@@ -57,7 +57,7 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
         * [Faceted Stacked Frequency Bar Chart](pages/statistics/charts/facet_wrapped.md)
         * [Faceted Frequency Bar Chart](faceted_frequency_bar_chart.pages/statistics/charts/frequency_bar_chart.md)
       * Trivariate Analysis - 2 Qualitative and 1 Quantitative
-        * [Grouped Bar Chart](/pages/statistics/charts/grouped_bar_chart_2qual_1quan.mdgrouped_bar_chart_2qual_1quan.md)
+        * [Grouped Bar Chart](pages/statistics/charts/grouped_bar_chart_2qual_1quan.md)
         * [Stacked Bar Chart](pages/statistics/charts/stack_bar_chart_2qual_1quan.md)
         * [Faceted Bar Chart](pages/statistics/charts/faceted_bar_chart_2quan_1quan.md)
         * [Heat Map](pages/statistics/charts/heat_map_2quan_1qual.md)
