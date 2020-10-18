@@ -47,11 +47,21 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
       * [Notched Box Plot](pages/statistics/charts/notched_box_plot.md)
       * [Bivariate Violin Plot](pages/statistics/charts/violin_plot_bi.md)
     * Multivariate Data Visualization
-      * Facets
-        * [Horizontal Facets]()
-        * [Vertical Facets]()
-        * [Wrapped Facets]()
-        * [Two-dimensional Grid Facets]()
+      * General Facets
+        * [Horizontal Facets](pages/statistics/charts/facet_horizontal.md)
+        * [Vertical Facets](pages/statistics/charts/facet_vertical.md)
+        * [Wrapped Facets](pages/statistics/charts/facet_wrapped.md)
+        * [Two-dimensional Grid Facets](pages/statistics/charts/facet_2d_grid.md)
+      * Qualitative Trivariate Analysis
+        * [Faceted Grouped Frequency Bar Chart](pages/statistics/charts/faceted_grouped_frequency_bar_chart.md)
+        * [Faceted Stacked Frequency Bar Chart](pages/statistics/charts/facet_wrapped.md)
+        * [Faceted Frequency Bar Chart](faceted_frequency_bar_chart.pages/statistics/charts/frequency_bar_chart.md)
+      * Trivariate Analysis - 2 Qualitative and 1 Quantitative
+        * [Grouped Bar Chart](/pages/statistics/charts/grouped_bar_chart_2qual_1quan.mdgrouped_bar_chart_2qual_1quan.md)
+        * [Stacked Bar Chart](pages/statistics/charts/stack_bar_chart_2qual_1quan.md)
+        * [Faceted Bar Chart](pages/statistics/charts/faceted_bar_chart_2quan_1quan.md)
+        * [Heat Map](pages/statistics/charts/heat_map_2quan_1qual.md)
+
     * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)

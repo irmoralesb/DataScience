@@ -1,5 +1,10 @@
 # Faceted Frequency Bar Chart
 
+## Highlights
+
+* Grouped bar chart
+* Faceted by 3rd variable
+
 ## Environment Setup
 
 ``` r

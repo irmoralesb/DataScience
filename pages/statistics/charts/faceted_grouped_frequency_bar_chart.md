@@ -1,7 +1,12 @@
-# Grouped Frequency Bar Chart Trivariate
+# Faceted Grouped Frequency Bar Chart
+
+## Highlights
+
+* Frequency bar chart
+* Faceted by two variables
+* Multiple orientations
 
 ## Environment Setup
-
 
 ``` r
 movies <- read.csv("../data/movies.csv")

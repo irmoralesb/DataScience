@@ -1,5 +1,11 @@
 # Faceted Stacked Frequency Bar Chart
 
+## Highlights
+
+* Stacked bar chart
+* Faceted by 3rd variable
+* Comparison of marginal frequencies
+
 ## Environment Setup
 
 ``` r

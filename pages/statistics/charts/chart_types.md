@@ -187,19 +187,30 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 
 ### Charts & Plots
 
-  * [Grouped bar chart](grouped_frequency_bar_chart_trivariate.md)
-  * [Stacked bar chart]()
-  * [Frequency bar chart]()
+* [Faceted Grouped Frequency Bar Chart](faceted_grouped_frequency_bar_chart.md)
+* [Faceted Stacked Frequency Bar Chart](faceted_stacked_frequency_bar_chart.md)
+* [Faceted Frequency Bar Chart](faceted_frequency_bar_chart.md)
 
-<!-- 
-  * [Faceted by 3rd variable]()
-* Faceted Stacked Frequency Bar Chart
-  * [Faceted by 3rd variable]()
-  * [Comparison of marginal frequencies]()
-* Faceted Frequency Bar Chart
-  * [Faceted by two variables]()
-  * [Multiple orientations]() -->
+## Trivariate Analysis - 2 Qualitative and 1 Quantitative
 
+### What Does It Measure?
+
+* 2 Categorical variables
+* 1 Numeric variable
+* Aggregate measure (sum, min, max, avg, etc...)
+* Multiple table formats
+
+### I Can Answer Questions Like
+
+1) How does box office revenew compare across award status and rating?
+2) Are there any patterns?
+
+### Charts & Plots
+
+* [Grouped Bar Chart](grouped_bar_chart_2qual_1quan.md)
+* [Stacked Bar Chart](stack_bar_chart_2qual_1quan.md)
+* [Faceted Bar Chart](faceted_bar_chart_2quan_1quan.md)
+* [Heat Map](heat_map_2quan_1qual.md)
 
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)
