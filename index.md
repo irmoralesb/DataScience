@@ -77,33 +77,36 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
         * [Correlogram](pages/statistics/charts/correlogram.md)
         * [Scatter Plot Matrix](pages/statistics/charts/scatter_plot_matrix.md)
         * [Parallel Coordinates Plot](pages/statistics/charts/parallel_coordinates_plot.md)
-      * Visualizing Spatial Data - Maps
-        * [Dot Density Map](pages/statistics/charts/maps_charts.md)
-        * [Contour Map](pages/statistics/charts/maps_charts.md)
-        * [Level Map](pages/statistics/charts/maps_charts.md)
-        * [Bubble Map](pages/statistics/charts/maps_charts.md)
-        * [Choropleth](pages/statistics/charts/maps_charts.md)
-        * [Map Projections](pages/statistics/charts/maps_charts.md)
-      * Visualizing Hierarchical Data
-        * [Tree Diagram](pages/statistics/charts/hierarchical_data.md)
-        * [Tree Graph](pages/statistics/charts/hierarchical_data.md)
-        * [Dendrogram](pages/statistics/charts/hierarchical_data.md)
-        * [Radial Tree](pages/statistics/charts/hierarchical_data.md)
-        * [Tree Map](pages/statistics/charts/hierarchical_data.md)
-      * Visualizing Graph and Network Data
-        * [Small Graph](pages/statistics/charts/small_graph.md)
-        * [Large Graph](pages/statistics/charts/large_graph.md)
-        * [Community Graph](pages/statistics/charts/community_graph.md)
-      * Visualizing Text Data
-        * [Frequency Word Cloud](pages/statistics/charts/frequency_word_cloud.md)
-        * [Quantitative Word Cloud](pages/statistics/charts/quantitative_word_cloud.md)
-        * [Colored Word Cloud](pages/statistics/charts/colored_word_cloud.md)
-      * Animating Data Visualization
-        * [Animation](pages/statistics/charts/animations.md)
-        * [Using Animation to tell a Story](pages/statistics/charts/animations.md)
-        * [Using Animation to Improve Perspective](pages/statistics/charts/animations.md)
-        * [Using Animation to Capture Attention](pages/statistics/charts/animations.md)
-    * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
+    * Visualizing Spatial Data - Maps
+      * [Dot Density Map](pages/statistics/charts/maps_charts.md)
+      * [Contour Map](pages/statistics/charts/maps_charts.md)
+      * [Level Map](pages/statistics/charts/maps_charts.md)
+      * [Bubble Map](pages/statistics/charts/maps_charts.md)
+      * [Choropleth](pages/statistics/charts/maps_charts.md)
+      * [Map Projections](pages/statistics/charts/maps_charts.md)
+    * Visualizing Hierarchical Data
+      * [Tree Diagram](pages/statistics/charts/hierarchical_data.md)
+      * [Tree Graph](pages/statistics/charts/hierarchical_data.md)
+      * [Dendrogram](pages/statistics/charts/hierarchical_data.md)
+      * [Radial Tree](pages/statistics/charts/hierarchical_data.md)
+      * [Tree Map](pages/statistics/charts/hierarchical_data.md)
+    * Visualizing Graph and Network Data
+      * [Small Graph](pages/statistics/charts/small_graph.md)
+      * [Large Graph](pages/statistics/charts/large_graph.md)
+      * [Community Graph](pages/statistics/charts/community_graph.md)
+    * Visualizing Text Data
+      * [Frequency Word Cloud](pages/statistics/charts/frequency_word_cloud.md)
+      * [Quantitative Word Cloud](pages/statistics/charts/quantitative_word_cloud.md)
+      * [Colored Word Cloud](pages/statistics/charts/colored_word_cloud.md)
+    * Animating Data Visualization
+      * [Animation](pages/statistics/charts/animations.md)
+      * [Using Animation to tell a Story](pages/statistics/charts/animations.md)
+      * [Using Animation to Improve Perspective](pages/statistics/charts/animations.md)
+      * [Using Animation to Capture Attention](pages/statistics/charts/animations.md)
+    * Interactive Visualization
+      * [Using Interactive](pages/statistics/charts/interactive.md)
+    * Notes
+      * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
     * [Moments of Distribution](/pages/statistics/concepts/moments_of_distribution.md)

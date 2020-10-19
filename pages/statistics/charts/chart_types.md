@@ -388,5 +388,11 @@ x
 * [Using Animation to Improve Perspective](animations.md)
 * [Using Animation to Capture Attention](animations.md)
 
+## Interactive
+
+### Plot & Charts
+* [Interactive](interactive.md)
+
+
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)
