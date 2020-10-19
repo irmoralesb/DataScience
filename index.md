@@ -90,6 +90,19 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
         * [Dendrogram](pages/statistics/charts/hierarchical_data.md)
         * [Radial Tree](pages/statistics/charts/hierarchical_data.md)
         * [Tree Map](pages/statistics/charts/hierarchical_data.md)
+      * Visualizing Graph and Network Data
+        * [Small Graph](pages/statistics/charts/small_graph.md)
+        * [Large Graph](pages/statistics/charts/large_graph.md)
+        * [Community Graph](pages/statistics/charts/community_graph.md)
+      * Visualizing Text Data
+        * [Frequency Word Cloud](pages/statistics/charts/frequency_word_cloud.md)
+        * [Quantitative Word Cloud](pages/statistics/charts/quantitative_word_cloud.md)
+        * [Colored Word Cloud](pages/statistics/charts/colored_word_cloud.md)
+      * Animating Data Visualization
+        * [Animation](pages/statistics/charts/animations.md)
+        * [Using Animation to tell a Story](pages/statistics/charts/animations.md)
+        * [Using Animation to Improve Perspective](pages/statistics/charts/animations.md)
+        * [Using Animation to Capture Attention](pages/statistics/charts/animations.md)
     * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)

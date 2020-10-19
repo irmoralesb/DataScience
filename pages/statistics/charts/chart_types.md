@@ -321,5 +321,72 @@ x
 * [Radial Tree](hierarchical_data.md)
 * [Tree Map](hierarchical_data.md)
   
+## Visualizing Graph and Network Data
+
+### What Does It Measure?
+  
+* Relationships
+* Network
+* Graph
+* Nodes and Edges
+  - Vertices (Nodes)
+  - Edges
+  - Directed
+  - Undirected
+  - Weighted
+* Network of pairs
+* Additional variables
+  
+### It Can Answer Questions Like
+
+* Which actors have acted together?
+* Are there acting communities?
+
+### Plots & Charts
+
+* [Small Graph](small_graph.md)
+* [Large Graph](large_graph.md)
+* [Community Graph](community_graph.md)
+
+
+## Visualizing Text Data
+
+### What Does It Measure?
+
+* Body of text
+* Extract new information
+* Patterns and trends
+* Unstructured data
+* Convert to lower case
+* Remove punctuation
+* Remove stopwords
+* Reduce to stem words
+* Strip extra whitespace
+* Convert to frequencies
+* Get and work with a bag-of-words 
+* Frequency of terms
+* Additional variables
+
+### It Can Answer Questions Like
+
+* What are the top keywords by frequency?
+* What are the top keywords by box office?
+* What are the top keywords by critic score?
+
+### Plots & Charts
+
+* [Frequency Word Cloud]()
+* [Quantitative Word Cloud]()
+* [Colored Word Cloud]()
+
+## Animating Data Visualization
+
+### Plots & Charts
+
+* [Animation](animations.md)
+* [Using Animation to tell a Story](animations.md)
+* [Using Animation to Improve Perspective](animations.md)
+* [Using Animation to Capture Attention](animations.md)
+
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)
