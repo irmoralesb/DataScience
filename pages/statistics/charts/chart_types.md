@@ -273,5 +273,53 @@ Process of creating multiple plots in a single chart, they may be arranged in ro
 * [Scatter Plot Matrix](scatter_plot_matrix.md)
 * [Parallel Coordinates Plot](parallel_coordinates_plot.md)
 
+## Visualizing Spatial Data
+
+### What Does It Measure?
+
+* It uses topological, geometric or geographic properties
+* Geospatial analysis - for earth places
+* Two numeric variables
+* Longitude
+* Latitude
+* Other variables can be used, not only latitude and longitude.
+
+### It Can Answer Questions Like
+
+* What counties are we distributing movies to?
+* Where do we distribute the most movies?
+
+### Plots & Charts
+
+* [Dot Density Map](maps_charts.md)
+* [Contour Map](maps_charts.md)
+* [Level Map](maps_charts.md)
+* [Bubble Map](maps_charts.md)
+* [Choropleth](maps_charts.md)
+* [Map Projections](maps_charts.md)
+
+## Visualizing Hierarchical Data
+
+### What Does It Measure?
+
+* Parent-child relationship
+* Modeled as trees
+* Multiple levels
+* Two-level  hierarchy
+* Third numeric variable
+
+### It Can Answer Questions Like
+
+* What regions contain our top 10 distribution?
+* What is their average box office revenue?
+x
+### Plots & Charts
+
+* [Tree Diagram](hierarchical_data.md)
+* [Tree Graph](hierarchical_data.md)
+* [Dendrogram](hierarchical_data.md)
+* [Radial Tree](hierarchical_data.md)
+* [Tree Map](hierarchical_data.md)
+  
 ### Notes
 * [General Analysis Notes](general_analysis_notes.md)

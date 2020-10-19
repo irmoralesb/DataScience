@@ -77,6 +77,19 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
         * [Correlogram](pages/statistics/charts/correlogram.md)
         * [Scatter Plot Matrix](pages/statistics/charts/scatter_plot_matrix.md)
         * [Parallel Coordinates Plot](pages/statistics/charts/parallel_coordinates_plot.md)
+      * Visualizing Spatial Data - Maps
+        * [Dot Density Map](pages/statistics/charts/maps_charts.md)
+        * [Contour Map](pages/statistics/charts/maps_charts.md)
+        * [Level Map](pages/statistics/charts/maps_charts.md)
+        * [Bubble Map](pages/statistics/charts/maps_charts.md)
+        * [Choropleth](pages/statistics/charts/maps_charts.md)
+        * [Map Projections](pages/statistics/charts/maps_charts.md)
+      * Visualizing Hierarchical Data
+        * [Tree Diagram](pages/statistics/charts/hierarchical_data.md)
+        * [Tree Graph](pages/statistics/charts/hierarchical_data.md)
+        * [Dendrogram](pages/statistics/charts/hierarchical_data.md)
+        * [Radial Tree](pages/statistics/charts/hierarchical_data.md)
+        * [Tree Map](pages/statistics/charts/hierarchical_data.md)
     * [General Analysis Notes](pages/statistics/charts/general_analysis_notes.md)
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
