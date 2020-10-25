@@ -3,8 +3,12 @@
 > aka Average
 
 * It's affected by extreme values ([outliers](outliers.md))
-* Symbol <!-- $\bar{x}$ --><img style="transform: translateY(0.25em);background:white" src="../../../svg/VNuZK2xJvO.svg"/>
-* Formula <!-- $\bar{x}=\frac{\sum_{i=0}^{n}x_i}{n}$ --> <img style="transform: translateY(0.25em);background:white" src="../../../svg/wHwzHmJopT.svg"/>
+* Symbol
+  * Sample <!-- $\bar{x}$ --><img style="transform: translateY(0.25em);background:white" src="../../../svg/VNuZK2xJvO.svg"/>
+  * Population <!-- $\sigma$ --> <img style="transform: translateY(0.25em);background:white;" src="../../../svg/MlOcPF2nTh.svg"/>
+* Formula
+  * Sample<!-- $\bar{x}=\frac{\sum_{i=0}^{n}x_i}{n}$ --> <img style="transform: translateY(0.25em);background:white" src="../../../svg/wHwzHmJopT.svg"/>
+  * Population <!-- $\sigma=\frac{\sum_{i=0}^{n}x_i}{N}$ --> <img style="transform: translateY(0.25em);background:white;" src="../../../svg/omrToyxje8.svg"/>
 * N = Population or n = sample
 
 R

@@ -110,5 +110,13 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
   * Concepts
     * [Elements of Structured Data](/pages/statistics/concepts/elements_of_structured_data.md)
     * [Moments of Distribution](/pages/statistics/concepts/moments_of_distribution.md)
+    * [Mean](pages/statistics/concepts/mean.md)
+    * [Median](pages/statistics/concepts/median.md)
+    * [Outliers](pages/statistics/concepts/outliers.md)
+    * [Variance & Standard Deviation](pages/statistics/concepts/deviation.md)
+    * [Degrees of Freedom](pages/statistics/concepts/degrees_of_freedom.md)
+    * [Median Absolute Deviation](pages/statistics/concepts/mad.md)
+    * [Range](pages/statistics/concepts/range.md)
+    * [Percentiles](pages/statistics/concepts/percentiles.md)
     * [Correlation](/pages/statistics/concepts/correlation.md)
 
