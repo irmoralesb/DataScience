@@ -29,7 +29,7 @@ Plots
 
 *Aka: Cluster or dodged frequency bar chart)*
 
-It allows us to compare two variables, for instance we can see on X-axis the ratings, on Y-axis count of movies, but spliting the count on movies with awards. so you can compare one bar against the other easly.
+It allows us to compare two variables, for instance we can see on X-axis the ratings, on Y-axis count of movies, but spliting the count on movies with awards. so you can compare one bar against the other easily.
 
 ### Stacked Frequency Bar Chart
 

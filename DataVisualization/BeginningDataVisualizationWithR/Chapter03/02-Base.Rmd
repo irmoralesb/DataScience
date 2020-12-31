@@ -12,7 +12,7 @@ We are requested to answer these questions:
     
 
 
-Univariate visualizations of a quantitiative variable
+Univariate visualizations of a quantitative variable
 
 
 ## Setup environment

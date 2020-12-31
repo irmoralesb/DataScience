@@ -32,7 +32,7 @@ output: github_document
 
 *Aka: Cluster or dodged frequency bar chart)*  
 
-It allows us to compare two variables, for instance we can see on X-axis the ratings, on Y-axis count of movies, but spliting the count on movies with awards. so you can compare one bar against the other easly.
+It allows us to compare two variables, for instance we can see on X-axis the ratings, on Y-axis count of movies, but splitting the count on movies with awards. so you can compare one bar against the other easily.
 
 ### Stacked Frequency Bar Chart
 
@@ -42,12 +42,12 @@ It is similar than the previous, but the bar are in stack, so you can answer que
     * Joint frequency
     * Part of whole
 
-*Chose this data visualization when comparing the marginal frequency opf one category is more important than comparing the joint frequency across categories.*
+*Chose this data visualization when comparing the marginal frequency of one category is more important than comparing the joint frequency across categories.*
 
 
 ### 100% Stacked Frequency Bar Chart
 
-it is pretty much the same than Grouped frequency bar chart, but we strech the bar to fill the whole area, answer questions of type:
+it is pretty much the same than Grouped frequency bar chart, but we stretch the bar to fill the whole area, answer questions of type:
 
 
     * Relative frequency

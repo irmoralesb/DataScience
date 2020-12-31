@@ -97,7 +97,7 @@ All in one
 ----------
 
 Create small multiples of all four **Note:** Not exactly lined up
-**Note 2:** this chart looks betterin R script file, not well rendered here.
+**Note 2:** this chart looks better in R script file, not well rendered here.
 
 ``` r
 dot <- dotplot(

@@ -93,7 +93,7 @@ Charts
 
 ### Line Chart
 
-Similar to Step chart, rather than displays values as contants throughout each time period, they show the rate of change from one time period to the next.
+Similar to Step chart, rather than displays values as constants throughout each time period, they show the rate of change from one time period to the next.
 
     * Change value over time
     * Rate of change

@@ -48,7 +48,7 @@ library(RColorBrewer)
 library(dplyr)
 
 # Load Data
-movies <- read.csv("Movies.csv")
+movies <- read.csv("./data/Movies.csv")
 
 colors <- brewer.pal(4, "Set3")
 

@@ -6,7 +6,7 @@ We are requested to answer these questions:
     1. How many award-winning movies are in each rating category?
     2. What proportion of movies in each category have won awards?
 
-Bivariate visualizations for two qualititative variables
+Bivariate visualizations for two qualitative variables
 
 Setup environment
 -----------------

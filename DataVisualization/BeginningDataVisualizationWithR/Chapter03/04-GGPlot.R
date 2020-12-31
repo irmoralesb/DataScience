@@ -1,6 +1,6 @@
 
 library(ggplot2)
-movies = read.csv("../data/Movies.csv")
+movies = read.csv("data/Movies.csv")
 main_title <- "Distribution of Movies Runtimes"
 x_lab = "Runtime in minutes"
 

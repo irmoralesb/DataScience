@@ -2,15 +2,15 @@
 title: "Chapter 1 - Base Chart"
 output:
   github_document
-  
 ---
 
 ## Demo using Base R
 
 Create data frame
 ```{r}
+nameasfactor <- as.factor(c("a","b","c"))
 df <- data.frame(
-  Name = c("a","b","c"),
+  Name = nameasfactor,
   Value = c(1,2,3))
 ```
 
@@ -18,7 +18,7 @@ Display the data frame
 ```{r}
 print(df)
 ```
-*Note that when passing the data frame it displays the axis names, this is because it has where to get the data from*, if you pass the column as parameter it doest't have a way to determine those axis names automatically.
+*Note that when passing the data frame it displays the axis names, this is because it has where to get the data from*, if you pass the column as parameter it doesn't have a way to determine those axis names automatically.
 
 ### Plot
 
@@ -57,5 +57,5 @@ barplot(
 `?plot`
 and
 `?barplot`
-to see paramters help
+to see parameters help
 `?par`

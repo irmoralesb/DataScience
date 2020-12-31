@@ -6,7 +6,9 @@ We are requested to answer these questions:
     1. How are runtime and box-office revenue related?
     2. Has the average box-office revenue changed over time?
 
-*Bivariate Visualization for two quantitiative variables* \#\# Setting up environment
+*Bivariate Visualization for two quantitiative variables* 
+
+## Setting up environment
 
 ``` r
 movies <- read.csv('../data/Movies.csv')
@@ -113,7 +115,7 @@ density2d <- kde2d(
 
 ### Contour plot
 
-Create a contour plot of density, as you can see for this scenario this visualizartion is not the best.
+Create a contour plot of density, as you can see for this scenario this visualization is not the best.
 
 ``` r
 contour(
@@ -244,4 +246,4 @@ plot(
 
 ### Area charts
 
-Area charts are not easy to create on the base library, they will be included into lattice and ggplot exeamples.
+Area charts are not easy to create on the base library, they will be included into lattice and ggplot examples.

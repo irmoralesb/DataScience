@@ -40,7 +40,7 @@ There are some additional types of data analysis, such as:
 Create a frequency bar chart with defaults
 
 ```{r}
-movies <- read.csv("../data/Movies.csv")
+movies <- read.csv("data/Movies.csv")
 plot(movies$Rating)
 ```
 
