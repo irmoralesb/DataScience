@@ -86,3 +86,74 @@ _ = plt.ylabel('ECDF')
 
 # Display the plot
 plt.show()
+
+# PERCENTILES
+percentiles = np.array([2.5, 25, 50, 75, 97.5])
+versicolor_percentiles = np.percentile(versicolor_petal_length, percentiles)
+setosa_percentiles = np.percentile(setosa_petal_length, percentiles)
+virginica_percentiles = np.percentile(virginica_petal_length, percentiles)
+
+# Graph the ECDF with Percentiles
+
+plt.plot(x_set, y_set, marker=".", linestyle="none")
+plt.plot(setosa_percentiles, percentiles / 100, marker="D", color="red", linestyle="none")
+plt.plot(x_vers, y_vers, marker=".", linestyle="none")
+plt.plot(versicolor_percentiles, percentiles / 100, marker="D", color="red", linestyle="none")
+plt.plot(x_virg, y_virg, marker=".", linestyle="none")
+plt.plot(virginica_percentiles, percentiles / 100, marker="D", color="red", linestyle="none")
+plt.show()
+
+# BOXPLOT
+
+# Create box plot with Seaborn's default settings
+_ = sns.boxplot(x="species", y="petal length (cm)", data=iris_ds_data_merged)
+
+# Label the axes
+_ = plt.xlabel("species")
+_ = plt.ylabel("petal length (cm)")
+
+# Show the plot
+plt.show()
+
+# CORRELATION BETWEEN TO PROPERTIES
+iris_number_array = np.where(iris_ds.target_names == "versicolor")
+iris_number = iris_number_array[0]
+versicolor_petal_width = iris_ds_data_merged.loc[iris_ds.target == iris_number[0], ["petal width (cm)"]]
+# Make a scatter plot
+_ = plt.plot(versicolor_petal_length, versicolor_petal_width, marker=".", linestyle="none")
+
+# Label the axes
+_ = plt.xlabel("versicolor petal length")
+_ = plt.ylabel("versicolor petal width")
+
+# Show the result
+plt.show()
+
+# Compute the covariance matrix: covariance_matrix
+covariance_matrix = np.cov(versicolor_petal_length["petal length (cm)"], versicolor_petal_width["petal width (cm)"])
+
+# Print covariance matrix
+print(covariance_matrix)
+
+# Extract covariance of length and width of petals: petal_cov
+petal_cov = covariance_matrix[0][1]
+
+# Print the length/width covariance
+print(petal_cov)
+
+
+## PEARSON COEFFICIENT
+def pearson_r(x, y):
+    """Compute Pearson correlation coefficient between two arrays."""
+    # Compute correlation matrix: corr_mat
+    corr_mat = np.corrcoef(x, y)
+
+    # Return entry [0,1]
+    return corr_mat[0, 1]
+
+
+# Compute Pearson correlation coefficient for I. versicolor: r
+r = pearson_r(versicolor_petal_length["petal length (cm)"], versicolor_petal_width["petal width (cm)"])
+
+# Print the result
+print("Pearson Correlation {}".format(r))
