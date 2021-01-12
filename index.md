@@ -119,5 +119,7 @@ I still work as Web Developer, but I think I'm in a point that I need to review 
     * [Range](pages/statistics/concepts/range.md)
     * [Percentiles](pages/statistics/concepts/percentiles.md)
     * [Correlation](/pages/statistics/concepts/correlation.md)
+    * [Mode](/pages/statistics/concepts/mode.md)
+    * [Expected Value](pages/statistics/concepts/expected_value.md)
 * Exploratory Data Analysis [EDA](/pages/eda/main.md)
   * [Bernoulli Trials](pages/eda/bernoulli.md)
