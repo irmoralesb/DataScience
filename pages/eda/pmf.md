@@ -74,3 +74,23 @@ plt.show()
 
 
 ![Binomnial CDF](../images/Courses/binomial_cdf.png)
+
+
+## Probability Density Function (PDF)
+
+* Continous analog to the PMF
+* Mathematical description of the relative likelihood of observing a value of a continuous variable
+
+![Normal Distribution](../images/Courses/normal_distribution.png)
+
+The probability of occurence is the area under the curve
+
+![Probability](../images/Courses/normal_distribution_probability.png)
+
+We also can make reference of the Normal CDF
+
+![Normal CDF](../images/Courses/normal_distribution_cdf.png)
+
+And we can see the probability in this way
+![Normal CDF Probability](../images/Courses/normal_distribution_cdf_probability.png)
+
