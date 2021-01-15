@@ -94,3 +94,36 @@ We also can make reference of the Normal CDF
 And we can see the probability in this way
 ![Normal CDF Probability](../images/Courses/normal_distribution_cdf_probability.png)
 
+## Normal Distribution
+
+* Describe a continous variable whose PDF has a single symmetric peak
+
+![](../images/Courses/normal_distribution_1.png)
+
+> The mean and standard deviation of the Normal Distribution ARE NOT the same than the ones calculated by the data!!!
+
+Thinking of the example of light speed mesurement we can see that it looks like a Normal Distribution, but we will have **bias**
+
+![](../images/Courses/normal_distribution_light_speed.png)
+
+ so it is better to compare the ECDF against the theorical CDF of the normal distribution
+
+ ```python
+import numpy as np
+mean = np.mean(speed_of_light)
+std = np.std(speed_of_light)
+samples = np.random.normal(mean, std, size = 10000)
+x, y = ecdf(speed_of_light)
+x_theor, y_theor = ecdf(sample)
+
+plt.plot(x_theor, y_theor)
+plt.plot(x, y, marker=".", linestyle="none")
+plt.xlabel("speed of light in km/s")
+plt.ylabel("CDF")
+plt.show()
+ ```
+
+
+![](../images/Courses/normal_vs_cdf.png)
+
+Removing Bias we can see that the mesurement is approximatelly a Normal Distribution
