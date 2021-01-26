@@ -36,7 +36,7 @@ We use it when we need to evaluate probabilities under specific conditions
 
 ### Independece
 
-    <img style="transform: translateY(0.1em); background: white;" src="../../svg/NdcfFmxcDB.svg">
+<img style="transform: translateY(0.1em); background: white;" src="../../svg/NdcfFmxcDB.svg">
 
 The conditional probability can also include more than one condition
 
@@ -44,7 +44,7 @@ The conditional probability can also include more than one condition
 
 ### Not Independence
 
-    <img style="transform: translateY(0.1em); background: white;" src="../../svg/XUGA0OwCrT.svg">
+<img style="transform: translateY(0.1em); background: white;" src="../../svg/XUGA0OwCrT.svg">
 
 > Example by using 21 card game
 
