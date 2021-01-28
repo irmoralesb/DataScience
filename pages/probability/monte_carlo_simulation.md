@@ -32,7 +32,6 @@ sample(beads, 5) # This will return all the beads in the beads collection
 sample(beads, 5, replacement=TRUE)
 
 # So we can OMIT the replicate function by doing this
-
 sample(beads, B, replacement=TRUE)
 
 ```
