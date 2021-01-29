@@ -86,7 +86,6 @@ pnorm(68.5, mean(x), sd(x))) - pnorm(67.5, mean(x), sd(y)))
 
 > There are cases where the estimated and real probability is not close, it may pass **on some intervals**.
 
-
 ```r
 mean(x <= 70.9) - mean(x <= 70.1)
 #0.02216749
@@ -96,4 +95,19 @@ pnorm(70.9, mean(x), sd(x)) - pnorm(70.1, mean(x), sd(x)
 
 ```
 
-this may be related to the data gathered and some students round the values to the neares number... *70*
+This may be related to the data gathered and some students round the values to the neares number... *70*
+
+## Probability Density
+
+> For continuous probability getting the probability of a single value is not defined, but there is a theorethical definition which has similar interpretation, it has to do with the **Probability Density**
+
+ <!-- $F(a)=Pr(X\leq a)=\int_{-\infty}^af(x)dx$ --> <img style="transform: translateY(0.1em); background: white;" src="../../svg/Lr6vbZXvvK.svg">
+
+
+ ### Code
+
+The density distribution function for a normal distribution.
+
+ ```r
+dnorm(x)
+ ```

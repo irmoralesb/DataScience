@@ -35,3 +35,36 @@ sample(beads, 5, replacement=TRUE)
 sample(beads, B, replacement=TRUE)
 
 ```
+
+## Monte Carlo Simulation Using Normally Distributed Variables
+
+```r
+rnorm(size=0, avg=0, std=1)
+```
+
+### Example
+
+```r
+x <- heights %>% filter(sex == "Male") %>% .$height
+n <- length(x)
+avg <- mean(x)
+s <- sd(x)
+simulated_heights <- rnorm(n, avg, s)
+```
+
+It looks normal distributed, because we model it like that.
+
+![monte carlo simulation](../images/Courses/montecarlo_normal_1.png)
+
+We can model scenarios to get the max height for a man with this code.
+
+```r
+B <- 10000
+tallest <- replicate(B, {
+    simulated_data <- rnorm(800, avg, s)
+    max(simulated_data)
+})
+
+mean(tallest >= 7*12)
+#0.019
+```

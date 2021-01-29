@@ -19,3 +19,14 @@ Proportion of times the event occurs when we repeat the experiment over and over
 ## Event
 
 Things that can happen when something happens by chance
+
+## Probabilty of a subset
+
+If we have a dice, what is the probability of getting 4
+
+<img style="transform: translateY(0.1em); background: white;" src="../../svg/duS9Mcs8u7.svg">
+
+If we want to know the probability of getting a number less or equal than 4, then we need to add all the probabilities, CDF.
+
+<img style="transform: translateY(0.1em); background: white;" src="../../svg/54ZuGyIb2W.svg">
+
