@@ -74,9 +74,6 @@ plt.show()
 
 ![Binomnial CDF](../images/Courses/binomial_cdf.png)
 
-<<<<<<< HEAD
-=======
-
 ## Probability Density Function (PDF)
 
 * Continous analog to the PMF
@@ -128,4 +125,3 @@ plt.show()
 ![](../images/Courses/normal_vs_cdf.png)
 
 Removing Bias we can see that the mesurement is approximatelly a Normal Distribution
->>>>>>> 915d80ed462f3653f4ed44332e31f7ced0ee6bbc
