@@ -2,7 +2,6 @@
 
 By using the computer, we can mimic a large enough samples, so we can determine the limits and tendency.
 
-
 ```r
 beads <- rep(c("red", "blue"), times = c(2,3))
 # beads "red", "red", "blue", "blue", "blue"
