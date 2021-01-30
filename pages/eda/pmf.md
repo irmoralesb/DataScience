@@ -72,5 +72,5 @@ _ = plt.ylabel("CDF")
 plt.show()
 ```
 
-
 ![Binomnial CDF](../images/Courses/binomial_cdf.png)
+
