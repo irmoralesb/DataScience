@@ -2,6 +2,24 @@
 
 > The random variable is represented by **S**
 
+## Notation
+
+> Upper case is used to denote **Random numbers**
+> Lower case is used to denote **Observed values**
+
+For instance
+
+<img style="transform: translateY(0.1em); background: white;" src="../../svg/eP0WcCEEfj.svg">
+
+Where: 
+
+X : Random variable, i.e. any number in a die roll
+x : Arbitrary value, i.e. the number we see
+
+So <img style="transform: translateY(0.1em); background: white;" src="../../svg/C2G36RNB3x.svg">
+
+## Description
+
 Taking the cassino game total winning can be represented by **S**
 
 We have the next rulette game:
@@ -11,6 +29,7 @@ We have the next rulette game:
 * 2 Green
 
 Representing the scenario
+
 ```r
 colors <- rep(c("Black", "Red", "Green"), c(18,18,2))
 ```
@@ -83,7 +102,7 @@ mean(S <= a)
 
 This is the histogram of the distribution
 
-![](../images/Courses/random_varible_pdf.png)
+![Random variable](../images/Courses/random_varible_pdf.png)
 
 This looks like a normal distribution, so we can model it
 
@@ -105,7 +124,7 @@ data.frames (S= S) %>% ggplot(aes(S, ..density..)) +
     geom_line (data=normal_density, mapping=aes(s,f), color="blue")
 ```
 
-![](../images/Courses/random_variable_normal_dist_comparisson.png)
+![Random variable distribution](../images/Courses/random_variable_normal_dist_comparisson.png)
 
 > The average/mean is referred as the  **Expected Value** and the standard deviation as the **Standard Error**
 
@@ -113,3 +132,5 @@ data.frames (S= S) %>% ggplot(aes(S, ..density..)) +
 Theorical Statistics provides a way to derive a distribution of a random variable defined as independent draws from a urn, in this example we can show that <img style="transform: translateY(0.1em); background: white;" src="../../svg/gCIrbSPCOi.svg"> follows what is known as [Binomial Distribution](../statistics/distributions/binomial_distribution.md)
 
 That means we don't need to run Monte Carlo Simulations nor use the normal aproximation to know the probability distribution of this, this is only for ilustrative proposes.
+
+
