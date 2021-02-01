@@ -31,8 +31,7 @@ When estimating the standard error of a proportion in a population by using a ra
 * The number r of successes in n Bernoulli trials with probability p of success, is Binomially distributed.
 * The number r of heads in 4 coin flips with probability 0.5 of heads, is Binomially distributed.
 
-
-Sampling from the Binomial distribution
+#### Sampling from the Binomial distribution
 
 
 ```python

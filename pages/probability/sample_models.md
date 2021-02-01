@@ -128,9 +128,6 @@ data.frames (S= S) %>% ggplot(aes(S, ..density..)) +
 
 > The average/mean is referred as the  **Expected Value** and the standard deviation as the **Standard Error**
 
-
 Theorical Statistics provides a way to derive a distribution of a random variable defined as independent draws from a urn, in this example we can show that <img style="transform: translateY(0.1em); background: white;" src="../../svg/gCIrbSPCOi.svg"> follows what is known as [Binomial Distribution](../statistics/distributions/binomial_distribution.md)
 
 That means we don't need to run Monte Carlo Simulations nor use the normal aproximation to know the probability distribution of this, this is only for ilustrative proposes.
-
-

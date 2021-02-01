@@ -12,6 +12,18 @@ A special type of categorical data is data in which the categories represent or 
 
 <!-- $EV = (v1 * p1) + (v2 * p2) + ... + (vn * pn)$ --> <img style="transform: translateY(0.1em); background: white;" src="../../../svg/Ijp4FL2vf7.svg">
 
+## Standard Error
+
+ It's a single metric that sums up the variability in the sampling distribution for a statistic. The standard error can be estimated using a statistic based on the standard deviation  s  of the sample values, and the sample size  n:
+
+<!-- $StandardError = SE = \frac{s}{\sqrt{n}}$ --> <img style="transform: translateY(0.1em); background: white;" src="../../../svg/Wo4sA5Bx7u.svg">
+
+> As the sample size increases, the standard error decreases
+
+The relationship between standard error and sample size is sometimes referred to as the **square root of n rule**: to reduce the standard error by a factor of 2, the sample size must be increased by a factor of 4.
+
+> Do not confuse standard deviation (which measures the variability of individual data points) with standard error (which measures the variability of a sample metric).
+
 ## Properties
 
 ### Property 1

@@ -4,6 +4,12 @@
 
 When the number of draws is large, the sum of the independent draws is approximately normal.
 
+Another description says that the means drawn from multiple samples will resemble the familiar bell-shaped normal curve, **even if the source population is not normally distributed**, provided that the sample size is large enough and the departure of the data from normality is not too great. The central limit theorem allows normal-approximation formulas like the t-distribution to be used in calculating sampling distributions for inference—that is, confidence intervals and hypothesis tests.
+
+The central limit theorem receives a lot of attention in traditional statistics texts because *it underlies the machinery of hypothesis tests and confidence intervals*, which themselves consume half the space in such texts. Data scientists should be aware of this role; however, *since formal hypothesis tests and confidence intervals play a small role in data science, and the  bootstrap is available in any case, the central limit theorem is not so central in the practice of data science.*
+
+We can see how this tendency works on the [sampling distribution](sampling_distribution.md), the more data we use for getting the mean, the more bell-shaped the chart is.
+
 ### Expected Value
 
 <img style="transform: translateY(0.1em); background: white;" src="../../svg/GXHmVVTxHF.svg">
