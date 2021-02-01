@@ -1,7 +1,6 @@
 # Bernoulli Trials
 
-You can think of a Bernoulli trial as a flip of a possibly biased coin. Specifically, each coin flip has a probability **p** of landing heads (success) and probability 
-<img style="transform: translateY(0.1em); background: white;" src="../../svg/pkwVrpJLxe.svg"> of landing tails (failure). In this exercise, you will write a function to perform n Bernoulli trials, perform_bernoulli_trials(n, p), which returns the number of successes out of n Bernoulli trials, each of which has probability p of success.
+You can think of a Bernoulli trial as a flip of a possibly biased coin. Specifically, each coin flip has a probability **p** of landing heads (success) and probability <img style="transform: translateY(0.1em); background: white;" src="../../svg/pkwVrpJLxe.svg"> of landing tails (failure). In this exercise, you will write a function to perform n Bernoulli trials, perform_bernoulli_trials(n, p), which returns the number of successes out of n Bernoulli trials, each of which has probability p of success.
 
 
 ```python
